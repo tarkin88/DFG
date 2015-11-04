@@ -1,0 +1,473 @@
+Oct 19 23:45 : avahi: Service 'Music Player' successfully established.
+Oct 19 23:45 : client: [0] opened from [::1]:33846
+Oct 19 23:46 : client: [1] opened from [::1]:33848
+Oct 19 23:46 : client: [2] opened from [::1]:33850
+Oct 19 23:46 : client: [3] opened from [::1]:33852
+Oct 19 23:46 : client: [4] opened from [::1]:33854
+Oct 19 23:46 : client: [5] opened from [::1]:33856
+Oct 19 23:46 : client: [6] opened from [::1]:33858
+Oct 19 23:47 : client: [7] opened from [::1]:33860
+Oct 19 23:49 : client: [8] opened from [::1]:33926
+Oct 19 23:49 : client: [9] opened from [::1]:33928
+Oct 19 23:49 : client: Max connections reached
+Oct 19 23:49 : client: Max connections reached
+Oct 19 23:50 : client: Max connections reached
+Oct 20 00:13 : avahi: Client Disconnected, will reconnect shortly
+Oct 20 20:57 : avahi: Service 'Music Player' successfully established.
+Oct 20 20:57 : client: [0] opened from [::1]:47780
+Oct 20 20:57 : client: [0] closed
+Oct 20 20:57 : client: [1] opened from [::1]:47782
+Oct 20 20:57 : client: [1] closed
+Oct 20 20:58 : client: [2] opened from [::1]:47784
+Oct 20 20:58 : client: [2] closed
+Oct 20 22:26 : client: [3] opened from [::1]:49026
+Oct 20 23:09 : client: [0] opened from [::1]:55634
+Oct 20 23:09 : avahi: Service 'Music Player' successfully established.
+Oct 20 23:09 : client: [0] closed
+Oct 20 23:09 : client: [1] opened from [::1]:55636
+Oct 20 23:15 : client: [1] closed
+Oct 20 23:15 : client: [2] opened from [::1]:55676
+Oct 20 23:15 : client: [2] closed
+Oct 20 23:16 : client: [3] opened from [::1]:55682
+Oct 20 23:16 : client: [3] closed
+Oct 20 23:16 : update: added Porter/Porter - Moctezuma (2014)/04 - La China.mp3
+Oct 20 23:16 : update: added Porter/Porter - Moctezuma (2014)/08 - Palapa.mp3
+Oct 20 23:16 : update: added Porter/Porter - Moctezuma (2014)/02 - M Bosque.mp3
+Oct 20 23:16 : update: added Porter/Porter - Moctezuma (2014)/05 - Rincón Yucateco.mp3
+Oct 20 23:16 : update: added Porter/Porter - Moctezuma (2014)/01 - Murciélago.mp3
+Oct 20 23:16 : update: added Porter/Porter - Moctezuma (2014)/06 - Huracancún.mp3
+Oct 20 23:16 : update: added Porter/Porter - Moctezuma (2014)/03 - Huitzil.mp3
+Oct 20 23:16 : update: added Porter/Porter - Moctezuma (2014)/07 -  Tzunami.mp3
+Oct 20 23:16 : client: [4] opened from [::1]:55684
+Oct 20 23:16 : player: played "Porter/Porter - Moctezuma (2014)/01 - Murciélago.mp3"
+Oct 20 23:21 : client: [5] opened from [::1]:55722
+Oct 20 23:22 : player: played "Porter/Porter - Moctezuma (2014)/08 - Palapa.mp3"
+Oct 20 23:22 : client: [6] opened from [::1]:55808
+Oct 20 23:26 : client: [6] closed
+Oct 20 23:27 : player: played "Porter/Porter - Moctezuma (2014)/03 - Huitzil.mp3"
+Oct 20 23:33 : player: played "Porter/Porter - Moctezuma (2014)/02 - M Bosque.mp3"
+Oct 20 23:37 : player: played "Porter/Porter - Moctezuma (2014)/01 - Murciélago.mp3"
+Oct 20 23:37 : client: [4] closed
+Oct 20 23:38 : player: played "Porter/Porter - Moctezuma (2014)/04 - La China.mp3"
+Oct 21 14:24 : client: [0] opened from [::1]:50948
+Oct 21 14:24 : avahi: Service 'Music Player' successfully established.
+Oct 21 14:24 : client: [1] opened from [::1]:50952
+Oct 21 14:24 : client: [2] opened from [::1]:50954
+Oct 21 14:24 : player: played "Porter/Porter - Moctezuma (2014)/04 - La China.mp3"
+Oct 21 14:24 : client: [2] closed
+Oct 21 14:24 : client: [3] opened from [::1]:50956
+Oct 21 14:24 : client: [3] closed
+Oct 21 14:24 : client: [4] opened from [::1]:50958
+Oct 21 14:24 : client: [5] opened from [::1]:50960
+Oct 21 14:24 : client: [5] closed
+Oct 21 14:24 : client: [6] opened from [::1]:50962
+Oct 21 14:24 : client: [6] closed
+Oct 21 14:24 : client: [7] opened from [::1]:50964
+Oct 21 14:24 : client: [7] closed
+Oct 21 14:24 : client: [8] opened from [::1]:50966
+Oct 21 14:24 : client: [8] closed
+Oct 21 14:24 : client: [9] opened from [::1]:50968
+Oct 21 14:24 : client: [9] closed
+Oct 21 14:24 : client: [10] opened from [::1]:50970
+Oct 21 14:24 : client: [10] closed
+Oct 21 14:24 : client: [11] opened from [::1]:50972
+Oct 21 14:24 : client: [11] closed
+Oct 21 14:24 : client: [12] opened from [::1]:50974
+Oct 21 14:24 : client: [12] closed
+Oct 21 14:24 : client: [13] opened from [::1]:50976
+Oct 21 14:24 : client: [13] closed
+Oct 21 14:24 : client: [14] opened from [::1]:50978
+Oct 21 14:24 : client: [14] closed
+Oct 21 14:24 : client: [15] opened from [::1]:50980
+Oct 21 14:24 : client: [15] closed
+Oct 21 14:24 : client: [16] opened from [::1]:50984
+Oct 21 14:24 : player: played "Porter/Porter - Moctezuma (2014)/01 - Murciélago.mp3"
+Oct 21 14:24 : client: [16] closed
+Oct 21 14:24 : client: [17] opened from [::1]:50988
+Oct 21 14:24 : player: played "Porter/Porter - Moctezuma (2014)/01 - Murciélago.mp3"
+Oct 21 14:24 : client: [17] closed
+Oct 21 14:24 : client: [18] opened from [::1]:50990
+Oct 21 14:24 : player: played "Porter/Porter - Moctezuma (2014)/02 - M Bosque.mp3"
+Oct 21 14:24 : client: [18] closed
+Oct 21 14:24 : client: [19] opened from [::1]:50994
+Oct 21 14:24 : player: played "Porter/Porter - Moctezuma (2014)/03 - Huitzil.mp3"
+Oct 21 14:24 : client: [19] closed
+Oct 21 14:24 : client: [20] opened from [::1]:50998
+Oct 21 14:24 : player: played "Porter/Porter - Moctezuma (2014)/05 - Rincón Yucateco.mp3"
+Oct 21 14:24 : client: [20] closed
+Oct 21 14:24 : client: [21] opened from [::1]:51018
+Oct 21 14:24 : player: played "Porter/Porter - Moctezuma (2014)/08 - Palapa.mp3"
+Oct 21 14:24 : client: [21] closed
+Oct 21 14:24 : client: [22] opened from [::1]:51020
+Oct 21 14:24 : player: played "Porter/Porter - Moctezuma (2014)/05 - Rincón Yucateco.mp3"
+Oct 21 14:24 : client: [22] closed
+Oct 21 14:24 : client: [23] opened from [::1]:51026
+Oct 21 14:24 : player: played "Porter/Porter - Moctezuma (2014)/03 - Huitzil.mp3"
+Oct 21 14:24 : client: [23] closed
+Oct 21 14:24 : client: [24] opened from [::1]:51028
+Oct 21 14:24 : player: played "Porter/Porter - Moctezuma (2014)/05 - Rincón Yucateco.mp3"
+Oct 21 14:24 : client: [24] closed
+Oct 21 14:24 : client: [25] opened from [::1]:51032
+Oct 21 14:24 : player: played "Porter/Porter - Moctezuma (2014)/08 - Palapa.mp3"
+Oct 21 14:24 : client: [25] closed
+Oct 21 14:24 : client: [26] opened from [::1]:51034
+Oct 21 14:24 : player: played "Porter/Porter - Moctezuma (2014)/05 - Rincón Yucateco.mp3"
+Oct 21 14:24 : client: [26] closed
+Oct 21 14:24 : client: [27] opened from [::1]:51036
+Oct 21 14:24 : player: played "Porter/Porter - Moctezuma (2014)/03 - Huitzil.mp3"
+Oct 21 14:24 : client: [27] closed
+Oct 21 14:24 : client: [28] opened from [::1]:51040
+Oct 21 14:24 : player: played "Porter/Porter - Moctezuma (2014)/02 - M Bosque.mp3"
+Oct 21 14:24 : client: [28] closed
+Oct 21 14:24 : client: [29] opened from [::1]:51042
+Oct 21 14:24 : player: played "Porter/Porter - Moctezuma (2014)/01 - Murciélago.mp3"
+Oct 21 14:24 : client: [29] closed
+Oct 21 14:24 : client: [30] opened from [::1]:51046
+Oct 21 14:24 : player: played "Porter/Porter - Moctezuma (2014)/01 - Murciélago.mp3"
+Oct 21 14:24 : client: [30] closed
+Oct 21 14:24 : client: [31] opened from [::1]:51048
+Oct 21 14:24 : player: played "Porter/Porter - Moctezuma (2014)/02 - M Bosque.mp3"
+Oct 21 14:24 : client: [31] closed
+Oct 21 14:24 : client: [32] opened from [::1]:51052
+Oct 21 14:24 : player: played "Porter/Porter - Moctezuma (2014)/03 - Huitzil.mp3"
+Oct 21 14:24 : client: [32] closed
+Oct 21 14:24 : client: [33] opened from [::1]:51056
+Oct 21 14:24 : player: played "Porter/Porter - Moctezuma (2014)/05 - Rincón Yucateco.mp3"
+Oct 21 14:24 : client: [33] closed
+Oct 21 14:24 : client: [34] opened from [::1]:51060
+Oct 21 14:24 : player: played "Porter/Porter - Moctezuma (2014)/08 - Palapa.mp3"
+Oct 21 14:24 : client: [34] closed
+Oct 21 14:24 : client: [35] opened from [::1]:51062
+Oct 21 14:24 : player: played "Porter/Porter - Moctezuma (2014)/05 - Rincón Yucateco.mp3"
+Oct 21 14:24 : client: [35] closed
+Oct 21 14:24 : client: [36] opened from [::1]:51064
+Oct 21 14:24 : player: played "Porter/Porter - Moctezuma (2014)/03 - Huitzil.mp3"
+Oct 21 14:24 : client: [36] closed
+Oct 21 14:24 : client: [37] opened from [::1]:51066
+Oct 21 14:24 : player: played "Porter/Porter - Moctezuma (2014)/02 - M Bosque.mp3"
+Oct 21 14:24 : client: [37] closed
+Oct 21 14:24 : client: [38] opened from [::1]:51070
+Oct 21 14:24 : player: played "Porter/Porter - Moctezuma (2014)/01 - Murciélago.mp3"
+Oct 21 14:24 : client: [38] closed
+Oct 21 14:24 : client: [39] opened from [::1]:51072
+Oct 21 14:24 : player: played "Porter/Porter - Moctezuma (2014)/01 - Murciélago.mp3"
+Oct 21 14:24 : client: [39] closed
+Oct 21 14:24 : client: [40] opened from [::1]:51074
+Oct 21 14:24 : player: played "Porter/Porter - Moctezuma (2014)/01 - Murciélago.mp3"
+Oct 21 14:24 : client: [40] closed
+Oct 21 14:24 : client: [41] opened from [::1]:51076
+Oct 21 14:24 : player: played "Porter/Porter - Moctezuma (2014)/01 - Murciélago.mp3"
+Oct 21 14:24 : client: [41] closed
+Oct 21 14:24 : client: [42] opened from [::1]:51080
+Oct 21 14:24 : player: played "Porter/Porter - Moctezuma (2014)/02 - M Bosque.mp3"
+Oct 21 14:24 : client: [42] closed
+Oct 21 14:24 : client: [43] opened from [::1]:51082
+Oct 21 14:24 : player: played "Porter/Porter - Moctezuma (2014)/03 - Huitzil.mp3"
+Oct 21 14:24 : client: [43] closed
+Oct 21 14:24 : client: [44] opened from [::1]:51084
+Oct 21 14:24 : player: played "Porter/Porter - Moctezuma (2014)/05 - Rincón Yucateco.mp3"
+Oct 21 14:24 : client: [44] closed
+Oct 21 14:24 : client: [45] opened from [::1]:51086
+Oct 21 14:24 : player: played "Porter/Porter - Moctezuma (2014)/08 - Palapa.mp3"
+Oct 21 14:24 : client: [45] closed
+Oct 21 14:24 : client: [46] opened from [::1]:51092
+Oct 21 14:24 : player: played "Porter/Porter - Moctezuma (2014)/06 - Huracancún.mp3"
+Oct 21 14:24 : client: [46] closed
+Oct 21 14:24 : player: played "Porter/Porter - Moctezuma (2014)/04 - La China.mp3"
+Oct 21 14:25 : client: [47] opened from [::1]:51096
+Oct 21 14:25 : player: played "Porter/Porter - Moctezuma (2014)/04 - La China.mp3"
+Oct 21 14:25 : client: [47] closed
+Oct 21 14:25 : client: [48] opened from [::1]:51098
+Oct 21 14:25 : player: played "Porter/Porter - Moctezuma (2014)/06 - Huracancún.mp3"
+Oct 21 14:25 : client: [48] closed
+Oct 21 14:25 : client: [1] closed
+Oct 21 14:25 : client: [49] opened from [::1]:51104
+Oct 21 14:25 : client: [49] closed
+Oct 21 14:26 : client: [50] opened from [::1]:51106
+Oct 21 14:26 : client: [50] closed
+Oct 21 14:26 : client: [51] opened from [::1]:51108
+Oct 21 14:26 : client: [51] closed
+Oct 21 14:26 : client: [52] opened from [::1]:51110
+Oct 21 14:26 : player: played "Porter/Porter - Moctezuma (2014)/08 - Palapa.mp3"
+Oct 21 14:26 : client: [52] closed
+Oct 21 14:26 : client: [53] opened from [::1]:51116
+Oct 21 14:26 : client: [53] closed
+Oct 21 14:26 : client: [54] opened from [::1]:51118
+Oct 21 14:26 : client: [54] closed
+Oct 21 14:27 : client: [55] opened from [::1]:51120
+Oct 21 14:27 : client: [55] closed
+Oct 21 14:29 : client: [56] opened from [::1]:51134
+Oct 21 14:29 : client: [56] closed
+Oct 21 14:30 : client: [57] opened from [::1]:51136
+Oct 21 14:30 : client: [57] closed
+Oct 21 14:30 : client: [58] opened from [::1]:51138
+Oct 21 14:30 : client: [58] closed
+Oct 21 14:30 : client: [59] opened from [::1]:51140
+Oct 21 14:30 : client: [59] closed
+Oct 21 14:30 : client: [60] opened from [::1]:51142
+Oct 21 14:30 : client: [60] closed
+Oct 21 16:25 : client: [61] opened from [::1]:51162
+Oct 21 16:25 : client: [61] closed
+Oct 21 16:25 : player: played "Porter/Porter - Moctezuma (2014)/05 - Rincón Yucateco.mp3"
+Oct 21 16:27 : client: [62] opened from [::1]:51168
+Oct 21 16:28 : client: [63] opened from [::1]:51174
+Oct 21 16:29 : client: [63] closed
+Oct 21 16:29 : client: [64] opened from [::1]:51178
+Oct 21 16:30 : client: [64] closed
+Oct 21 16:30 : client: [65] opened from [::1]:51180
+Oct 21 16:30 : client: [65] closed
+Oct 21 16:30 : client: [62] closed
+Oct 21 16:30 : player: played "Porter/Porter - Moctezuma (2014)/08 - Palapa.mp3"
+Oct 21 16:31 : client: [66] opened from [::1]:51184
+Oct 21 16:31 : client: [67] opened from [::1]:51186
+Oct 21 16:31 : client: [67] closed
+Oct 21 16:31 : client: [66] closed
+Oct 21 16:32 : client: [68] opened from [::1]:51188
+Oct 21 16:32 : client: [68] closed
+Oct 21 16:33 : client: [69] opened from [::1]:51190
+Oct 21 16:33 : client: [69] closed
+Oct 21 16:35 : client: [70] opened from [::1]:51238
+Oct 21 16:35 : client: [70] closed
+Oct 21 16:35 : player: played "Porter/Porter - Moctezuma (2014)/06 - Huracancún.mp3"
+Oct 21 16:35 : avahi: Service 'Music Player' successfully established.
+Oct 21 16:36 : client: [0] opened from [::1]:51240
+Oct 21 16:36 : client: [1] opened from [::1]:51242
+Oct 21 16:36 : client: [2] opened from [::1]:51244
+Oct 21 16:36 : client: [3] opened from [::1]:51246
+Oct 21 16:36 : client: [3] closed
+Oct 21 16:36 : player: played "Porter/Porter - Moctezuma (2014)/06 - Huracancún.mp3"
+Oct 21 16:36 : player: played "Porter/Porter - Moctezuma (2014)/07 -  Tzunami.mp3"
+Oct 21 16:36 : player: played "Porter/Porter - Moctezuma (2014)/04 - La China.mp3"
+Oct 21 16:36 : player: played "Porter/Porter - Moctezuma (2014)/04 - La China.mp3"
+Oct 21 16:36 : player: played "Porter/Porter - Moctezuma (2014)/04 - La China.mp3"
+Oct 21 16:36 : player: played "Porter/Porter - Moctezuma (2014)/04 - La China.mp3"
+Oct 21 16:36 : player: played "Porter/Porter - Moctezuma (2014)/04 - La China.mp3"
+Oct 21 16:36 : client: [0] closed
+Oct 21 16:37 : avahi: Service 'Music Player' successfully established.
+Oct 21 16:37 : client: [0] opened from [::1]:51260
+Oct 21 16:37 : client: [1] opened from [::1]:51262
+Oct 21 16:37 : client: [2] opened from [::1]:51264
+Oct 21 16:37 : player: played "Porter/Porter - Moctezuma (2014)/05 - Rincón Yucateco.mp3"
+Oct 21 16:37 : player: played "Porter/Porter - Moctezuma (2014)/06 - Huracancún.mp3"
+Oct 21 16:37 : player: played "Porter/Porter - Moctezuma (2014)/02 - M Bosque.mp3"
+Oct 21 16:37 : player: played "Porter/Porter - Moctezuma (2014)/01 - Murciélago.mp3"
+Oct 21 16:37 : client: [2] closed
+Oct 21 16:38 : player: played "Porter/Porter - Moctezuma (2014)/03 - Huitzil.mp3"
+Oct 21 16:38 : avahi: Service 'Music Player' successfully established.
+Oct 21 16:38 : client: [0] opened from [::1]:51278
+Oct 21 16:38 : client: [1] opened from [::1]:51280
+Oct 21 16:38 : player: played "Porter/Porter - Moctezuma (2014)/03 - Huitzil.mp3"
+Oct 21 16:38 : config: option 'path' on line 21 was not recognized
+Oct 21 16:38 : avahi: Service 'Music Player' successfully established.
+Oct 21 16:39 : client: [0] opened from [::1]:51282
+Oct 21 16:39 : client: [1] opened from [::1]:51284
+Oct 21 16:39 : client: [2] opened from [::1]:51286
+Oct 21 16:39 : output: Failed to open audio output
+Oct 21 16:39 : player: played "Porter/Porter - Moctezuma (2014)/03 - Huitzil.mp3"
+Oct 21 16:39 : player: played "Porter/Porter - Moctezuma (2014)/03 - Huitzil.mp3"
+Oct 21 16:39 : output: Failed to open audio output
+Oct 21 16:39 : player: played "Porter/Porter - Moctezuma (2014)/04 - La China.mp3"
+Oct 21 16:40 : player: played "Porter/Porter - Moctezuma (2014)/04 - La China.mp3"
+Oct 21 16:40 : player: played "Porter/Porter - Moctezuma (2014)/02 - M Bosque.mp3"
+Oct 21 16:40 : player: played "Porter/Porter - Moctezuma (2014)/05 - Rincón Yucateco.mp3"
+Oct 21 16:40 : client: [0] closed
+Oct 21 16:40 : player: played "Porter/Porter - Moctezuma (2014)/04 - La China.mp3"
+Oct 21 16:41 : avahi: Service 'Music Player' successfully established.
+Oct 21 16:41 : client: [0] opened from [::1]:51316
+Oct 21 16:41 : client: [1] opened from [::1]:51318
+Oct 21 16:41 : client: [2] opened from [::1]:51320
+Oct 21 16:41 : player: played "Porter/Porter - Moctezuma (2014)/04 - La China.mp3"
+Oct 21 16:41 : player: played "Porter/Porter - Moctezuma (2014)/05 - Rincón Yucateco.mp3"
+Oct 21 16:41 : player: played "Porter/Porter - Moctezuma (2014)/04 - La China.mp3"
+Oct 21 16:41 : client: [0] closed
+Oct 21 16:41 : player: played "Porter/Porter - Moctezuma (2014)/03 - Huitzil.mp3"
+Oct 21 16:41 : config: option 'path' on line 21 was not recognized
+Oct 21 16:41 : avahi: Service 'Music Player' successfully established.
+Oct 21 16:41 : client: [0] opened from [::1]:51330
+Oct 21 16:41 : client: [0] closed
+Oct 21 16:42 : client: [1] opened from [::1]:51332
+Oct 21 16:42 : client: [2] opened from [::1]:51334
+Oct 21 16:42 : client: [3] opened from [::1]:51336
+Oct 21 16:42 : client: [3] closed
+Oct 21 16:42 : client: [4] opened from [::1]:51338
+Oct 21 16:42 : client: [4] closed
+Oct 21 16:44 : client: [5] opened from [::1]:51344
+Oct 21 16:44 : client: [5] closed
+Oct 21 16:45 : player: played "Porter/Porter - Moctezuma (2014)/03 - Huitzil.mp3"
+Oct 21 16:51 : client: [6] opened from [::1]:51364
+Oct 21 16:51 : player: played "Porter/Porter - Moctezuma (2014)/01 - Murciélago.mp3"
+Oct 21 16:51 : player: played "Porter/Porter - Moctezuma (2014)/03 - Huitzil.mp3"
+Oct 21 16:54 : client: [6] closed
+Oct 21 16:57 : player: played "Porter/Porter - Moctezuma (2014)/04 - La China.mp3"
+Oct 21 17:01 : player: played "Porter/Porter - Moctezuma (2014)/05 - Rincón Yucateco.mp3"
+Oct 21 17:06 : player: played "Porter/Porter - Moctezuma (2014)/07 -  Tzunami.mp3"
+Oct 21 17:10 : client: [7] opened from [::1]:51460
+Oct 21 17:10 : client: [7] closed
+Oct 21 17:10 : player: played "Porter/Porter - Moctezuma (2014)/03 - Huitzil.mp3"
+Oct 21 17:16 : player: played "Porter/Porter - Moctezuma (2014)/02 - M Bosque.mp3"
+Oct 21 17:21 : player: played "Porter/Porter - Moctezuma (2014)/06 - Huracancún.mp3"
+Oct 21 17:26 : player: played "Porter/Porter - Moctezuma (2014)/01 - Murciélago.mp3"
+Oct 21 17:28 : avahi: Client Disconnected, will reconnect shortly
+Oct 21 17:28 : player: played "Porter/Porter - Moctezuma (2014)/08 - Palapa.mp3"
+Oct 21 17:29 : config: option 'path' on line 21 was not recognized
+Oct 21 17:29 : avahi: Service 'Music Player' successfully established.
+Oct 21 17:29 : client: [0] opened from [::1]:50934
+Oct 21 17:32 : client: [1] opened from [::1]:50976
+Oct 21 17:32 : player: played "Porter/Porter - Moctezuma (2014)/08 - Palapa.mp3"
+Oct 21 17:32 : client: [1] closed
+Oct 21 17:32 : client: [2] opened from [::1]:50980
+Oct 21 17:32 : client: [2] closed
+Oct 21 17:32 : client: [3] opened from [::1]:50982
+Oct 21 17:32 : client: [3] closed
+Oct 21 17:32 : client: [4] opened from [::1]:50984
+Oct 21 17:32 : player: played "Porter/Porter - Moctezuma (2014)/05 - Rincón Yucateco.mp3"
+Oct 21 17:32 : client: [4] closed
+Oct 21 17:32 : client: [5] opened from [::1]:50986
+Oct 21 17:32 : player: played "Porter/Porter - Moctezuma (2014)/08 - Palapa.mp3"
+Oct 21 17:32 : client: [5] closed
+Oct 21 17:32 : client: [6] opened from [::1]:50990
+Oct 21 17:32 : player: played "Porter/Porter - Moctezuma (2014)/05 - Rincón Yucateco.mp3"
+Oct 21 17:32 : client: [6] closed
+Oct 21 17:32 : client: [7] opened from [::1]:50994
+Oct 21 17:32 : player: played "Porter/Porter - Moctezuma (2014)/08 - Palapa.mp3"
+Oct 21 17:32 : client: [7] closed
+Oct 21 17:32 : client: [8] opened from [::1]:50998
+Oct 21 17:32 : player: played "Porter/Porter - Moctezuma (2014)/05 - Rincón Yucateco.mp3"
+Oct 21 17:32 : client: [8] closed
+Oct 21 17:32 : client: [9] opened from [::1]:51000
+Oct 21 17:32 : player: played "Porter/Porter - Moctezuma (2014)/08 - Palapa.mp3"
+Oct 21 17:32 : client: [9] closed
+Oct 21 17:32 : client: [10] opened from [::1]:51004
+Oct 21 17:32 : player: played "Porter/Porter - Moctezuma (2014)/05 - Rincón Yucateco.mp3"
+Oct 21 17:32 : client: [10] closed
+Oct 21 17:32 : client: [11] opened from [::1]:51006
+Oct 21 17:32 : player: played "Porter/Porter - Moctezuma (2014)/08 - Palapa.mp3"
+Oct 21 17:32 : client: [11] closed
+Oct 21 17:32 : client: [12] opened from [::1]:51008
+Oct 21 17:32 : player: played "Porter/Porter - Moctezuma (2014)/03 - Huitzil.mp3"
+Oct 21 17:32 : client: [12] closed
+Oct 21 17:38 : player: played "Porter/Porter - Moctezuma (2014)/08 - Palapa.mp3"
+Oct 21 17:40 : client: [13] opened from [::1]:51052
+Oct 21 17:42 : player: played "Porter/Porter - Moctezuma (2014)/03 - Huitzil.mp3"
+Oct 21 17:47 : player: played "Porter/Porter - Moctezuma (2014)/07 -  Tzunami.mp3"
+Oct 21 17:59 : player: played "Porter/Porter - Moctezuma (2014)/04 - La China.mp3"
+Oct 21 18:06 : config: option 'path' on line 21 was not recognized
+Oct 21 18:06 : client: [0] opened from [::1]:56210
+Oct 21 18:06 : avahi: Service 'Music Player' successfully established.
+Oct 21 18:06 : player: played "Porter/Porter - Moctezuma (2014)/04 - La China.mp3"
+Oct 21 18:11 : player: played "Porter/Porter - Moctezuma (2014)/08 - Palapa.mp3"
+Oct 21 18:15 : player: played "Porter/Porter - Moctezuma (2014)/03 - Huitzil.mp3"
+Oct 21 18:20 : client: [1] opened from [::1]:56288
+Oct 21 18:20 : player: played "Porter/Porter - Moctezuma (2014)/05 - Rincón Yucateco.mp3"
+Oct 21 18:20 : client: [1] closed
+Oct 21 18:20 : client: [2] opened from [::1]:56294
+Oct 21 18:20 : client: [2] closed
+Oct 21 18:20 : client: [3] opened from [::1]:56296
+Oct 21 18:20 : update: added Antemasque/Antemasque - Antemasque (2014)/ANTEMASQUE - ANTEMASQUE - 03 Ride Like The Devil's Son.mp3
+Oct 21 18:20 : update: added Antemasque/Antemasque - Antemasque (2014)/ANTEMASQUE - ANTEMASQUE - 10 Rome Armed To The Teeth.mp3
+Oct 21 18:20 : update: added Antemasque/Antemasque - Antemasque (2014)/ANTEMASQUE - ANTEMASQUE - 07 Drown All Your Witches.mp3
+Oct 21 18:20 : update: added Antemasque/Antemasque - Antemasque (2014)/ANTEMASQUE - ANTEMASQUE - 09 People Forget.mp3
+Oct 21 18:20 : update: added Antemasque/Antemasque - Antemasque (2014)/ANTEMASQUE - ANTEMASQUE - 08 Providence.mp3
+Oct 21 18:20 : update: added Antemasque/Antemasque - Antemasque (2014)/ANTEMASQUE - ANTEMASQUE - 05 50,000 Kilowatts.mp3
+Oct 21 18:20 : update: added Antemasque/Antemasque - Antemasque (2014)/ANTEMASQUE - ANTEMASQUE - 04 In The Lurch.mp3
+Oct 21 18:20 : update: added Antemasque/Antemasque - Antemasque (2014)/ANTEMASQUE - ANTEMASQUE - 01 4AM.mp3
+Oct 21 18:20 : update: added Antemasque/Antemasque - Antemasque (2014)/ANTEMASQUE - ANTEMASQUE - 06 Momento Mori.mp3
+Oct 21 18:20 : update: added Antemasque/Antemasque - Antemasque (2014)/ANTEMASQUE - ANTEMASQUE - 02 I Got No Remorse.mp3
+Oct 21 18:20 : client: [3] closed
+Oct 21 18:20 : client: [4] opened from [::1]:56298
+Oct 21 18:20 : player: played "Porter/Porter - Moctezuma (2014)/07 -  Tzunami.mp3"
+Oct 21 18:20 : player: played "Antemasque/Antemasque - Antemasque (2014)/ANTEMASQUE - ANTEMASQUE - 01 4AM.mp3"
+Oct 21 18:23 : player: played "Antemasque/Antemasque - Antemasque (2014)/ANTEMASQUE - ANTEMASQUE - 01 4AM.mp3"
+Oct 21 18:25 : client: [4] closed
+Oct 21 18:25 : client: [5] opened from [::1]:56312
+Oct 21 18:25 : client: [5] closed
+Oct 23 09:25 : player: played "Antemasque/Antemasque - Antemasque (2014)/ANTEMASQUE - ANTEMASQUE - 06 Momento Mori.mp3"
+Oct 23 09:27 : config: option 'path' on line 21 was not recognized
+Oct 23 09:27 : client: [0] opened from [::1]:49874
+Oct 23 09:27 : avahi: Service 'Music Player' successfully established.
+Oct 24 10:32 : player: played "Antemasque/Antemasque - Antemasque (2014)/ANTEMASQUE - ANTEMASQUE - 06 Momento Mori.mp3"
+Oct 24 18:23 : config: option 'path' on line 21 was not recognized
+Oct 24 18:23 : client: [0] opened from [::1]:43838
+Oct 24 18:23 : avahi: Service 'Music Player' successfully established.
+Oct 30 20:08 : avahi: Client Disconnected, will reconnect shortly
+Oct 30 20:08 : player: played "Antemasque/Antemasque - Antemasque (2014)/ANTEMASQUE - ANTEMASQUE - 06 Momento Mori.mp3"
+Oct 30 20:08 : config: option 'path' on line 21 was not recognized
+Oct 30 20:08 : client: [0] opened from [::1]:42662
+Oct 30 21:48 : player: played "Antemasque/Antemasque - Antemasque (2014)/ANTEMASQUE - ANTEMASQUE - 06 Momento Mori.mp3"
+Nov 01 12:56 : config: option 'path' on line 21 was not recognized
+Nov 01 12:56 : client: [0] opened from [::1]:40370
+Nov 01 13:02 : player: played "Antemasque/Antemasque - Antemasque (2014)/ANTEMASQUE - ANTEMASQUE - 06 Momento Mori.mp3"
+Nov 01 13:02 : config: option 'path' on line 21 was not recognized
+Nov 01 13:02 : client: [0] opened from [::1]:36958
+Nov 01 13:03 : player: played "Antemasque/Antemasque - Antemasque (2014)/ANTEMASQUE - ANTEMASQUE - 06 Momento Mori.mp3"
+Nov 01 13:04 : config: option 'path' on line 21 was not recognized
+Nov 01 13:04 : client: [0] opened from [::1]:37442
+Nov 01 13:05 : client: [1] opened from [::1]:37520
+Nov 01 13:22 : client: [2] opened from [::1]:37796
+Nov 01 13:22 : client: [2] closed
+Nov 01 13:22 : client: [3] opened from [::1]:37798
+Nov 01 13:22 : player: played "Antemasque/Antemasque - Antemasque (2014)/ANTEMASQUE - ANTEMASQUE - 06 Momento Mori.mp3"
+Nov 01 13:25 : player: played "Antemasque/Antemasque - Antemasque (2014)/ANTEMASQUE - ANTEMASQUE - 01 4AM.mp3"
+Nov 01 13:28 : player: played "Antemasque/Antemasque - Antemasque (2014)/ANTEMASQUE - ANTEMASQUE - 03 Ride Like The Devil's Son.mp3"
+Nov 01 13:31 : player: played "Antemasque/Antemasque - Antemasque (2014)/ANTEMASQUE - ANTEMASQUE - 09 People Forget.mp3"
+Nov 01 13:36 : player: played "Antemasque/Antemasque - Antemasque (2014)/ANTEMASQUE - ANTEMASQUE - 08 Providence.mp3"
+Nov 01 13:40 : player: played "Antemasque/Antemasque - Antemasque (2014)/ANTEMASQUE - ANTEMASQUE - 10 Rome Armed To The Teeth.mp3"
+Nov 01 13:43 : player: played "Antemasque/Antemasque - Antemasque (2014)/ANTEMASQUE - ANTEMASQUE - 07 Drown All Your Witches.mp3"
+Nov 01 13:43 : player: played "Antemasque/Antemasque - Antemasque (2014)/ANTEMASQUE - ANTEMASQUE - 03 Ride Like The Devil's Son.mp3"
+Nov 01 13:43 : client: [3] closed
+Nov 02 11:25 : config: option 'path' on line 21 was not recognized
+Nov 02 11:25 : client: [0] opened from [::1]:49604
+Nov 02 11:26 : client: [1] opened from [::1]:49608
+Nov 02 11:26 : client: [1] closed
+Nov 02 11:30 : player: played "Porter/Porter - Moctezuma (2014)/01 - Murciélago.mp3"
+Nov 02 11:35 : player: played "Porter/Porter - Moctezuma (2014)/06 - Huracancún.mp3"
+Nov 02 11:39 : player: played "Porter/Porter - Moctezuma (2014)/03 - Huitzil.mp3"
+Nov 02 11:45 : player: played "Porter/Porter - Moctezuma (2014)/02 - M Bosque.mp3"
+Nov 02 11:51 : player: played "Porter/Porter - Moctezuma (2014)/04 - La China.mp3"
+Nov 02 11:55 : player: played "Porter/Porter - Moctezuma (2014)/05 - Rincón Yucateco.mp3"
+Nov 02 12:01 : player: played "Porter/Porter - Moctezuma (2014)/08 - Palapa.mp3"
+Nov 02 12:03 : client: [2] opened from [::1]:49782
+Nov 02 12:03 : player: played "Porter/Porter - Moctezuma (2014)/07 -  Tzunami.mp3"
+Nov 02 12:08 : client: [3] opened from [::1]:49806
+Nov 02 12:08 : player: played "Porter/Porter - Moctezuma (2014)/08 - Palapa.mp3"
+Nov 02 12:08 : client: [3] closed
+Nov 02 12:08 : client: [4] opened from [::1]:49808
+Nov 02 12:08 : player: played "Porter/Porter - Moctezuma (2014)/07 -  Tzunami.mp3"
+Nov 02 12:08 : client: [4] closed
+Nov 02 12:14 : player: played "Porter/Porter - Moctezuma (2014)/08 - Palapa.mp3"
+Nov 02 12:14 : client: [5] opened from [::1]:49822
+Nov 02 12:14 : client: [5] closed
+Nov 02 12:14 : client: [6] opened from [::1]:49824
+Nov 02 12:14 : client: [6] closed
+Nov 02 12:14 : client: [7] opened from [::1]:49828
+Nov 02 12:14 : player: played "Porter/Porter - Moctezuma (2014)/01 - Murciélago.mp3"
+Nov 02 12:14 : client: [7] closed
+Nov 02 12:15 : client: [8] opened from [::1]:49830
+Nov 02 12:15 : player: played "Porter/Porter - Moctezuma (2014)/02 - M Bosque.mp3"
+Nov 02 12:15 : client: [8] closed
+Nov 02 12:19 : player: played "Porter/Porter - Moctezuma (2014)/03 - Huitzil.mp3"
+Nov 02 12:24 : player: played "Porter/Porter - Moctezuma (2014)/04 - La China.mp3"
+Nov 02 12:29 : player: played "Porter/Porter - Moctezuma (2014)/05 - Rincón Yucateco.mp3"
+Nov 02 12:34 : player: played "Porter/Porter - Moctezuma (2014)/06 - Huracancún.mp3"
+Nov 02 12:39 : player: played "Porter/Porter - Moctezuma (2014)/07 -  Tzunami.mp3"
+Nov 02 12:44 : player: played "Porter/Porter - Moctezuma (2014)/08 - Palapa.mp3"
+Nov 02 12:45 : client: [9] opened from [::1]:49936
+Nov 02 12:45 : player: played "Antemasque/Antemasque - Antemasque (2014)/ANTEMASQUE - ANTEMASQUE - 01 4AM.mp3"
+Nov 02 12:45 : client: [9] closed
+Nov 02 12:48 : player: played "Antemasque/Antemasque - Antemasque (2014)/ANTEMASQUE - ANTEMASQUE - 01 4AM.mp3"
+Nov 02 12:51 : player: played "Antemasque/Antemasque - Antemasque (2014)/ANTEMASQUE - ANTEMASQUE - 02 I Got No Remorse.mp3"
+Nov 02 12:54 : player: played "Antemasque/Antemasque - Antemasque (2014)/ANTEMASQUE - ANTEMASQUE - 03 Ride Like The Devil's Son.mp3"
+Nov 02 12:57 : player: played "Antemasque/Antemasque - Antemasque (2014)/ANTEMASQUE - ANTEMASQUE - 04 In The Lurch.mp3"
+Nov 02 13:00 : player: played "Antemasque/Antemasque - Antemasque (2014)/ANTEMASQUE - ANTEMASQUE - 05 50,000 Kilowatts.mp3"
+Nov 02 13:03 : player: played "Antemasque/Antemasque - Antemasque (2014)/ANTEMASQUE - ANTEMASQUE - 06 Momento Mori.mp3"
+Nov 02 13:07 : player: played "Antemasque/Antemasque - Antemasque (2014)/ANTEMASQUE - ANTEMASQUE - 07 Drown All Your Witches.mp3"
+Nov 02 13:11 : player: played "Antemasque/Antemasque - Antemasque (2014)/ANTEMASQUE - ANTEMASQUE - 08 Providence.mp3"
+Nov 02 13:15 : player: played "Antemasque/Antemasque - Antemasque (2014)/ANTEMASQUE - ANTEMASQUE - 09 People Forget.mp3"
+Nov 02 13:18 : player: played "Antemasque/Antemasque - Antemasque (2014)/ANTEMASQUE - ANTEMASQUE - 10 Rome Armed To The Teeth.mp3"
+Nov 02 21:50 : config: option 'path' on line 21 was not recognized
+Nov 02 21:50 : client: [0] opened from [::1]:41432
+Nov 02 21:51 : player: played "Antemasque/Antemasque - Antemasque (2014)/ANTEMASQUE - ANTEMASQUE - 10 Rome Armed To The Teeth.mp3"
+Nov 03 11:25 : config: option 'path' on line 21 was not recognized
+Nov 03 11:25 : client: [0] opened from [::1]:54260
+Nov 03 11:32 : config: option 'path' on line 21 was not recognized
+Nov 03 11:32 : client: [0] opened from [::1]:40524
