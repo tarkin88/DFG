@@ -48,5 +48,12 @@ $symlink $dots/Xresources $HOME/.Xresources
 #bashrc
 delete_all $HOME/.bashrc
 $symlink $dots/bashrc $HOME/.bashrc
+#mpd
+delete_all $HOME/.mpd
+$symlink $dots/mpd $HOME/.mpd
+
+delete_all $HOME/.ncmpcpp
+$symlink $dots/ncmpcpp $HOME/.ncmpcpp
+
 
 echo "DONE !!!" && notify-send "DONE !!!"
