@@ -1,16 +1,15 @@
 xrdb .Xresources &
-
 # Start URxvt daemon
-urxvtd -q -o -f &
-
-# Remove tearing
-xfce4-panel &
- compton --config .config/compton/compton.conf &
-mpd ~/.mpd/config &
 nitrogen --restore &
 dunst -conf .config/dunst/dunstrc &
+# Remove tearing
+compton --config .config/compton/compton.conf &
+xfce4-panel &
+urxvtd -q -o -f &
+mpd ~/.mpd/config &
+pulseaudio --start &
 (sleep 1s && mpdscribble) &
-(sleep 3s && clipit) &
-(sleep 3s && nm-applet) &
-(sleep 3s && volumeicon) &
-(sleep 3s && cbatticon) &
+(sleep 5s && clipit) &
+(sleep 5s && volumeicon) &
+(sleep 6s && cbatticon) &
+(sleep 6s && nm-applet 2>&1 /dev/null &) &

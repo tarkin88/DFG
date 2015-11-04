@@ -38,16 +38,6 @@ echo "A ranger inyour Linux? what's about a rogue?"
 delete_all $configs/ranger
 $symlink $dots/ranger $configs
 
-#MPD
-echo "A daemon Music in your Linux"
-delete_all $HOME/.mpd
-$symlink $dots/.mpd $HOME
-
-#NCMPCPP
-echo "Lets control that Daemon in your Linux!!!"
-delete_all $HOME/.ncmpcpp
-$symlink $dots/.ncmpcpp $HOME
-
 #VIM
 echo "Some configs for your Linux!!!"
 delete_all $HOME/.vimrc
@@ -55,10 +45,6 @@ $symlink $dots/vimrc $HOME/.vimrc
 #XRESOURCES
 delete_all $HOME/.Xresources
 $symlink $dots/Xresources $HOME/.Xresources
-echo "xrdb $HOME/.Xresources" >> $configs/openbox/autostart
-#mpdscribble
-delete_all $HOME/.mpdscribble/
-$symlink $dots/mpdscribble $HOME/.mpdscribble
 #bashrc
 delete_all $HOME/.bashrc
 $symlink $dots/bashrc $HOME/.bashrc
