@@ -2,11 +2,15 @@
 
 ! Clickable link
 
+URxvt.iconFile:      ~/.term.png
 !*perl-ext-common:    default,matcher, tabbed
 URxvt.perl-ext-common:  default,tabbed, matcher
 *url-launcher:       chromium
 *matcher.button:     1
-URxvt.iconFile:      /usr/share/icons/UltraFlatIcons/apps/scalable/gnome-term.svg
+URxvt.depth:                32
+URxvt.fading:               40
+URxvt.urgentOnBell:         true
+URxvt.loginShell:           true
 
 
 !! RICE

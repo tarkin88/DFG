@@ -4,12 +4,14 @@ nitrogen --restore &
 dunst -conf .config/dunst/dunstrc &
 # Remove tearing
 compton --config .config/compton/compton.conf &
-xfce4-panel &
-urxvtd -q -o -f &
 mpd ~/.mpd/config &
 pulseaudio --start &
+urxvtd -q -o -f &
+(sleep 1s && xfce4-panel) &
+(sleep 2s && tint2) &
 (sleep 1s && mpdscribble) &
+(sleep 3s && conky) &
 (sleep 5s && clipit) &
 (sleep 5s && volumeicon) &
 (sleep 6s && cbatticon) &
-(sleep 6s && nm-applet 2>&1 /dev/null) &
+#(sleep 6s && nm-applet 2>&1 /dev/null) &
