@@ -6,6 +6,7 @@
 URxvt.perl-ext-common:  default,tabbed, matcher
 *url-launcher:       chromium
 *matcher.button:     1
+URxvt.iconFile:      /usr/share/icons/UltraFlatIcons/apps/scalable/gnome-term.svg
 
 
 !! RICE
