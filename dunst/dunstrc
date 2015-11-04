@@ -12,7 +12,7 @@
     font = monaco (TTF) 11
     format = "<b>%s</b>\n%b"
     # geometry [{width}]x{height}][+/-{x}+/-{y}]
-    geometry = "0-10+10"
+    geometry = "0-15+15"
     history_length = 20
     horizontal_padding = 20
     idle_threshold = 120
@@ -64,6 +64,3 @@
     background = "#83c83d"
     foreground = "#000000"
 
-[i3blocks]
-    summary = "*"
-		script = /home/microfracture/.bin/i3blocks-dunst.py

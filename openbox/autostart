@@ -12,4 +12,4 @@ pulseaudio --start &
 (sleep 5s && clipit) &
 (sleep 5s && volumeicon) &
 (sleep 6s && cbatticon) &
-(sleep 6s && nm-applet 2>&1 /dev/null &) &
+(sleep 6s && nm-applet 2>&1 /dev/null) &
