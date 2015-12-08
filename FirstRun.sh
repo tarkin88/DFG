@@ -24,19 +24,19 @@ delete_all $configs/compton
 $symlink $dots/compton $configs
 
 #dunst
-echo "Dunst...something your Linux"
-delete_all $configs/dunts
-$symlink $dots/dunst $configs
+#echo "Dunst...something your Linux"
+#delete_all $configs/dunts
+#$symlink $dots/dunst $configs
 
 #tint2
-echo "Tinting your Linux"
-delete_all $configs/tint2
-$symlink $dots/tint2 $configs
+#echo "Tinting your Linux"
+#delete_all $configs/tint2
+#$symlink $dots/tint2 $configs
 
 #OPENBOX
-echo "Openboxing your Linux"
-delete_all $configs/openbox
-$symlink $dots/openbox $configs
+#echo "Openboxing your Linux"
+#delete_all $configs/openbox
+#$symlink $dots/openbox $configs
 
 #RANGER
 echo "A ranger inyour Linux? what's about a rogue?"
@@ -54,14 +54,14 @@ $symlink $dots/Xresources $HOME/.Xresources
 delete_all $HOME/.bashrc
 $symlink $dots/bashrc $HOME/.bashrc
 #mpd
-delete_all $HOME/.mpd
-$symlink $dots/mpd $HOME/.mpd
+#delete_all $HOME/.mpd
+#$symlink $dots/mpd $HOME/.mpd
 
-delete_all $HOME/.ncmpcpp
-$symlink $dots/ncmpcpp $HOME/.ncmpcpp
+#delete_all $HOME/.ncmpcpp
+#$symlink $dots/ncmpcpp $HOME/.ncmpcpp
 
-delete_all $HOME/.term.png
-$symlink $dots/term.png $HOME/.term.png
+#delete_all $HOME/.term.png
+#$symlink $dots/term.png $HOME/.term.png
 
 delete_all $HOME/.conkyrc
 $symlink $dots/conkyrc $HOME/.conkyrc

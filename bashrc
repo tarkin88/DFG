@@ -1,3 +1,4 @@
+#!/usr/bin/sh
 # Archlinux Ultimate Install - .bashrc
 # by helmuthdu
 # OVERALL CONDITIONALS {{{
