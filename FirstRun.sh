@@ -64,7 +64,7 @@ $symlink $dots/ncmpcpp $HOME/.ncmpcpp
 delete_all $HOME/.conkyrc
 $symlink $dots/conkyrc $HOME/.conkyrc
 #openbox_theme
-delete_all $HOME/.themes/Dyne
+delete_all $HOME/.themes
 $symlink $dots/themes $HOME/.themes
 
 xrdb $HOME/.Xresources
