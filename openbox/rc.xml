@@ -39,7 +39,7 @@
                   'Active' - where the active window is -->
   </placement>
   <theme>
-    <name>minato</name>
+    <name>Dyne</name>
     <titleLayout>CILM</titleLayout>
     <!--
       available characters are NDSLIMC, each can occur at most once.
@@ -117,12 +117,11 @@
 
        use obconf if you want to change these without having to log out
        and back in -->
-    <number>3</number>
+    <number>2</number>
     <firstdesk>1</firstdesk>
     <names>
       <name>Main</name>
       <name>Dev</name>
-      <name>Media</name>
     </names>
     <popupTime>875</popupTime>
     <!-- The number of milliseconds to show the popup for when switching
@@ -131,8 +130,8 @@
   <resize>
     <drawContents>yes</drawContents>
     <popupShow>Nonpixel</popupShow>
-    <!-- 'Always', 'Never', or 'Nonpixel' (xterms and such) -->
-    <popupPosition>Center</popupPosition>
+    <!-- 'Always', 'Never', or 'Nonpixel' (termites and such) -->
+    <popupPosition>Top</popupPosition>
     <!-- 'Center', 'Top', or 'Fixed' -->
     <popupFixedPosition>
       <!-- these are used if popupPosition is set to 'Fixed' -->
@@ -219,39 +218,6 @@
       <action name="Execute">
         <command>termite</command>
       </action>
-    </keybind>
-    <keybind key="C-A-Right">
-      <action name="GoToDesktop"/>
-    </keybind>
-    <keybind key="C-A-Up">
-      <action name="GoToDesktop"/>
-    </keybind>
-    <keybind key="C-A-Down">
-      <action name="GoToDesktop"/>
-    </keybind>
-    <keybind key="S-A-Left">
-      <action name="SendToDesktop"/>
-    </keybind>
-    <keybind key="S-A-Right">
-      <action name="SendToDesktop"/>
-    </keybind>
-    <keybind key="S-A-Up">
-      <action name="SendToDesktop"/>
-    </keybind>
-    <keybind key="S-A-Down">
-      <action name="SendToDesktop"/>
-    </keybind>
-    <keybind key="W-F1">
-      <action name="GoToDesktop"/>
-    </keybind>
-    <keybind key="W-F2">
-      <action name="GoToDesktop"/>
-    </keybind>
-    <keybind key="W-F3">
-      <action name="GoToDesktop"/>
-    </keybind>
-    <keybind key="W-F4">
-      <action name="GoToDesktop"/>
     </keybind>
     <keybind key="W-d">
       <action name="ToggleShowDesktop"/>
