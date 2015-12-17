@@ -28,16 +28,31 @@ echo "Dunst...something your Linux"
 delete_all $configs/dunts
 $symlink $dots/dunst $configs
 
+#i3
+echo "Let's try i3...again xD"
+delete_all $configs/i3
+$symlink $dots/i3 $configs
+
+#i3 blocks
+delete_all $HOME.i3blocks.conf
+$symlink $dots/i3blocks.conf $HOME/.i3blocks.conf
+
+
+#termite
+echo "Some colors for terminal"
+delete_all $configs/termite
+$symlink $dots/termite $configs
+
 #tint2
-echo "Tinting your Linux"
-delete_all $configs/tint2
-$symlink $dots/tint2 $configs
+#echo "Tinting your Linux"
+#delete_all $configs/tint2
+#$symlink $dots/tint2 $configs
 
 #OPENBOX
-echo "Openboxing your Linux"
-delete_all $configs/openbox
-$symlink $dots/openbox $configs
-obmenu-generator -s -p -R
+#echo "Openboxing your Linux"
+#delete_all $configs/openbox
+#$symlink $dots/openbox $configs
+#obmenu-generator -s -p -R
 
 #RANGER
 echo "A ranger in your Linux? what's about a rogue?"
@@ -61,11 +76,11 @@ $symlink $dots/mpd $HOME/.mpd
 delete_all $HOME/.ncmpcpp
 $symlink $dots/ncmpcpp $HOME/.ncmpcpp
 #conky
-delete_all $HOME/.conkyrc
-$symlink $dots/conkyrc $HOME/.conkyrc
-#openbox_theme
-delete_all $HOME/.themes
-$symlink $dots/themes $HOME/.themes
+#delete_all $HOME/.conkyrc
+#$symlink $dots/conkyrc $HOME/.conkyrc
+##openbox_theme
+#delete_all $HOME/.themes
+#$symlink $dots/themes $HOME/.themes
 
 xrdb $HOME/.Xresources
 

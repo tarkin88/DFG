@@ -1,78 +1,87 @@
-!! MISC
-
-! Clickable link
-
-URxvt.iconFile:      ~/.term.png
-!*perl-ext-common:    default,matcher, tabbed
-URxvt.perl-ext-common:  default,tabbed, matcher
-*url-launcher:       chromium
-*matcher.button:     1
-URxvt.depth:                32
-URxvt.fading:               40
-URxvt.urgentOnBell:         true
-URxvt.loginShell:           true
+Xft.dpi: 96
+Xft.antialias: true 
+Xft.hinting: true
+Xft.rgba: rgb
+Xft.hintstyle: hintslight
+Xft.lcdfilter: lcddefault
 
 
-!! RICE
+URxvt.scrollBar: false
+URxvt*transparent: false
+URxvt*shading: 20
+URxvt*fading: 20
+URxvt*saveLines: 1000
+URxvt*buffered:	false
 
-! Make minimal
-*scrollBar:          false
-*internalBorder:     18
-*.geometry:          101x20
+URxvt.keysym.M-C-c:	perl:clipboard:copy
+URxvt.keysym.M-C-v:	perl:clipboard:paste
 
-! Set font
-*font:               xft:monaco:size=11
-*boldFont:           xft:monaco:size=10
-*lineSpace:          8
+!URxvt.font: -*-tewi-medium-*-*-*-11-150-*-*-*-*-*-*,\
+!			-wuncon-siji-medium-r-normal--10-100-75-75-c-80-iso10646-1
 
-! Change cursor
-*cursorUnderline:    true
+URxvt.font: xft:Monaco:size=8
 
-URxvt.tabbed.tabbar-fg: 2
-URxvt.tabbed.tabbar-bg: 0
-URxvt.tabbed.tab-fg:    3
-URxvt.tabbed.tab-bg:    0
+URxvt*letterSpace:  -1
 
-!! COLORS
+!URxvt*borderColor:	#151515
+!URxvt*borderColor: #77c3a9
+URxvt*borderLess:	false
+URxvt*colorBD:		#ffffff
 
-! Misc
-*foreground:         #E8DFD6
-*background:         #344042
-*cursorColor:        #F3D5C9
-*highlightColor:     #009688
-*highlightTextColor: #ef9a9a
+! special
+*foreground:   #eceff1
+*background:   #263238
+*cursorColor:  #eceff1
 
-! Black
-*color0:             #37413F
-*color8:             #4B5755
+! black
+*color0:       #263238
+*color8:       #37474f
 
-! Red
-*color1:             #F99595
-*color9:             #F3D5C9
+! red
+*color1:       #ff9800
+*color9:       #ffa74d
 
-! Green
-*color2:             #7CBF9E
-*color10:            #A2D9B1
+! green
+*color2:       #8bc34a
+*color10:      #9ccc65
 
-! Yellow
-*color3:             #E5C078
-*color11:            #F9D48C
+! yellow
+*color3:       #ffc107
+*color11:      #ffa000
 
-! Blue
-*color4:             #7BBAC7
-*color12:            #DFF0EB
+! blue
+*color4:       #03a9f4
+*color12:      #81d4fa
 
-! Magenta
-! TODO: MAke less bright
-*color5:             #FF5879
-*color13:            #FF99A1
+! magenta
+*color5:       #ea427b
+*color13:      #ad1457
 
-! Cyan
-*color6:             #62BDB3
-*color14:            #9ED9D8
+! cyan
+*color6:       #009688
+*color14:      #26a69a
 
-! White
-*color7:             #F2F1B9
-*color15:            #F6F6C9
+! white
+*color7:       #cfd8dc
+*color15:      #eceff1
 
+
+
+rofi.terminal:	urxvt
+rofi.lines:		8
+rofi.eh:		1
+rofi.width:		70
+rofi.padding:	30	
+rofi.opacity:	70
+rofi.bw:		0
+!rofi.bc:		#03a9f4
+rofi.bc:		#C5CCD1
+rofi.bg:		#272822
+!rofi.fg:		#263238
+!rofi.hlbg:		#03a9f4
+!rofi.hlfg:		#eceff1
+rofi.fg:		#C5CCD1
+rofi.hlbg:		#eceff1
+rofi.hlfg:		#263238
+rofi.font:		Monaco 18
 
