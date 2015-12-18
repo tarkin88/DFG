@@ -1,9 +1,8 @@
 [options]
-# font = Monaco for Powerline 9
 font = Monaco 10
 
 [colors]
-background = #272822
+background = #393A38
 foreground = #eceff1
 cursor     = #b3bfc7
 color0     = #272822
