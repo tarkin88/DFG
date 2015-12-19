@@ -62,15 +62,11 @@ exec --no-startup-id feh --bg-fill --no-xinerama ~/.dotfiles/wall.jpg
 #Compton
 exec --no-startup-id compton -o 0.3 --backend glx --vsync opengl -b -i 1.0 --config ~/.config/compton/compton.conf
 
-#Gaps
-gaps inner 5
-gaps outer 1
-
-# borders
-#for_window [class="^.*"] border pixel 0
-for_window [class="^.*"] border pixel 1.5
-#new_window pixel 3
-#new_float pixel 3
+#removes window titles
+for_window [class=".*"] border pixel 1.7
+gaps inner 6
+gaps outer 2
+smart_borders no_gaps
 
 # start a terminal
 # bindsym $mod+Return exec urxvt -sbg
@@ -157,6 +153,18 @@ bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
+
+#change volume
+bindsym XF86AudioLowerVolume exec amixer sset Master 3-
+bindsym XF86AudioRaiseVolume exec amixer sset Master 3+
+bindsym XF86AudioMute exec amixer sset Master toggle && amixer sset Headphone on && amixer sset Speaker on
+bindsym XF86AudioMicMute exec amixer sset Capture toggle
+ 
+#backlight control
+bindsym XF86MonBrightnessUp exec xbacklight +3
+bindsym XF86MonBrightnessDown exec xbacklight -3
+
+
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -204,7 +212,7 @@ client.background               $UNFOCUS
 bar {
         #i3bar_command i3bar -t
         #status_command SCRIPT_DIR=/home/frank/.config/i3/i3blocks.config i3blocks
-        status_command  exec i3blocks -c /home/frank/.i3blocks.conf
+        status_command  exec i3blocks -c /home/frank/.config/i3blocks/i3blocks.conf
         position top
         colors {
             background #262626
@@ -220,7 +228,7 @@ bar {
 
 
 #DUNST
-exec dunst
+exec --no-startup-id  dunst
 
 #AUDIO
 exec --no-startup-id pulseaudio --start
@@ -234,6 +242,6 @@ exec --no-startup-id devmon --sync --exec-on-drive "notify-send 'Automount' '%l 
 
 #Misc
 exec --no-startup-id xrdb .Xresources
-exec notify-send -a i3 "loaded" "Welcome to i3."
+exec --no-startup-id  notify-send -a i3 "loaded" "Welcome to i3."
 #CLIPBOARD
-exec clipit
+exec --no-startup-id  clipit

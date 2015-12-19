@@ -34,9 +34,8 @@ delete_all $configs/i3
 $symlink $dots/i3 $configs
 
 #i3 blocks
-delete_all $HOME.i3blocks.conf
-$symlink $dots/i3blocks.conf $HOME/.i3blocks.conf
-
+delete_all $configs/i3blocks
+$symlink $dots/i3blocks $configs
 
 #termite
 echo "Some colors for terminal"

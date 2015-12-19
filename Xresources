@@ -65,23 +65,19 @@ URxvt*colorBD:		#ffffff
 *color7:       #cfd8dc
 *color15:      #eceff1
 
-
-
-rofi.terminal:	urxvt
-rofi.lines:		8
-rofi.eh:		1
-rofi.width:		70
-rofi.padding:	30	
-rofi.opacity:	70
+rofi.terminal:	termite
+rofi.lines:		5
+rofi.eh:		2
+rofi.width:		100
+rofi.padding:	450	
+rofi.opacity:	90
 rofi.bw:		0
-!rofi.bc:		#03a9f4
-rofi.bc:		#C5CCD1
-rofi.bg:		#272822
-!rofi.fg:		#263238
-!rofi.hlbg:		#03a9f4
-!rofi.hlfg:		#eceff1
-rofi.fg:		#C5CCD1
-rofi.hlbg:		#eceff1
-rofi.hlfg:		#263238
-rofi.font:		Monaco 18
+rofi.bc:		#2f343f
+rofi.bg:		#2f343f
+rofi.fg:		#ffffff
+!rofi.hlbg:		#2f343f
+rofi.hlbg:		#cfd8dc
+rofi.hlfg:		#262626
+!rofi.hlfg:		#ffffff
+rofi.font:		Terminus 23
 
