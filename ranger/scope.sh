@@ -63,6 +63,7 @@ case "$extension" in
         try transmission-show "$path" && { dump | trim; exit 5; } || exit 1;;
     # HTML Pages:
     htm|html|xhtml)
+        try google-chrome-stable -dump "$path" && { dump | trim | fmt -s -w $width; exit 4; }
         try w3m    -dump "$path" && { dump | trim | fmt -s -w $width; exit 4; }
         try lynx   -dump "$path" && { dump | trim | fmt -s -w $width; exit 4; }
         try elinks -dump "$path" && { dump | trim | fmt -s -w $width; exit 4; }
