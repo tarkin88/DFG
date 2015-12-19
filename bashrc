@@ -1,3 +1,4 @@
+#!/usr/bin/sh
 # Archlinux Ultimate Install - .bashrc
 # by helmuthdu
 # OVERALL CONDITIONALS {{{
@@ -19,7 +20,7 @@ _isroot=false
 
     [[ -f $HOME/.dircolors_256 ]] && eval $(dircolors -b $HOME/.dircolors_256)
 
-    export TERM='xterm-256color'
+    export TERM='termite-256color'
 
      B='\[\e[1;38;5;33m\]'
     LB='\[\e[1;38;5;81m\]'
@@ -48,7 +49,7 @@ _isroot=false
       export PS1="$GY[$Y\u$GY@$P\h$GY:$B\W$GY]$W\$(get_prompt_symbol) "
     fi
   else
-    export TERM='xterm-color'
+    export TERM='termite-color'
   fi
 #}}}
 # BASH OPTIONS {{{

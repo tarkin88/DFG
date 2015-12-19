@@ -2,9 +2,9 @@
 # This script needed for create the symlinks for th resources.
 
 echo "Create the whole container"
-mkdir -p  $HOME/.odf
+mkdir -p  $HOME/.dotfiles
 
-dots=$HOME/.odf
+dots=$HOME/.dotfiles
 configs=$HOME/.config/
 
 cp -R * $dots
@@ -28,23 +28,38 @@ echo "Dunst...something your Linux"
 delete_all $configs/dunts
 $symlink $dots/dunst $configs
 
+#i3
+echo "Let's try i3...again xD"
+delete_all $configs/i3
+$symlink $dots/i3 $configs
+
+#i3 blocks
+delete_all $configs/i3blocks
+$symlink $dots/i3blocks $configs
+
+#termite
+echo "Some colors for terminal"
+delete_all $configs/termite
+$symlink $dots/termite $configs
+
 #tint2
-echo "Tinting your Linux"
-delete_all $configs/tint2
-$symlink $dots/tint2 $configs
+#echo "Tinting your Linux"
+#delete_all $configs/tint2
+#$symlink $dots/tint2 $configs
 
 #OPENBOX
-echo "Openboxing your Linux"
-delete_all $configs/openbox
-$symlink $dots/openbox $configs
+#echo "Openboxing your Linux"
+#delete_all $configs/openbox
+#$symlink $dots/openbox $configs
+#obmenu-generator -s -p -R
 
 #RANGER
-echo "A ranger inyour Linux? what's about a rogue?"
+echo "A ranger in your Linux? what's about a rogue?"
 delete_all $configs/ranger
 $symlink $dots/ranger $configs
 
 #VIM
-echo "Some configs for your Linux!!!"
+echo "Some extra configs for your Linux!!!"
 delete_all $HOME/.vimrc
 $symlink $dots/vimrc $HOME/.vimrc
 #XRESOURCES
@@ -56,15 +71,15 @@ $symlink $dots/bashrc $HOME/.bashrc
 #mpd
 delete_all $HOME/.mpd
 $symlink $dots/mpd $HOME/.mpd
-
+#ncmpcpp
 delete_all $HOME/.ncmpcpp
 $symlink $dots/ncmpcpp $HOME/.ncmpcpp
-
-delete_all $HOME/.term.png
-$symlink $dots/term.png $HOME/.term.png
-
-delete_all $HOME/.conkyrc
-$symlink $dots/conkyrc $HOME/.conkyrc
+#conky
+#delete_all $HOME/.conkyrc
+#$symlink $dots/conkyrc $HOME/.conkyrc
+##openbox_theme
+#delete_all $HOME/.themes
+#$symlink $dots/themes $HOME/.themes
 
 xrdb $HOME/.Xresources
 
