@@ -29,13 +29,13 @@ delete_all $configs/dunts
 $symlink $dots/dunst $configs
 
 #i3
-echo "Let's try i3...again xD"
-delete_all $configs/i3
-$symlink $dots/i3 $configs
+#echo "Let's try i3...again xD"
+#delete_all $configs/i3
+#$symlink $dots/i3 $configs
 
 #i3 blocks
-delete_all $configs/i3blocks
-$symlink $dots/i3blocks $configs
+#delete_all $configs/i3blocks
+#$symlink $dots/i3blocks $configs
 
 #termite
 echo "Some colors for terminal"
@@ -48,10 +48,10 @@ $symlink $dots/termite $configs
 #$symlink $dots/tint2 $configs
 
 #OPENBOX
-#echo "Openboxing your Linux"
-#delete_all $configs/openbox
-#$symlink $dots/openbox $configs
-#obmenu-generator -s -p -R
+echo "Openboxing your Linux"
+delete_all $configs/openbox
+$symlink $dots/openbox $configs
+obmenu-generator -s -p -R
 
 #RANGER
 echo "A ranger in your Linux? what's about a rogue?"

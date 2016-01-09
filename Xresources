@@ -66,11 +66,11 @@ URxvt*colorBD:		#ffffff
 *color15:      #eceff1
 
 rofi.terminal:	termite
-rofi.lines:		5
+rofi.lines:		7
 rofi.eh:		2
 rofi.width:		100
-rofi.padding:	450	
-rofi.opacity:	90
+rofi.padding:	180	
+rofi.opacity:	70
 rofi.bw:		0
 rofi.bc:		#2f343f
 rofi.bg:		#2f343f
@@ -79,5 +79,5 @@ rofi.fg:		#ffffff
 rofi.hlbg:		#cfd8dc
 rofi.hlfg:		#262626
 !rofi.hlfg:		#ffffff
-rofi.font:		Terminus 23
+rofi.font:		Monaco 20
 
