@@ -51,7 +51,6 @@ $symlink $dots/termite $configs
 echo "Openboxing your Linux"
 delete_all $configs/openbox
 $symlink $dots/openbox $configs
-obmenu-generator -s -p -R
 
 #RANGER
 echo "A ranger in your Linux? what's about a rogue?"

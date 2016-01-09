@@ -1,16 +1,14 @@
-#!/usr/bin/sh
-#Variables
-Compton="compton -o 0.3 --backend glx --vsync opengl -b -i 1.0" #--config ~/.config/compton/compton.conf
-MPD="mpd ~/.mpd/config"
+#!/usr/bin/sh\
 
-#EXEC
+#EXECs
 xrdb .Xresources &
 dunst &
 (sleep 1s && pulseaudio --start) &
 (sleep 1s && nitrogen --restore) &
 (sleep 1s && xfce4-panel) &
-(sleep 1s && $Compton) &
-(sleep 3s && devmon --sync --exec-on-drive "notify-send 'Automount' '%l is now mounted at %d.'" --exec-on-remove "notify-send 'Automount' '%l has been removed.'") &
-(sleep 4s && mpd) &
+(sleep 1s && compton --config ~/.config/compton/compton.conf) &
+(sleep 3s && devmon --sync --exec-on-drive "notify-send 'Automount' 'Media is now mounted at /run/media.'" --exec-on-remove "notify-send 'Automount' 'Media has been removed.'") &
+(sleep 4s && mpd ~/.mpd/config) &
 (sleep 5s && mpc update) &
 (sleep 5s && clipit) &
+(sleep 5s && nm-applet) &

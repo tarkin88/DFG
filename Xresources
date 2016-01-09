@@ -69,8 +69,8 @@ rofi.terminal:	termite
 rofi.lines:		7
 rofi.eh:		2
 rofi.width:		100
-rofi.padding:	180	
-rofi.opacity:	70
+rofi.padding:	250	
+rofi.opacity:	85
 rofi.bw:		0
 rofi.bc:		#2f343f
 rofi.bg:		#2f343f

@@ -117,13 +117,16 @@
 
        use obconf if you want to change these without having to log out
        and back in -->
-    <number>4</number>
+    <number>3</number>
     <firstdesk>1</firstdesk>
     <names>
       <!-- set names up here if you want to, like this:
     <name>desktop 1</name>
     <name>desktop 2</name>
     -->
+    <name>Main</name>
+    <name>Extra</name>
+    <name>Media</name>
     </names>
     <popupTime>875</popupTime>
     <!-- The number of milliseconds to show the popup for when switching
@@ -210,7 +213,11 @@
         <command>oblogout</command>
       </action>
     </keybind>
-    <keybind key="W-l"/>
+    <keybind key="W-l">
+      <action name="Execute">
+        <command>/usr/local/bin/i3lock-fancy/lock</command>
+      </action>
+    </keybind>
     <keybind key="W-q">
       <action name="Close"/>
     </keybind>
@@ -276,6 +283,11 @@
     <keybind key="W-F6">
       <action name="Execute">
         <command>xbacklight -dec 5</command>
+      </action>
+    </keybind>
+    <keybind key="W-F5">
+      <action name="Execute">
+        <command>xfce4-screenshooter</command>
       </action>
     </keybind>
     <keybind key="W-F3">
@@ -751,5 +763,8 @@
 
   # end of the example
 -->
+<application name="*">
+  <decor>no</decor>
+  </application>
   </applications>
 </openbox_config>
