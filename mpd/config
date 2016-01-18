@@ -1,8 +1,9 @@
+#!/usr/bin/sh
 # Set directories
-music_directory			"/home/frank/Música"
-playlist_directory		"/home/frank/.mpd/playlists"
-db_file					"/home/frank/.mpd/database"
-log_file				"/home/frank/.mpd/log"
-state_file				"/home/frank/.mpd/state"
-sticker_file			"/home/frank/.mpd/sticker.sql"
+music_directory			"~/Música"
+playlist_directory		"~/.mpd/playlists"
+db_file					"~/.mpd/database"
+log_file				"~/.mpd/log"
+state_file				"~/.mpd/state"
+sticker_file			"~/.mpd/sticker.sql"
 

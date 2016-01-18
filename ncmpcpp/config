@@ -1,5 +1,6 @@
+#!/usr/bin/sh
 # Host and music location
-mpd_music_dir = "/home/frank/Música"
+mpd_music_dir = "$HOME/Música"
 #mpd_host = "::"
 
 # Playlist look

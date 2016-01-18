@@ -16,10 +16,7 @@ URxvt*buffered:	false
 URxvt.keysym.M-C-c:	perl:clipboard:copy
 URxvt.keysym.M-C-v:	perl:clipboard:paste
 
-!URxvt.font: -*-tewi-medium-*-*-*-11-150-*-*-*-*-*-*,\
-!			-wuncon-siji-medium-r-normal--10-100-75-75-c-80-iso10646-1
-
-URxvt.font: xft:Monaco:size=8
+URxvt.font: xft:Monaco:size=9
 
 URxvt*letterSpace:  -1
 
@@ -29,8 +26,8 @@ URxvt*borderLess:	false
 URxvt*colorBD:		#ffffff
 
 ! special
-*foreground:   #eceff1
-*background:   #263238
+*foreground:   #cccccc
+*background:   #2d2d2d
 *cursorColor:  #eceff1
 
 ! black
@@ -73,7 +70,7 @@ rofi.padding:	250
 rofi.opacity:	85
 rofi.bw:		0
 rofi.bc:		#2f343f
-rofi.bg:		#2f343f
+rofi.bg:		#2d2d2d
 rofi.fg:		#ffffff
 !rofi.hlbg:		#2f343f
 rofi.hlbg:		#cfd8dc

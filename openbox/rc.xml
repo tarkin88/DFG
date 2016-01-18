@@ -117,7 +117,7 @@
 
        use obconf if you want to change these without having to log out
        and back in -->
-    <number>3</number>
+    <number>2</number>
     <firstdesk>1</firstdesk>
     <names>
       <!-- set names up here if you want to, like this:
@@ -126,7 +126,6 @@
     -->
     <name>Main</name>
     <name>Extra</name>
-    <name>Media</name>
     </names>
     <popupTime>875</popupTime>
     <!-- The number of milliseconds to show the popup for when switching
@@ -218,6 +217,9 @@
         <command>/usr/local/bin/i3lock-fancy/lock</command>
       </action>
     </keybind>
+    <keybind key="W-d">
+    <action name="ToggleShowDesktop"/>
+  </keybind>
     <keybind key="W-q">
       <action name="Close"/>
     </keybind>
@@ -260,49 +262,54 @@
     <keybind key="A-W-Up">
       <action name="GrowToEdgeNorth"/>
     </keybind>
+    <keybind key="W-Tab">
+      <action name="NextWindow">
+        <allDesktops>yes</allDesktops>
+      </action>
+    </keybind>
     <keybind key="W-F10">
       <action name="Execute">
-        <command>amixer set Master 5%+ unmute</command>
+        <command>~/.config/bash_scripts/vol.sh up</command>
       </action>
     </keybind>
     <keybind key="W-F9">
       <action name="Execute">
-        <command>amixer set Master 5%- unmute</command>
+        <command>~/.config/bash_scripts/vol.sh down</command>
       </action>
     </keybind>
     <keybind key="W-F8">
       <action name="Execute">
-        <command>amixer set Master toggle</command>
+        <command>~/.config/bash_scripts/vol.sh mute</command>
       </action>
     </keybind>
     <keybind key="W-F7">
       <action name="Execute">
-        <command>xbacklight -inc 5</command>
+        <command>~/.config/bash_scripts/backlight.sh up</command>
       </action>
     </keybind>
     <keybind key="W-F6">
       <action name="Execute">
-        <command>xbacklight -dec 5</command>
+        <command>~/.config/bash_scripts/backlight.sh down</command>
       </action>
     </keybind>
     <keybind key="W-F5">
       <action name="Execute">
-        <command>xfce4-screenshooter</command>
+        <command>~/.config/bash_scripts/scrot.sh</command>
       </action>
     </keybind>
     <keybind key="W-F3">
       <action name="Execute">
-        <command>mpc toggle</command>
+        <command>~/.config/bash_scripts/current_song.sh toggle</command>
       </action>
     </keybind>
     <keybind key="W-F2">
       <action name="Execute">
-        <command>mpc next</command>
+        <command>~/.config/bash_scripts/current_song.sh next</command>
       </action>
     </keybind>
     <keybind key="W-F1">
       <action name="Execute">
-        <command>mpc prev</command>
+        <command>~/.config/bash_scripts/current_song.sh prev</command>
       </action>
     </keybind>
     <keybind key="A-Tab">
@@ -697,7 +704,7 @@
   # order that they appear in this list
 
 
-    # each rule element can be left out or set to 'default' to specify to not 
+    # each rule element can be left out or set to 'default' to specify to not
     # change that attribute of the window
 
     <decor>yes</decor>

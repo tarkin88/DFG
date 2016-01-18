@@ -1,9 +1,10 @@
+#!/usr/bin/sh
 [options]
-font = Monaco 10
+font = Monaco 11
 
 [colors]
-background = #393A38
-foreground = #eceff1
+background = #2d2d2d
+foreground = #cccccc
 cursor     = #b3bfc7
 color0     = #272822
 color8     = #37474f
