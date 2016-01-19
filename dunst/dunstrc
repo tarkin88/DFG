@@ -245,3 +245,7 @@
     summary = Brightness
     format = "<b> %s </b>\n%b"
     timeout = 1
+
+[updates]
+    summary = Updates
+    format = "<b> %s </b>\n%b"

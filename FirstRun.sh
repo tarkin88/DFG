@@ -73,7 +73,7 @@ $symlink $dots/tint2 $configs
 xrdb $HOME/.Xresources
 chmod +x $configs/bash_scripts/*
 echo ""
-echo "Now Listen:"
+echo "MPD:"
 mpc update | head -1
 echo ""
 echo "That's all folks!!!"

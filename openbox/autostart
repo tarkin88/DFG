@@ -1,5 +1,6 @@
 #!/usr/bin/sh\
 media="$(dir /dev/disk/by-label)"
+
 #EXECs
 xrdb .Xresources &
 dunst &
@@ -11,3 +12,4 @@ dunst &
 (sleep 3s && devmon --sync --exec-on-drive "notify-send 'Automount' 'New media detect: $media.'" --exec-on-remove "notify-send 'Automount' '$media has removed.'") &
 (sleep 5s && clipit) &
 (sleep 5s && nm-applet) &
+(sleep 30s && ~/.config/bash_scripts/check_updates.sh ) &
