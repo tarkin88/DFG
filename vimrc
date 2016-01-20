@@ -1,67 +1,26 @@
-" Enable syntax
+execute pathogen#infect()
 syntax on
-
-" Make vi imporived
-set nocompatible
-
-" fish fix
-set shell=bash
-
-"au BufRead,BufNewFile * start
-
-" Hide statusbar
-"set noshowmode
-
-" Enable mouse use in all modes
-set mouse=a
-
-" Lines above/below cursor
-set scrolloff=5
-
-" Stop wrapping
-set nowrap
-
-" Indentation
-set noexpandtab
-set tabstop=4
-set shiftwidth=4
-
-" Save position
-if has("autocmd")
-  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
-endif
-
-" Disable custom vim title
-set titlestring=URxvt\ [vim\ %F]
-
-" Enable line numbers
 set number
+filetype plugin indent on
+"NerdTree
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+"CTRLP
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+"Airline
+let g:airline_powerline_fonts = 1
+"gitgutter
+set updatetime=250
+" Syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
 
-" Enable intentation lines
-set list
-set listchars=tab:\┆\ 
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 
-
-"" MISC
-
-" Disable backups
-set nobackup
-set nowritebackup
-set noswapfile
-set noundofile
-
-" hdni stuff
-set showmatch
-set ignorecase
-set smartcase
-set incsearch
-set autowrite
-set hidden
-set tabstop=4
-set more
-set wildmenu
-set history=200
-set matchtime=2
-set autoread
-set backspace=indent,eol,start
+"Overwrite commands
+map <C-l> :NERDTreeToggle<CR>
