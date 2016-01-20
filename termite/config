@@ -1,6 +1,18 @@
 #!/usr/bin/sh
 [options]
 font = Monaco 11
+audible_bell = true
+visible_bell = false
+dynamic_title = true
+urgent_on_bell = true
+clickable_url = true
+geometry = 890x600
+# "system", "on" or "off"
+cursor_blink = system
+# "block", "underline" or "ibeam"
+cursor_shape = underline
+# $BROWSER is used by default
+browser = google-chrome-stable
 
 [colors]
 background = #2d2d2d
