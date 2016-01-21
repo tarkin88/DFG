@@ -69,6 +69,10 @@ echo ". . . . . . . . . . . . . "
 #tint2
 delete_all $configs/tint2
 $symlink $dots/tint2 $configs
+echo ". . . . . . . . . . . . . . "
+#conky
+delete_all $configs/conky
+$symlink $dots/conky $configs
 
 xrdb $HOME/.Xresources
 chmod +x $configs/bash_scripts/*

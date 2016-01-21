@@ -6,7 +6,7 @@ visible_bell = false
 dynamic_title = true
 urgent_on_bell = true
 clickable_url = true
-geometry = 890x600
+geometry = 820x520
 # "system", "on" or "off"
 cursor_blink = system
 # "block", "underline" or "ibeam"

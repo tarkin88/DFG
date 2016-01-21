@@ -315,6 +315,12 @@
     <keybind key="A-Tab">
       <action name="NextWindow"/>
     </keybind>
+    <keybind key="A-W-h">
+      <action name="Execute">
+        <command>clipmenu</command>
+      </action>
+    </keybind>
+
   </keyboard>
   <mouse>
     <dragThreshold>1</dragThreshold>
