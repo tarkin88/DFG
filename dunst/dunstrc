@@ -126,7 +126,7 @@
     browser = /usr/bin/google-chrome-stable -new-tab
 
 [frame]
-    width = 2
+    width = 3
     color = "#262627"
 
 [shortcuts]

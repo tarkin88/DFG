@@ -4,14 +4,13 @@ media="$(dir /dev/disk/by-label)"
 #EXECs
 compton --config ~/.config/compton/compton.conf &
 xrdb .Xresources &
+setxbmap latam
 dunst &
 nitrogen --restore &
 (sleep 1s && tint2) &
 (sleep 1s && pulseaudio --start) &
 (sleep 2s && mpd ~/.mpd/config) &
-(sleep 2s && clipmenud) &
+(sleep 2s && clipit) &
 (sleep 2s && conky) &
 (sleep 2s && devmon --sync --exec-on-drive "notify-send 'Automount' 'New media detect: $media.'" --exec-on-remove "notify-send 'Automount' '$media has removed.'") &
-#(sleep 5s && clipit) &
-#(sleep 5s && nm-applet) &
 (sleep 40s && ~/.config/bash_scripts/check_updates.sh ) &
