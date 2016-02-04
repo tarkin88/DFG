@@ -1,4 +1,5 @@
 #!/usr/bin/sh
+
 [options]
 font = Monaco 11
 audible_bell = true
@@ -15,22 +16,38 @@ cursor_shape = underline
 browser = google-chrome-stable
 
 [colors]
-background = #2d2d2d
-foreground = #cccccc
-cursor     = #b3bfc7
-color0     = #272822
-color8     = #37474f
-color1     = #ff9800
-color9     = #ffa74d
-color2     = #8bc34a
-color10    = #9ccc65
-color3     = #ffc107
-color11    = #ffa000
-color4     = #03a9f4
-color12    = #81d4fa
-color5     = #ea427b
-color13    = #ad1457
-color6     = #009688
-color14    = #26a69a
-color7     = #cfd8dc
-color15    = #eceff1
+background = #344042
+foreground = #E8DFD6
+cursor     = #F3D5C9
+
+# black
+color0=#37413F
+color8=#4B5755
+
+# re
+color1=#F99595
+color9=#F3D5C9
+
+# green
+color2=#7CBF9E
+color10=#A2D9B1
+
+# yellow
+color3=#E5C078
+color11=#F9D48C
+
+# blue
+color4=#7BBAC7
+color12=#DFF0EB
+
+# magenta
+color5=#FF5879
+color13=#FF99A1
+
+# cyan
+color6=#62BDB3
+color14=#9ED9D8
+
+# white
+color7=#F2F1B9
+color15=#F6F6C9

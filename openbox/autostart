@@ -4,7 +4,7 @@ media="$(dir /dev/disk/by-label)"
 #EXECs
 compton --config ~/.config/compton/compton.conf &
 xrdb .Xresources &
-setxbmap latam
+setxbmap latam &
 dunst &
 nitrogen --restore &
 (sleep 1s && tint2) &

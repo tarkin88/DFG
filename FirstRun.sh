@@ -3,6 +3,7 @@
 
 echo "Let's do this shit..."
 mkdir -p  $HOME/.dotfiles
+mkdir -p  $HOME/.themes
 
 dots=$HOME/.dotfiles
 configs=$HOME/.config/
@@ -73,6 +74,11 @@ echo ". . . . . . . . . . . . . . "
 #conky
 delete_all $configs/conky
 $symlink $dots/conky $configs
+
+echo ". . . . . . . . . . . . . . "
+#theme
+delete_all $HOME/.themes/minato
+$symlink $dots/minato  $HOME/.themes/
 
 xrdb $HOME/.Xresources
 chmod +x $configs/bash_scripts/*

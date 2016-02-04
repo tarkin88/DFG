@@ -25,42 +25,47 @@ URxvt*letterSpace:  -1
 URxvt*borderLess:	false
 URxvt*colorBD:		#ffffff
 
-! special
-*foreground:   #cccccc
-*background:   #2d2d2d
-*cursorColor:  #eceff1
+!! COLORS
 
-! black
-*color0:       #263238
-*color8:       #37474f
+! Misc
+*foreground:         #E8DFD6
+*background:         #344042
+*cursorColor:        #F3D5C9
+*highlightColor:     #009688
+*highlightTextColor: #ef9a9a
 
-! red
-*color1:       #ff9800
-*color9:       #ffa74d
+! Black
+*color0:             #37413F
+*color8:             #4B5755
 
-! green
-*color2:       #8bc34a
-*color10:      #9ccc65
+! Red
+*color1:             #F99595
+*color9:             #F3D5C9
 
-! yellow
-*color3:       #ffc107
-*color11:      #ffa000
+! Green
+*color2:             #7CBF9E
+*color10:            #A2D9B1
 
-! blue
-*color4:       #03a9f4
-*color12:      #81d4fa
+! Yellow
+*color3:             #E5C078
+*color11:            #F9D48C
 
-! magenta
-*color5:       #ea427b
-*color13:      #ad1457
+! Blue
+*color4:             #7BBAC7
+*color12:            #DFF0EB
 
-! cyan
-*color6:       #009688
-*color14:      #26a69a
+! Magenta
+! TODO: MAke less bright
+*color5:             #FF5879
+*color13:            #FF99A1
 
-! white
-*color7:       #cfd8dc
-*color15:      #eceff1
+! Cyan
+*color6:             #62BDB3
+*color14:            #9ED9D8
+
+! White
+*color7:             #F2F1B9
+*color15:            #F6F6C9
 
 rofi.terminal:	termite
 rofi.lines:		7
