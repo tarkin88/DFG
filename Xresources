@@ -1,3 +1,40 @@
+! special
+*.foreground:   #e1e1e1
+*.background:   #2b303b
+*.cursorColor:  #e1e1e1
+
+! black
+*.color0:       #272a30
+*.color8:       #65737e
+
+! red
+*.color1:       #bf616a
+*.color9:       #bf616a
+
+! green
+*.color2:       #a3be8c
+*.color10:      #a3be8c
+
+! yellow
+*.color3:       #ebcb8b
+*.color11:      #ebcb8b
+
+! blue
+*.color4:       #8fa1b3
+*.color12:      #8fa1b3
+
+! magenta
+*.color5:       #b48ead
+*.color13:      #b48ead
+
+! cyan
+*.color6:       #96b5b4
+*.color14:      #96b5b4
+
+! white
+*.color7:       #c0c5ce
+*.color15:      #eff1f5
+
 Xft.dpi: 96
 Xft.antialias: true 
 Xft.hinting: true
@@ -13,71 +50,39 @@ URxvt*fading: 20
 URxvt*saveLines: 1000
 URxvt*buffered:	false
 
-URxvt.keysym.M-C-c:	perl:clipboard:copy
-URxvt.keysym.M-C-v:	perl:clipboard:paste
 
-!URxvt.font: -*-tewi-medium-*-*-*-11-150-*-*-*-*-*-*,\
-!			-wuncon-siji-medium-r-normal--10-100-75-75-c-80-iso10646-1
+!URxvt.font: xft:Terminus:size=10
+URxvt.font:     xft:bitstream vera sans mono:size=10:antialias=true
+URxvt.boldFont: xft:bitstream vera sans mono:bold:size=10:antialias=true
 
-URxvt.font: xft:Monaco:size=8
-
-URxvt*letterSpace:  -1
+!URxvt*letterSpace:  -1
 
 !URxvt*borderColor:	#151515
 !URxvt*borderColor: #77c3a9
 URxvt*borderLess:	false
 URxvt*colorBD:		#ffffff
 
-! special
-*foreground:   #eceff1
-*background:   #263238
-*cursorColor:  #eceff1
 
-! black
-*color0:       #263238
-*color8:       #37474f
-
-! red
-*color1:       #ff9800
-*color9:       #ffa74d
-
-! green
-*color2:       #8bc34a
-*color10:      #9ccc65
-
-! yellow
-*color3:       #ffc107
-*color11:      #ffa000
-
-! blue
-*color4:       #03a9f4
-*color12:      #81d4fa
-
-! magenta
-*color5:       #ea427b
-*color13:      #ad1457
-
-! cyan
-*color6:       #009688
-*color14:      #26a69a
-
-! white
-*color7:       #cfd8dc
-*color15:      #eceff1
-
+rofi.modi: run
 rofi.terminal:	termite
-rofi.lines:		5
+rofi.lines:		4
+rofi.columns:	1
 rofi.eh:		2
 rofi.width:		100
-rofi.padding:	450	
-rofi.opacity:	90
-rofi.bw:		0
-rofi.bc:		#2f343f
-rofi.bg:		#2f343f
-rofi.fg:		#ffffff
-!rofi.hlbg:		#2f343f
-rofi.hlbg:		#cfd8dc
-rofi.hlfg:		#262626
-!rofi.hlfg:		#ffffff
-rofi.font:		Terminus 23
+rofi.padding:	400	
+rofi.opacity:	88
+rofi.bw:		2
+rofi.font:		Terminus 16
+rofi.line-margin:	4
+rofi.levenshtein-sort:	false
+rofi.sidebar-mode:	false
+!rofi.fullscreen:	true
 
+! ------------------------------------------------------------------------------
+! ROFI Color theme
+! ------------------------------------------------------------------------------
+rofi.color-enabled: true
+rofi.color-window: #2b303b, #273238, #1e2529
+rofi.color-normal: #273238, #c1c1c1, #273238, #394249, #ffffff
+rofi.color-active: #273238, #80cbc4, #273238, #394249, #80cbc4
+rofi.color-urgent: #273238, #ff1844, #273238, #394249, #ff1844

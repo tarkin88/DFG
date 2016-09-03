@@ -65,7 +65,7 @@
 
     # The transparency of the window. range: [0; 100]
     # This option will only work if a compositing windowmanager is present (e.g. xcompmgr, compiz, etc..)
-    transparency = 10
+    transparency = 30
 
     # Don't remove messages, if the user is idle (no mouse or keyboard input)
     # for longer than idle_threshold seconds.
@@ -104,7 +104,7 @@
     padding = 8
 
     # horizontal padding
-    horizontal_padding = 8
+    horizontal_padding = 9
 
     # Define a color for the separator.
     # possible values are:
@@ -126,8 +126,8 @@
     browser = /usr/bin/firefox -new-tab
 
 [frame]
-    width = 2
-    color = "#00c3ff"
+    width = 0
+    color = "#011418"
 
 [shortcuts]
     # shortcuts are specified as [modifier+][modifier+]...key
@@ -151,14 +151,14 @@
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the '#' and following  would be interpreted as a comment.
-    background = "#1D596B"
-    foreground = "#7BA8B5"
+    background = "#011418"
+    foreground = "#C2C2C2"
     timeout = 10
 
 [urgency_normal]
     #background = "#E3AD0B"
-	 background = "#66A0B5"
-    foreground = "#524218"
+	 background = "#011418"
+    foreground = "#C2C2C2"
     timeout = 10
 
 [urgency_critical]

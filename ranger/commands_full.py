@@ -482,7 +482,7 @@ class terminal(Command):
         if command not in get_executables():
             command = 'x-terminal-emulator'
         if command not in get_executables():
-            command = 'termite'
+            command = 'xterm'
         self.fm.run(command, flags='f')
 
 
