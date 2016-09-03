@@ -219,7 +219,7 @@ bindsym XF86MonBrightnessDown exec xbacklight -3
 
 
 #Wallpaper
-exec --no-startup-id feh --bg-fill --no-xinerama ~/.dotfiles/wall.jpg
+exec --no-startup-id feh --bg-fill --no-xinerama ~/.dotfiles/wall.png
 
 #Compton
 exec --no-startup-id compton --config ~/.config/compton/compton.conf
