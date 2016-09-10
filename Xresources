@@ -69,8 +69,8 @@ rofi.lines:		4
 rofi.columns:	1
 rofi.eh:		2
 rofi.width:		100
-rofi.padding:	400	
-rofi.opacity:	88
+rofi.padding:	450	
+rofi.opacity:	96
 rofi.bw:		2
 rofi.font:		Terminus 16
 rofi.line-margin:	4
