@@ -26,7 +26,7 @@ symlink="ln -s -f -n"
 #i3 blocks
 #delete_all $configs/i3blocks
 #$symlink $dots/i3blocks $configs
-#SCRIPTS 
+#SCRIPTS
 delete_all $configs/bash_scripts
 $symlink $dots/bash_scripts $configs
 
@@ -63,9 +63,13 @@ delete_all $configs/ranger
 $symlink $dots/ranger $configs
 
 #VIM
-echo "Some extra configs for your Linux!!!"
-delete_all $HOME/.vimrc
-$symlink $dots/vimrc $HOME/.vimrc
+#echo "Some extra configs for your Linux!!!"
+#delete_all $HOME/.vimrc
+#$symlink $dots/vimrc $HOME/.vimrc
+#NVIM
+delete_all $configs/nvim
+$symlink $dots/nvim $configs
+
 #XRESOURCES
 delete_all $HOME/.Xresources
 $symlink $dots/Xresources $HOME/.Xresources
@@ -84,10 +88,6 @@ $symlink $dots/mpd $HOME/.mpd
 delete_all $HOME/.ncmpcpp
 $symlink $dots/ncmpcpp $HOME/.ncmpcpp
 
-#GTK
-delete_all $configs/gtk-3.0/gtk.css
-$symlink $dots/gtk.css $configs/gtk-3.0/
-
 #conky
 delete_all $HOME/.conkyrc
 $symlink $dots/conkyrc $HOME/.conkyrc
@@ -101,4 +101,4 @@ mpc update | head -1
 chmod +x $configs/bash_scripts/*
 echo ""
 echo "DONE"
-dunstify  "That's all folks!!!" 
+dunstify  "That's all folks!!!"

@@ -1,3 +1,6 @@
+call plug#begin('~/.vim/plugged')
+call plug#end()
+
 " Enable syntax
 syntax on
 
