@@ -1,0 +1,175 @@
+# i3 Config Tarkin88
+
+# Colors
+#setup color
+set $col1 #343C48
+set $col2 #528588
+set $col3 #E5E5E5
+set $col4 #BA5E57
+set $col5 #E38179
+set $col6 #343C48
+set $col7 #528588
+#Basic Settings
+set $mod Mod4
+font pango:Inconsolata 9
+floating_modifier $mod
+# Terminal
+bindsym $mod+Return exec urxvt
+#NEW WINDOWS
+new_window pixel 1
+new_float pixel 1
+
+# Rules
+for_window [class="^.*"] border pixel
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="bubble"] floating enable
+# GAP
+set $default_gaps_inner 4
+set $default_gaps_outer 1
+gaps inner $default_gaps_inner
+gaps outer $default_gaps_outer
+
+#Volume keys
+bindsym Mod4+F12 exec "amixer -D pulse sset Master '7%+'"
+bindsym Mod4+F11 exec "amixer -D pulse sset Master '7%-'"
+bindsym Mod4+F10+ exec "amixer -D pulse set Master toggle"
+
+# kill focused window
+bindsym $mod+q kill
+#Dmenu
+bindsym $mod+space exec rofi -show run
+
+#bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+# change focus
+bindsym $mod+j focus left
+bindsym $mod+k focus down
+bindsym $mod+l focus up
+bindsym $mod+ntilde focus right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# move focused window
+bindsym $mod+Shift+j move left
+bindsym $mod+Shift+k move down
+bindsym $mod+Shift+l move up
+bindsym $mod+Shift+ntilde move right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# split in horizontal orientation
+bindsym $mod+h split h
+
+# split in vertical orientation
+bindsym $mod+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+#bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# focus the child container
+
+for_window [class="^.*"] border pixel 1
+
+# switch to workspace
+set $ws1  "1:TERM "
+set $ws2  "2:NET "
+set $ws3  "3:MEDIA "
+set $ws4  "4:EXTRA  "
+
+workspace $ws1 gaps inner 2
+workspace $ws1 gaps outer 2
+workspace $ws2 gaps inner 2
+workspace $ws2 gaps outer 2
+workspace $ws3 gaps inner 2
+workspace $ws3 gaps outer 2
+
+workspace_auto_back_and_forth yes
+
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+
+bindsym $mod+Tab workspace back_and_forth
+
+
+bindsym $mod+Shift+1 move container to workspace number $ws1
+bindsym $mod+Shift+2 move container to workspace number $ws2
+bindsym $mod+Shift+3 move container to workspace number $ws3
+bindsym $mod+Shift+4 move container to workspace number $ws4
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
+        bindsym j resize shrink width 10 px or 10 ppt
+        bindsym k resize grow height 10 px or 10 ppt
+        bindsym l resize shrink height 10 px or 10 ppt
+        bindsym ntilde resize grow width 10 px or 10 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+bindsym $mod+r mode "resize"
+# class                 border  backgr. text    indicator child_border
+client.focused          $col2 $col2 $col2
+client.focused          $col2 $col2 $col2
+client.unfocused        $col6 $col6 $col6
+client.focused_inactive $col1 $col1 $col1
+client.urgent           $col1 $col1 $col1
+
+bar {
+        status_command i3blocks -c ~/.config/i3blocks/i3blocks.conf
+        position top
+        height 20
+        strip_workspace_numbers yes
+        font pango:FontAwesome 10
+        colors {
+                background             $col1
+                statusline             $col2
+                active_workspace       $col4 $col4 $col3
+                focused_workspace      $col7 $col7 $col3
+                inactive_workspace     $col6 $col6 $col3
+                urgent_workspace       $col7 $col7 $col3
+        }
+}

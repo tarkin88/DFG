@@ -40,22 +40,29 @@ echo "Dunst...something your Linux"
 delete_all $configs/dunts
 $symlink $dots/dunst $configs
 
-
 #termite
-echo "Some colors for terminal"
-delete_all $configs/termite
-$symlink $dots/termite $configs
+#echo "Some colors for terminal"
+#delete_all $configs/termite
+$#symlink $dots/termite $configs
 
 #tint2
 echo "Tinting your Linux"
 delete_all $configs/tint2
 $symlink $dots/tint2 $configs
 
+# i3
+echo "i3 to me!"
+delete_all $configs/i3
+$symlink $dots/i3 $configs
+
+delete_all $configs/i3blocks
+$symlink $dots/i3blocks $configs
+
 #OPENBOX
-echo "Openboxing your Linux"
-delete_all $configs/openbox
-$symlink $dots/openbox $configs
-obmenu-generator -s -p -R
+#echo "Openboxing your Linux"
+#delete_all $configs/openbox
+#$symlink $dots/openbox $configs
+#obmenu-generator -s -p -R
 
 #RANGER
 echo "A ranger in your Linux? what's about a rogue?"
@@ -63,12 +70,12 @@ delete_all $configs/ranger
 $symlink $dots/ranger $configs
 
 #VIM
-#echo "Some extra configs for your Linux!!!"
-#delete_all $HOME/.vimrc
-#$symlink $dots/vimrc $HOME/.vimrc
+echo "Some extra configs for your Linux!!!"
+delete_all $HOME/.vimrc
+$symlink $dots/vimrc $HOME/.vimrc
 #NVIM
-delete_all $configs/nvim
-$symlink $dots/nvim $configs
+#delete_all $configs/nvim
+#$symlink $dots/nvim $configs
 
 #XRESOURCES
 delete_all $HOME/.Xresources
@@ -88,12 +95,15 @@ $symlink $dots/mpd $HOME/.mpd
 delete_all $HOME/.ncmpcpp
 $symlink $dots/ncmpcpp $HOME/.ncmpcpp
 
+#Wallpapers
+delete_all $HOME/.walls
+$symlink $dots/walls  $HOME/.walls
 #conky
-delete_all $HOME/.conkyrc
-$symlink $dots/conkyrc $HOME/.conkyrc
+#delete_all $HOME/.conkyrc
+#$symlink $dots/conkyrc $HOME/.conkyrc
 ##openbox_
-delete_all $HOME/.themes
-$symlink $dots/themes  $HOME/.themes
+#delete_all $HOME/.themes
+#$symlink $dots/themes  $HOME/.themes
 echo "maybe some theme too..."
 xrdb $HOME/.Xresources
 echo "MPD:"
