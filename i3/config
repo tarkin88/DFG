@@ -30,8 +30,8 @@ gaps inner $default_gaps_inner
 gaps outer $default_gaps_outer
 
 #Volume keys
-bindsym Mod4+F12 exec "amixer -D pulse sset Master '7%+'"
-bindsym Mod4+F11 exec "amixer -D pulse sset Master '7%-'"
+bindsym Mod4+F12 exec "amixer -D pulse sset Master '5%+'"
+bindsym Mod4+F11 exec "amixer -D pulse sset Master '5%-'"
 bindsym Mod4+F10+ exec "amixer -D pulse set Master toggle"
 
 # kill focused window
@@ -134,16 +134,16 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym ntilde resize grow width 10 px or 10 ppt
+        bindsym j resize shrink width 6 px or 6 ppt
+        bindsym k resize grow height 6 px or 6 ppt
+        bindsym l resize shrink height 6 px or 6 ppt
+        bindsym ntilde resize grow width 6 px or 6 ppt
 
         # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
+        bindsym Left resize shrink width 6 px or 6 ppt
+        bindsym Down resize grow height 6 px or 6 ppt
+        bindsym Up resize shrink height 6 px or 6 ppt
+        bindsym Right resize grow width 6 px or 6 ppt
 
         # back to normal: Enter or Escape
         bindsym Return mode "default"
@@ -152,16 +152,15 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 # class                 border  backgr. text    indicator child_border
-client.focused          $col2 $col2 $col2
-client.focused          $col2 $col2 $col2
-client.unfocused        $col6 $col6 $col6
+client.focused          $col2 $col2 $col1
+client.unfocused        $col6 $col6 $col2
 client.focused_inactive $col1 $col1 $col1
 client.urgent           $col1 $col1 $col1
 
 bar {
         status_command i3blocks -c ~/.config/i3blocks/i3blocks.conf
         position top
-        height 20
+        height 22
         strip_workspace_numbers yes
         font pango:FontAwesome 10
         colors {
@@ -173,3 +172,6 @@ bar {
                 urgent_workspace       $col7 $col7 $col3
         }
 }
+
+#AUTORUN
+exec --no-startup-id ~/.config/bash_scripts/autostart.sh
