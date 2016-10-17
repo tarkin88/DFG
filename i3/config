@@ -9,37 +9,48 @@ set $col4 #BA5E57
 set $col5 #E38179
 set $col6 #343C48
 set $col7 #528588
+
 #Basic Settings
 set $mod Mod4
 font pango:Inconsolata 9
 floating_modifier $mod
+
 # Terminal
-bindsym $mod+Return exec urxvt
+bindsym $mod+Return exec xfce4-terminal
+
 #NEW WINDOWS
-new_window pixel 1
-new_float pixel 1
+new_window pixel 2
+new_float pixel 2
+
+# Disable follow cursor for focus
+focus_follows_mouse no 
 
 # Rules
-for_window [class="^.*"] border pixel
+for_window [class="^.*"] border 10 pixel
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="bubble"] floating enable
+
 # GAP
-set $default_gaps_inner 4
-set $default_gaps_outer 1
+set $default_gaps_inner 6
+set $default_gaps_outer 0
 gaps inner $default_gaps_inner
 gaps outer $default_gaps_outer
 
 #Volume keys
 bindsym Mod4+F12 exec "amixer -D pulse sset Master '5%+'"
 bindsym Mod4+F11 exec "amixer -D pulse sset Master '5%-'"
-bindsym Mod4+F10+ exec "amixer -D pulse set Master toggle"
+bindsym Mod4+F10 exec "amixer -D pulse set Master toggle"
+
+#Lock screen
+bindsym Mod4+F1 exec "i3lock-fancy"
 
 # kill focused window
 bindsym $mod+q kill
-#Dmenu
-bindsym $mod+space exec rofi -show run
 
+#Launcher
+bindsym $mod+d exec rofi -show run
 #bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+
 # change focus
 bindsym $mod+j focus left
 bindsym $mod+k focus down
@@ -82,14 +93,14 @@ bindsym $mod+e layout toggle split
 bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
-#bindsym $mod+space focus mode_toggle
+bindsym $mod+space focus mode_toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
 
 # focus the child container
 
-for_window [class="^.*"] border pixel 1
+for_window [class="^.*"] border pixel 4
 
 # switch to workspace
 set $ws1  "1:TERM "
@@ -160,7 +171,7 @@ client.urgent           $col1 $col1 $col1
 bar {
         status_command i3blocks -c ~/.config/i3blocks/i3blocks.conf
         position top
-        height 22
+        height 20
         strip_workspace_numbers yes
         font pango:FontAwesome 10
         colors {
