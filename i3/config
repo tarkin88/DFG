@@ -41,6 +41,10 @@ bindsym Mod4+F12 exec "amixer -D pulse sset Master '5%+'"
 bindsym Mod4+F11 exec "amixer -D pulse sset Master '5%-'"
 bindsym Mod4+F10 exec "amixer -D pulse set Master toggle"
 
+bindsym $mod+F9 exec xbacklight -inc 10 # increase screen brightness
+bindsym $mod+F8 exec xbacklight -dec 10 # decrease screen brightness
+
+
 #Lock screen
 bindsym Mod4+F1 exec "i3lock-fancy"
 
