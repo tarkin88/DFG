@@ -1,7 +1,10 @@
 # i3 Config Tarkin88
+#Primary Key [default Windows key]
 
-# Colors
-#setup color
+set $mod Mod4
+
+# Gloval Variables
+# color
 set $col1 #343C48
 set $col2 #528588
 set $col3 #E5E5E5
@@ -9,57 +12,43 @@ set $col4 #BA5E57
 set $col5 #E38179
 set $col6 #343C48
 set $col7 #528588
+# gaps
+set $gaps_inner 6
+set $gaps_outer 0
+# resize
+set $resize_value 3
+# border
+set $border_size 2
+#Font settings
+font pango:monaco 8
 
-#Basic Settings
-set $mod Mod4
-font pango:Inconsolata 9
+# Floating Settings
 floating_modifier $mod
-
-# Terminal
-bindsym $mod+Return exec xfce4-terminal
-
-#NEW WINDOWS
-new_window pixel 2
-new_float pixel 2
-
-# Disable follow cursor for focus
-focus_follows_mouse no 
-
-# Rules
-for_window [class="^.*"] border 10 pixel
-for_window [window_role="pop-up"] floating enable
-for_window [window_role="bubble"] floating enable
-
-# GAP
-set $default_gaps_inner 6
-set $default_gaps_outer 0
-gaps inner $default_gaps_inner
-gaps outer $default_gaps_outer
-
-#Volume keys
-bindsym Mod4+F12 exec "amixer -D pulse sset Master '5%+'"
-bindsym Mod4+F11 exec "amixer -D pulse sset Master '5%-'"
-bindsym Mod4+F10 exec "amixer -D pulse set Master toggle"
-
-bindsym $mod+F9 exec xbacklight -inc 10 # increase screen brightness
-bindsym $mod+F8 exec xbacklight -dec 10 # decrease screen brightness
-
-
-#Lock screen
-bindsym Mod4+F1 exec "i3lock-fancy"
 
 # kill focused window
 bindsym $mod+q kill
 
-#Launcher
+# Launcher settings 
 bindsym $mod+d exec rofi -show run
-#bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+
+# Terminal
+bindsym $mod+Return exec xfce4-terminal
+
+# Border
+new_window pixel $border_size
+new_float pixel $border_size
+
+gaps inner $gaps_inner
+gaps outer $gaps_outer
+
+# Focus 
+focus_follows_mouse no 
 
 # change focus
 bindsym $mod+j focus left
 bindsym $mod+k focus down
 bindsym $mod+l focus up
-bindsym $mod+ntilde focus right
+bindsym $mod+semicolon focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -71,7 +60,7 @@ bindsym $mod+Right focus right
 bindsym $mod+Shift+j move left
 bindsym $mod+Shift+k move down
 bindsym $mod+Shift+l move up
-bindsym $mod+Shift+ntilde move right
+bindsym $mod+Shift+semicolon move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -103,36 +92,31 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+a focus parent
 
 # focus the child container
-
-for_window [class="^.*"] border pixel 4
+#bindsym $mod+d focus child
 
 # switch to workspace
-set $ws1  "1:TERM "
-set $ws2  "2:NET "
-set $ws3  "3:MEDIA "
-set $ws4  "4:EXTRA  "
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
+bindsym $mod+4 workspace 4
+bindsym $mod+5 workspace 5
+bindsym $mod+6 workspace 6
+bindsym $mod+7 workspace 7
+bindsym $mod+8 workspace 8
+bindsym $mod+9 workspace 9
+bindsym $mod+0 workspace 10
 
-workspace $ws1 gaps inner 2
-workspace $ws1 gaps outer 2
-workspace $ws2 gaps inner 2
-workspace $ws2 gaps outer 2
-workspace $ws3 gaps inner 2
-workspace $ws3 gaps outer 2
-
-workspace_auto_back_and_forth yes
-
-bindsym $mod+1 workspace $ws1
-bindsym $mod+2 workspace $ws2
-bindsym $mod+3 workspace $ws3
-bindsym $mod+4 workspace $ws4
-
-bindsym $mod+Tab workspace back_and_forth
-
-
-bindsym $mod+Shift+1 move container to workspace number $ws1
-bindsym $mod+Shift+2 move container to workspace number $ws2
-bindsym $mod+Shift+3 move container to workspace number $ws3
-bindsym $mod+Shift+4 move container to workspace number $ws4
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace 1
+bindsym $mod+Shift+2 move container to workspace 2
+bindsym $mod+Shift+3 move container to workspace 3
+bindsym $mod+Shift+4 move container to workspace 4
+bindsym $mod+Shift+5 move container to workspace 5
+bindsym $mod+Shift+6 move container to workspace 6
+bindsym $mod+Shift+7 move container to workspace 7
+bindsym $mod+Shift+8 move container to workspace 8
+bindsym $mod+Shift+9 move container to workspace 9
+bindsym $mod+Shift+0 move container to workspace 10
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -149,16 +133,16 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 6 px or 6 ppt
-        bindsym k resize grow height 6 px or 6 ppt
-        bindsym l resize shrink height 6 px or 6 ppt
-        bindsym ntilde resize grow width 6 px or 6 ppt
+        bindsym j resize shrink width $resize_value px or $resize_value ppt
+        bindsym k resize grow height $resize_value px or $resize_value ppt
+        bindsym l resize shrink height $resize_value px or $resize_value ppt
+        bindsym semicolon resize grow width $resize_value px or $resize_value ppt
 
         # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 6 px or 6 ppt
-        bindsym Down resize grow height 6 px or 6 ppt
-        bindsym Up resize shrink height 6 px or 6 ppt
-        bindsym Right resize grow width 6 px or 6 ppt
+        bindsym Left resize shrink width $resize_value px or $resize_value ppt
+        bindsym Down resize grow height $resize_value px or $resize_value ppt
+        bindsym Up resize shrink height $resize_value px or $resize_value ppt
+        bindsym Right resize grow width $resize_value px or $resize_value ppt
 
         # back to normal: Enter or Escape
         bindsym Return mode "default"
@@ -166,18 +150,24 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
-# class                 border  backgr. text    indicator child_border
-client.focused          $col2 $col2 $col1
-client.unfocused        $col6 $col6 $col2
-client.focused_inactive $col1 $col1 $col1
-client.urgent           $col1 $col1 $col1
 
+#custom byndsym
+
+#Lock screen
+bindsym Mod4+F1 exec "i3lock-fancy"
+# brightness
+bindsym $mod+F9 exec xbacklight -inc 10
+bindsym $mod+F8 exec xbacklight -dec 10
+# similar to windows alt + tab on workspaces
+bindsym $mod+Tab workspace back_and_forth
+
+# Start i3bar to display a workspace bar (plus the system information i3status
+# finds out, if available)
 bar {
-        status_command i3blocks -c ~/.config/i3blocks/i3blocks.conf
         position top
-        height 20
         strip_workspace_numbers yes
-        font pango:FontAwesome 10
+        status_command i3status
+        height 18
         colors {
                 background             $col1
                 statusline             $col2
@@ -188,5 +178,13 @@ bar {
         }
 }
 
-#AUTORUN
+#colors settings
+# class                   border        backgr. text    indicator child_border
+client.focused            $col2         $col2           $col1
+client.unfocused          $col6         $col6           $col2
+client.focused_inactive   $col1         $col1           $col1
+client.urgent             $col1         $col1           $col1
+
+
+# autorun 
 exec --no-startup-id ~/.config/bash_scripts/autostart.sh
