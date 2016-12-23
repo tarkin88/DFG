@@ -1,24 +1,3 @@
-! Font settings
-URxvt.font: xft:Inconsolata:size=12
-!URxvt.letterSpace: -1
-
-! Scrollbar
-URxvt.scrollBar: false
-!URxvt.scrollBar_right: true
-!URxvt.scrollstyle: plain
-!URxvt.scrollColor: #2d2d2d
-
-! Transparency
-!URxvt.transparent: true
-!URxvt.shading: 9
-
-! Clickable links
-URxvt.perl-ext-common: default,matcher
-URxvt.url-launcher: /usr/bin/google-chrome
-URxvt.matcher.button: 1
-
-! Colours
-URxvt.depth: 24
 
 *background: #282828
 *foreground: #ebdbb2

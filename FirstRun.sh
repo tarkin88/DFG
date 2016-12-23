@@ -70,4 +70,4 @@ chmod +x $configs/bash_scripts/*
 chmod +x $configs/i3blocks/*
 echo ""
 echo "DONE"
-dunstify  "That's all folks!!!"
+dunst  "That's all folks!!!"

@@ -16,7 +16,7 @@ set $col7 #528588
 set $gaps_inner 6
 set $gaps_outer 0
 # resize
-set $resize_value 3
+set $resize_value 2
 # border
 set $border_size 2
 #Font settings
@@ -28,7 +28,7 @@ floating_modifier $mod
 # kill focused window
 bindsym $mod+q kill
 
-# Launcher settings 
+# Launcher settings
 bindsym $mod+d exec rofi -show run
 
 # Terminal
@@ -41,8 +41,11 @@ new_float pixel $border_size
 gaps inner $gaps_inner
 gaps outer $gaps_outer
 
-# Focus 
-focus_follows_mouse no 
+# fix graphics glitch
+new_window none
+
+# Focus
+focus_follows_mouse no
 
 # change focus
 bindsym $mod+j focus left
@@ -92,7 +95,7 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+a focus parent
 
 # focus the child container
-#bindsym $mod+d focus child
+# bindsym $mod+space focus child
 
 # switch to workspace
 bindsym $mod+1 workspace 1
@@ -161,22 +164,33 @@ bindsym $mod+F8 exec xbacklight -dec 10
 # similar to windows alt + tab on workspaces
 bindsym $mod+Tab workspace back_and_forth
 
+# focus rules
+
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="bubble"] floating enable
+for_window [window_role="task_dialog"] floating enable
+for_window [window_role="Preferences"] floating enable
+
+for_window [window_type="dialog"] floating enable
+for_window [window_type="menu"] floating enable
+
+
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
-        position top
-        strip_workspace_numbers yes
-        status_command i3status
-        height 18
-        colors {
-                background             $col1
-                statusline             $col2
-                active_workspace       $col4 $col4 $col3
-                focused_workspace      $col7 $col7 $col3
-                inactive_workspace     $col6 $col6 $col3
-                urgent_workspace       $col7 $col7 $col3
-        }
-}
+# bar {
+#         position top
+#         strip_workspace_numbers yes
+#         status_command i3status
+#         height 18
+#         colors {
+#                 background             $col1
+#                 statusline             $col2
+#                 active_workspace       $col4 $col4 $col3
+#                 focused_workspace      $col7 $col7 $col3
+#                 inactive_workspace     $col6 $col6 $col3
+#                 urgent_workspace       $col7 $col7 $col3
+#         }
+# }
 
 #colors settings
 # class                   border        backgr. text    indicator child_border
@@ -186,5 +200,5 @@ client.focused_inactive   $col1         $col1           $col1
 client.urgent             $col1         $col1           $col1
 
 
-# autorun 
+# autorun
 exec --no-startup-id ~/.config/bash_scripts/autostart.sh
