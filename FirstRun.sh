@@ -46,9 +46,9 @@ delete_all $configs/ranger
 $symlink $dots/ranger $configs
 
 #VIM
-echo "Some extra configs for your Linux!!!"
-delete_all $HOME/.vimrc
-$symlink $dots/vimrc $HOME/.vimrc
+#echo "Some extra configs for your Linux!!!"
+#delete_all $HOME/.vimrc
+#$symlink $dots/vimrc $HOME/.vimrc
 
 #XRESOURCES
 delete_all $HOME/.Xresources
@@ -59,13 +59,13 @@ delete_all $HOME/.xinitrc
 $symlink $dots/xinitrc $HOME/.xinitrc
 
 #mpd
-delete_all $configs/mpd
-$symlink $dots/mpd $configs
+#delete_all $configs/mpd
+#$symlink $dots/mpd $configs
 
 echo "maybe some theme too..."
 xrdb $HOME/.Xresources
-echo "MPD:"
-mpc update | head -1
+#echo "MPD:"
+#mpc update | head -1
 chmod +x $configs/bash_scripts/*
 chmod +x $configs/i3blocks/*
 echo ""
