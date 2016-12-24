@@ -1,27 +1,132 @@
+! special
+*.foreground:   #e9dcdc
+*.background:   #2a2c31
+*.cursorColor:  #e9dcdc
 
-*background: #282828
-*foreground: #ebdbb2
-! Black + DarkGrey
-*color0: #282828
-*color8: #928374
-! DarkRed + Red
-*color1: #cc241d
-*color9: #fb4934
-! DarkGreen + Green
-*color2: #98971a
-*color10: #b8bb26
-! DarkYellow + Yellow
-*color3: #d79921
-*color11: #fabd2f
-! DarkBlue + Blue
-*color4: #458588
-*color12: #83a598
-! DarkMagenta + Magenta
-*color5: #b16286
-*color13: #d3869b
-! DarkCyan + Cyan
-*color6: #689d6a
-*color14: #8ec07c
-! LightGrey + White
-*color7: #a89984
-*color15: #ebdbb2
+! black
+*.color0:       #2b303b
+*.color8:       #65737e
+
+! red
+*.color1:       #d4848c
+*.color9:       #a73b46
+
+! green
+*.color2:       #a3be8c
+*.color10:      #a3be8c
+
+! yellow
+*.color3:       #eddcb9
+*.color11:      #ebcb8b
+
+! blue
+*.color4:       #9d9ea0
+*.color12:      #838e98
+
+! magenta
+*.color5:       #b48ead
+*.color13:      #b48ead
+
+! cyan
+*.color6:       #93c5c4
+*.color14:      #96b5b4
+
+! white
+*.color7:       #dee1e7
+*.color15:      #eff1f5
+
+
+! ------------------------------------------------------------------------------
+! ROFI Color theme
+! ------------------------------------------------------------------------------
+! Use extended color scheme
+rofi.color-enabled:                  true
+! Color scheme for normal row
+rofi.color-normal:                   #2a2c31,  #D8DEE9 , argb:00000000,  #A73B46 ,  #1B2B34
+! Color scheme for urgent row
+rofi.color-urgent:                   #2a2c31,  #F99157 , argb:00000000,  #F99157 ,  #1B2B34
+! Color scheme for active row
+rofi.color-active:                   #2a2c31,  #6699CC , argb:00000000,  #6699CC ,  #1B2B34
+! Color scheme window
+rofi.color-window:                   #2a2c31,  #A73B46 ,  #A73B46
+! Separator style (none, dash, solid)
+rofi.separator-style:                solid
+
+! Enabled modi
+rofi.modi:                           run,window
+
+! Window opacity
+rofi.opacity:                        70
+
+! Window width
+rofi.width:                         100
+
+! Number of lines
+rofi.lines:                          5
+
+! Number of columns
+rofi.columns:                        1
+
+! Border width
+rofi.bw:                             0
+
+! Location on screen
+rofi.location:                       2
+
+! Padding
+rofi.padding:                        400
+
+! Y-offset relative to location
+rofi.yoffset:                        25
+
+! X-offset relative to location
+rofi.xoffset:                        0
+
+! Always show number of lines
+rofi.fixed-num-lines:                true
+
+! Terminal to use
+rofi.terminal:                       xfce4-terminal
+
+! rofi.disable-history:                false
+! Use levenshtein sorting
+! rofi.levenshtein-sort:               false
+! Set case-sensitivity
+! rofi.case-sensitive:                 false
+! Enable sidebar-mode
+! rofi.sidebar-mode:                   true
+! Set lazy filter limit
+! rofi.lazy-filter-limit:              15000
+! Row height (in chars)
+ rofi.eh:                             2
+! Enable auto select mode
+rofi.auto-select:                    true
+! Parse hosts file for ssh mode
+! rofi.parse-hosts:                    false
+! Parse known_hosts file for ssh mode
+! rofi.parse-known-hosts:              true
+! Set the modi to combine in combi mode
+! rofi.combi-modi:                     window,run
+! Do a more fuzzy matching
+! rofi.fuzzy:                          false
+! Use glob matching
+! rofi.glob:                           false
+! Tokenize input string
+! rofi.tokenize:                       true
+
+! Monitor id to show on
+rofi.m:                              -1
+! Margin between rows
+
+rofi.line-margin:                    2
+! Pre-set filter
+! rofi.filter:
+
+! Separator style (none, dash, solid)
+rofi.separator-style:                none
+
+! Hide scroll-bar
+rofi.hide-scrollbar:                 true
+! Show markup
+!rofi.markup-rows:                    false
+! Fulls

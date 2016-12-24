@@ -128,7 +128,7 @@
 
 [frame]
     width = 0
-    color = "#2B4047"
+    color = "#D4848C"
 
 [shortcuts]
     # shortcuts are specified as [modifier+][modifier+]...key
@@ -144,7 +144,7 @@
 
     # redisplay last message(s)
     # On the US keyboard layout 'grave' is normally above TAB and left of '1'.
-    history = ctrl+grave
+    #history = ctrl+grave
 
     # context menu
     context = ctrl+shift+period
@@ -152,14 +152,14 @@
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the '#' and following  would be interpreted as a comment.
-    background = "#2B4047"
-    foreground = "#C2C2C2"
+    background = "#2A2C31"
+    foreground = "#E9DCDC"
     timeout = 10
 
 [urgency_normal]
     #background = "#E3AD0B"
-	 background = "#2B4047"
-    foreground = "#C2C2C2"
+	 background = "#2A2C31"
+    foreground = "#E9DCDC"
     timeout = 10
 
 [urgency_critical]
