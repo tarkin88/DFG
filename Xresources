@@ -50,7 +50,6 @@ rofi.color-active:                   #2a2c31,  #6699CC , argb:00000000,  #6699CC
 ! Color scheme window
 rofi.color-window:                   #2a2c31,  #A73B46 ,  #A73B46
 ! Separator style (none, dash, solid)
-rofi.separator-style:                solid
 
 ! Enabled modi
 rofi.modi:                           run,window

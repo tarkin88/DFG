@@ -1,7 +1,18 @@
 # Own Dot Files
-A repository for backup my dotfiles. 
+A repository for backup my dotfiles.
 Needed:
-- Vim 
-- rxvt-unicode
+- Neo Vim
 - ranger
-- openbox
+- i3
+- i3 blocks
+- compton
+- dunst
+- font awesome
+- monaco font
+- numix theme
+- Yltra icons
+- scrot
+- nitrogen
+- i3lock fancy
+- rofi
+- xfce4-terminal
