@@ -9,7 +9,7 @@
 #Primary Key [default Windows key]
 set $mod Mod4
 
-# Gloval Variables
+# Global Variables
 # colors
 set $backgr #2a2c31
 set $foregr #e9dcdc
@@ -206,10 +206,10 @@ client.urgent             $backgr   $backgr   $accent $urgent   $urgent
 bar {
     status_command i3blocks -c ~/.config/i3blocks/i3blocks.conf
     position top
+    tray_output none
     strip_workspace_numbers yes
     separator_symbol        "::"
     workspace_buttons       yes
-    tray_output none
     height                  25
     font pango:             Monaco 9
     colors {

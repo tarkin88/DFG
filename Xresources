@@ -122,9 +122,6 @@ rofi.line-margin:                    2
 ! Pre-set filter
 ! rofi.filter:
 
-! Separator style (none, dash, solid)
-rofi.separator-style:                none
-
 ! Hide scroll-bar
 rofi.hide-scrollbar:                 true
 ! Show markup
