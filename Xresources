@@ -42,13 +42,13 @@
 ! Use extended color scheme
 rofi.color-enabled:                  true
 ! Color scheme for normal row
-rofi.color-normal:                   #2a2c31,  #D8DEE9 , argb:00000000,  #A73B46 ,  #1B2B34
+rofi.color-normal:                   #2a2c31,  #D8DEE9 , argb:00000000,  #29C1B6 ,  #1B2B34
 ! Color scheme for urgent row
 rofi.color-urgent:                   #2a2c31,  #F99157 , argb:00000000,  #F99157 ,  #1B2B34
 ! Color scheme for active row
 rofi.color-active:                   #2a2c31,  #6699CC , argb:00000000,  #6699CC ,  #1B2B34
 ! Color scheme window
-rofi.color-window:                   #2a2c31,  #A73B46 ,  #A73B46
+rofi.color-window:                   #2a2c31,  #29C1B6 ,  #29C1B6
 ! Separator style (none, dash, solid)
 
 ! Enabled modi

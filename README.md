@@ -9,8 +9,6 @@ Needed:
 - dunst
 - font awesome
 - monaco font
-- numix theme
-- Yltra icons
 - scrot
 - nitrogen
 - i3lock fancy

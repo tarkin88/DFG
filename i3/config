@@ -13,8 +13,8 @@ set $mod Mod4
 # colors
 set $backgr #282A36
 set $foregr #E3E3E3
-set $accent #CB5555
-set $urgent #29C1B6
+set $accent #29C1B6
+set $urgent #CB5555
 
 # gaps
 set $gaps_inner 5
@@ -22,7 +22,7 @@ set $gaps_outer 3
 # resize
 set $resize_value 2
 # border
-set $border_size 1
+set $border_size 2
 # default terminal
 set $term xfce4-terminal
 #Font settings
@@ -219,7 +219,7 @@ bar {
     separator_symbol        "::"
     workspace_buttons       yes
     height                  25
-    font pango:             Monaco 8.7
+    font pango:             Monaco 8.8
     colors {
             background  $backgr
             statusline  $foregr
