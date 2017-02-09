@@ -11,9 +11,20 @@ elif [[ "${BLOCK_BUTTON}" -eq 3 ]]; then
   amixer -q sset Master 5%-
 fi
 
+TYPE="${BLOCK_INSTANCE:-desk}"
+
 statusLine=$(amixer get Master | tail -n 1)
 status=$(echo "${statusLine}" | grep -wo "on")
-volume=$(echo "${statusLine}" | awk -F ' ' '{print $5}' | tr -d '[]%')
+
+if [[ "${TYPE}" == "desk" ]]; then
+  volume=$(echo "${statusLine}" | awk -F ' ' '{print $4}' | tr -d '[]%')
+elif [[ "${TYPE}" == "work" ]]; then
+  volume=$(echo "${statusLine}" | awk -F ' ' '{print $5}' | tr -d '[]%')
+elif [[ "${TYPE}" == "laptop" ]]; then
+  volume=$(echo "${statusLine}" | awk -F ' ' '{print $5}' | tr -d '[]%')
+else
+  exit
+fi
 
 if [[ "${status}" == "on" ]]; then
   echo "${volume}%"
