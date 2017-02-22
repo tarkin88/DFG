@@ -195,6 +195,7 @@ for_window [class="Galculator"] floating enable border normal
 for_window [window_role="Preferences"] floating enable
 for_window [class="Nitrogen"] floating enable border normal
 for_window [window_type="dialog"] floating enable
+for_window [window_type="oblogout"] floating enable
 for_window [window_type="menu"] floating enable
 for_window [class="Vlc"] floating enable border pixel 1
 for_window [class="Mplayer"] floating enable border pixel 1
