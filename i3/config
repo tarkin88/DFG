@@ -3,7 +3,7 @@
 # |                  i3 Config               |
 # |         Author: Francisco Suárez         |
 # |       franksg88 [at] gmail [dot] com     |
-# |               January 2017               |
+# |               July 2017               |
 # |------------------------------------------|
 
 #Primary Key [default Windows key]
@@ -32,7 +32,7 @@ font pango:monaco 8
 floating_modifier $mod
 
 # kill focused window
-bindsym $mod+q kill
+bindsym $mod+Shift+q kill
 
 # Launcher settings
 bindsym $mod+d exec "dmenu_run -i -p 'Launch' -fn '8x11' -nb '$backgr' -nf '$foregr' -sb '$backgr' -sf '$accent'"
@@ -44,9 +44,6 @@ bindsym $mod+Return exec $term
 new_window pixel $border_size
 #new_window normal $border_size
 new_float pixel $border_size
-
-gaps inner $gaps_inner
-gaps outer $gaps_outer
 
 # fix graphics glitch
 #new_window none
@@ -83,6 +80,8 @@ bindsym $mod+h split h
 
 # split in vertical orientation
 bindsym $mod+v split v
+
+bindsym $mod+q split toggle
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -166,7 +165,7 @@ bindsym $mod+r mode "resize"
 # similar behavior to windows alt + tab on workspaces
 bindsym $mod+Tab workspace back_and_forth
 #Lock screen
-bindsym $mod+F7 exec "i3lock-fancy"
+bindsym $mod+x exec "i3lock-fancy"
 #launch ranger [CLI file manager ]
 bindsym XF86Search exec $term -e "ranger"
 # brightness dec
@@ -213,9 +212,9 @@ client.urgent             $backgr   $backgr   $accent $urgent   $urgent
 
 
 bar {
-    status_command i3blocks -c ~/.config/i3blocks/i3blocks.conf
+    status_command i3status
     position top
-    tray_output none
+    tray_output yes
     strip_workspace_numbers yes
     # separator_symbol        "::"
     separator_symbol        "::"
@@ -237,3 +236,62 @@ bar {
 
 # autorun
 exec --no-startup-id ~/.config/bash_scripts/autostart.sh
+
+
+#############################
+### settings for i3-gaps: ###
+#############################
+
+# Set inner/outer gaps
+
+gaps inner $gaps_inner
+gaps outer $gaps_outer
+
+# Additionally, you can issue commands with the following syntax. This is useful to bind keys to changing the gap size.
+# gaps inner|outer current|all set|plus|minus <px>
+# gaps inner all set 10
+# gaps outer all plus 5
+
+# Smart gaps (gaps used if only more than one container on the workspace)
+smart_gaps on
+
+# Smart borders (draw borders around container only if it is not the only container on this workspace) 
+# on|no_gaps (on=always activate and no_gaps=only activate if the gap size to the edge of the screen is 0)
+smart_borders on
+
+# Press $mod+Shift+g to enter the gap mode. Choose o or i for modifying outer/inner gaps. Press one of + / - (in-/decrement for current workspace) or 0 (remove gaps for current workspace). If you also press Shift with these keys, the change will be global for all workspaces.
+set $mode_gaps Gaps: (o) outer, (i) inner
+set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
+set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
+bindsym $mod+Shift+g mode "$mode_gaps"
+
+mode "$mode_gaps" {
+        bindsym o      mode "$mode_gaps_outer"
+        bindsym i      mode "$mode_gaps_inner"
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+mode "$mode_gaps_inner" {
+        bindsym plus  gaps inner current plus 5
+        bindsym minus gaps inner current minus 5
+        bindsym 0     gaps inner current set 0
+
+        bindsym Shift+plus  gaps inner all plus 5
+        bindsym Shift+minus gaps inner all minus 5
+        bindsym Shift+0     gaps inner all set 0
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+mode "$mode_gaps_outer" {
+        bindsym plus  gaps outer current plus 5
+        bindsym minus gaps outer current minus 5
+        bindsym 0     gaps outer current set 0
+
+        bindsym Shift+plus  gaps outer all plus 5
+        bindsym Shift+minus gaps outer all minus 5
+        bindsym Shift+0     gaps outer all set 0
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
