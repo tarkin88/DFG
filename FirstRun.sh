@@ -34,14 +34,12 @@ echo ". . . ."
 #termite
 delete_all $configs/termite
 $symlink $dots/termite $configs
-echo ". . . . ."
-#OPENBOX
-delete_all $configs/openbox
-$symlink $dots/openbox $configs
-echo ". . . . . ."
-#RANGER
-delete_all $configs/ranger
-$symlink $dots/ranger $configs
+# i3
+delete_all $configs/i3
+$symlink $dots/i3 $configs
+# polybar
+delete_all $configs/polybar
+$symlink $dots/polybar $configs
 echo ". . . . . . ."
 #VIM
 delete_all $HOME/.vimrc
@@ -67,19 +65,6 @@ echo ". . . . . . . . . . . . "
 delete_all $configs/gtk-3.0/gtk.css
 $symlink $dots/gtk.css $configs/gtk-3.0/
 echo ". . . . . . . . . . . . . "
-#tint2
-delete_all $configs/tint2
-$symlink $dots/tint2 $configs
-echo ". . . . . . . . . . . . . . "
-#conky
-delete_all $configs/conky
-$symlink $dots/conky $configs
-
-echo ". . . . . . . . . . . . . . "
-#theme
-delete_all $HOME/.themes/minato
-$symlink $dots/minato  $HOME/.themes/
-
 xrdb $HOME/.Xresources
 chmod +x $configs/bash_scripts/*
 echo ""

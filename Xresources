@@ -67,19 +67,28 @@ URxvt*colorBD:		#ffffff
 *color7:             #F2F1B9
 *color15:            #F6F6C9
 
-rofi.terminal:	termite
-rofi.lines:		7
-rofi.eh:		2
-rofi.width:		100
-rofi.padding:	250	
-rofi.opacity:	85
-rofi.bw:		0
-rofi.bc:		#2f343f
-rofi.bg:		#2d2d2d
-rofi.fg:		#ffffff
-!rofi.hlbg:		#2f343f
-rofi.hlbg:		#cfd8dc
-rofi.hlfg:		#262626
-!rofi.hlfg:		#ffffff
-rofi.font:		Monaco 20
 
+
+! ------------------------------------------------------------------------------
+!                      ROFI Settings
+! ------------------------------------------------------------------------------
+!1st back, 4th selection
+! General
+
+rofi.font:                monaco 11
+rofi.fake-transparency:   false
+rofi.hide-scrollbar:      true
+
+! Enable the extended coloring options
+rofi.color-enabled: true
+
+! Property Name     BG       Border   Separator
+rofi.color-window:  #1d1f21, #b4b7b4, #1d1f21
+
+! Property Name     BG       FG       BG-alt   Head-BG  Head-FG
+rofi.color-normal:  #1d1f21, #c5c8c6, #1d1f21, #1d1f21, #ffffff
+rofi.color-active:  #1d1f21, #81a2be, #1d1f21, #1d1f21, #81a2be
+rofi.color-urgent:  #1d1f21, #cc6666, #1d1f21, #1d1f21, #cc6666
+
+! Set the desired separator style
+rofi.separator-style: solid
