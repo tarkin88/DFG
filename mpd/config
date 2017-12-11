@@ -1,9 +1,0 @@
-#!/usr/bin/sh
-# Set directories
-music_directory			"~/Música"
-playlist_directory		"~/.mpd/playlists"
-db_file					"~/.mpd/database"
-log_file				"~/.mpd/log"
-state_file				"~/.mpd/state"
-sticker_file			"~/.mpd/sticker.sql"
-

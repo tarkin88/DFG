@@ -5,20 +5,34 @@ Xft.rgba: rgb
 Xft.hintstyle: hintslight
 Xft.lcdfilter: lcddefault
 
-
 URxvt.scrollBar: false
 URxvt*transparent: false
-URxvt*shading: 20
-URxvt*fading: 20
+!URxvt*shading: 20
+!URxvt*fading: 20
 URxvt*saveLines: 1000
-URxvt*buffered:	false
+URxvt*buffered:	true
 
-URxvt.keysym.M-C-c:	perl:clipboard:copy
-URxvt.keysym.M-C-v:	perl:clipboard:paste
+!URxvt.keysym.M-C-c:	perl:clipboard:copy
+!URxvt.keysym.M-C-v:	perl:clipboard:paste
 
-URxvt.font: xft:Monaco:size=9
+URxvt.font: xft:Monaco:size=10
 
-URxvt*letterSpace:  -1
+URxvt*letterSpace:  0
+
+URxvt.perl-ext-common: default,clipboard,tabbedex, matcher
+URxvt.urlLauncher:      /usr/bin/google-chrome-stable
+URxvt.matcher.button:   1 
+
+! urxvt tabs settings:
+
+URxvt.tabbed.tabbar-fg: 2
+URxvt.tabbed.tabbar-bg: 0
+URxvt.tabbed.tab-fg: 2
+URxvt.tabbed.tab-bg: 8
+URxvt.tabbed.autohide:  no
+URxvt.tabbed.new-button:  no
+URxvt.tabbed.title: no
+
 
 !URxvt*borderColor:	#151515
 !URxvt*borderColor: #77c3a9

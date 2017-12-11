@@ -1,4 +1,11 @@
 #!/usr/bin/sh
+# |------------------------------------------|
+# |          Pacman updates checker          |
+# |         Author: Francisco Suárez         |
+# |       franksg88 [at] gmail [dot] com     |
+# |               December 2017              |
+# |------------------------------------------|
+
 updates="$(checkupdates | wc -l)"
 
 

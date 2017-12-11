@@ -1,8 +1,12 @@
 #!/usr/bin/bash
-
-# Author : Pavan Jadhaw
-# Github Profile : https://github.com/pavanjadhaw
-# Project Repository : https://github.com/pavanjadhaw/betterlockscreen
+# |------------------------------------------|
+# |            Better lock                   |
+# |         Author: Pavan Jadhaw             |
+# | Github  : https://github.com/pavanjadhaw |
+# |       Forked by: Francisco Suárez        |
+# |       franksg88 [at] gmail [dot] com     |
+# |               December 2017              |
+# |------------------------------------------|
 
 # ratio for rectangle to be drawn for time background on lockscreen
 rectangles=" "

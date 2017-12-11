@@ -1,20 +1,32 @@
 #!/usr/bin/sh
+# |------------------------------------------|
+# |                 player notify            |
+# |         Author: Francisco Suárez         |
+# |       franksg88 [at] gmail [dot] com     |
+# |               December 2017              |
+# |------------------------------------------|
 # USAGE:
 # current_song.sh next
 # current_song.sh prev
 # current_song.sh toggle
 
-if [ $1 = "next" ]
-then
-    mpc next
+# options
+case "$1" in
+    "")
     notify-send  'Now Playing' "$(mpc -f %artist% | head -1) - $(mpc -f %album% | head -1) ($(mpc -f %date% | head -1))   \n  $(mpc -f %title% | head -1) \n $(mpc -f %time% | head -1)"
-elif [ $1 = "prev" ]
-then
-    mpc prev
+        ;;
+    next)
+        scrot -u "${folder}/screenshot-${time}.png"
+        notify
+        ;;
+    prev)
+mpc prev
     notify-send  'Now Playing' "$(mpc -f %artist% | head -1) - $(mpc -f %album% | head -1) ($(mpc -f %date% | head -1))   \n  $(mpc -f %title% | head -1) \n $(mpc -f %time% | head -1)"
-elif [ $1 = "toggle" ]
-then
-    mpc toggle
+        ;;
+    toggle)
+mpc toggle
 
     notify-send  'Now Playing' "$(mpc -f %artist% | head -1) - $(mpc -f %album% | head -1) ($(mpc -f %date% | head -1))   \n  $(mpc -f %title% | head -1) \n $(mpc -f %time% | head -1)"
-fi
+        ;;
+  
+esac

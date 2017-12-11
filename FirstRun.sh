@@ -54,8 +54,8 @@ delete_all $HOME/.bashrc
 $symlink $dots/bashrc $HOME/.bashrc
 echo ". . . . . . . . . ."
 #mpd
-delete_all $HOME/.mpd
-$symlink $dots/mpd $HOME/.mpd
+delete_all $configs/.mpd
+$symlink $dots/mpd $configs
 echo ". . . . . . . . . . ."
 #ncmpcpp
 delete_all $HOME/.ncmpcpp

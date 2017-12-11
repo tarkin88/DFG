@@ -24,7 +24,7 @@ set $resize_value 2
 # border
 set $border_size 2
 # default terminal
-set $term termite
+set $term urxvt
 #Font settings
 font pango:monaco 9
 
@@ -169,16 +169,24 @@ bindsym $mod+Tab workspace back_and_forth
 bindsym $mod+x exec "~/.config/bash_scripts/lock.sh -l dimblur"
 #launch ranger [CLI file manager ]
 bindsym $mod+F1 exec $term -e "ranger"
+#launch ncmpcpp [CLI music player based on mpd ]
+bindsym $mod+F2 exec $term -e "ncmpcpp"
+#launch Pcmanfm
+bindsym $mod+F3 exec pcmanfm
+# take screenshoot with scrot
+bindsym Print  exec "~/.config/bash_scripts/screenshot.sh"
 # brightness dec
-#bindsym XF86MonBrightnessDown exec xbacklight -dec 15
+bindsym XF86MonBrightnessDown exec xbacklight -dec 15
 # brightness inc
-#bindsym XF86MonBrightnessUp exec xbacklight -inc 15
+bindsym XF86MonBrightnessUp exec xbacklight -inc 15
 # Previous
-bindsym XF86AudioPrev exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous"
+bindsym XF86AudioPrev exec "~/.config/bash_scripts/screenshot.sh prev"
 # Next
-bindsym XF86AudioNext exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next"
+bindsym XF86AudioNext exec "~/.config/bash_scripts/screenshot.sh next"
 # Play/Pause
-bindsym XF86AudioPlay exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause"
+bindsym XF86AudioPlay exec "~/.config/bash_scripts/screenshot.sh toggle"
+# Play/Pause
+bindsym XF86AudioStop  exec mpc stop
 
 # Mute
 bindsym XF86AudioMute exec "amixer -q sset Master toggle"
