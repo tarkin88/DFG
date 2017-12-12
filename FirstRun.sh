@@ -60,6 +60,10 @@ echo ". . . . . . . . . . ."
 #ncmpcpp
 delete_all $HOME/.ncmpcpp
 $symlink $dots/ncmpcpp $HOME/.ncmpcpp
+#wall
+delete_all $HOME/.wall.jpg 
+$symlink $dots/wall.jp $HOME/.wall.jpg
+
 echo ". . . . . . . . . . . . "
 #GTK
 delete_all $configs/gtk-3.0/gtk.css
