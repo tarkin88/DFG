@@ -180,11 +180,11 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 15
 # brightness inc
 bindsym XF86MonBrightnessUp exec xbacklight -inc 15
 # Previous
-bindsym XF86AudioPrev exec "~/.config/bash_scripts/screenshot.sh prev"
+bindsym XF86AudioPrev exec "~/.config/bash_scripts/current_song.sh prev"
 # Next
-bindsym XF86AudioNext exec "~/.config/bash_scripts/screenshot.sh next"
+bindsym XF86AudioNext exec "~/.config/bash_scripts/current_song.sh next"
 # Play/Pause
-bindsym XF86AudioPlay exec "~/.config/bash_scripts/screenshot.sh toggle"
+bindsym XF86AudioPlay exec "~/.config/bash_scripts/current_song.sh toggle"
 # Play/Pause
 bindsym XF86AudioStop  exec mpc stop
 
@@ -210,6 +210,7 @@ for_window [class="Mplayer"] floating enable border pixel 1
 for_window [class="GParted"] floating enable border normal
 for_window [class="Pavucontrol"] floating enable border normal
 for_window [class="Lxappearance"] floating enable border normal
+for_window [class="Ranger"] floating enable border normal
 
 
 # colors settings

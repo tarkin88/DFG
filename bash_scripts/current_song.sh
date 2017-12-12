@@ -16,8 +16,8 @@ case "$1" in
     notify-send  'Now Playing' "$(mpc -f %artist% | head -1) - $(mpc -f %album% | head -1) ($(mpc -f %date% | head -1))   \n  $(mpc -f %title% | head -1) \n $(mpc -f %time% | head -1)"
         ;;
     next)
-        scrot -u "${folder}/screenshot-${time}.png"
-        notify
+    mpc next
+    notify-send  'Now Playing' "$(mpc -f %artist% | head -1) - $(mpc -f %album% | head -1) ($(mpc -f %date% | head -1))   \n  $(mpc -f %title% | head -1) \n $(mpc -f %time% | head -1)"
         ;;
     prev)
 mpc prev
@@ -25,7 +25,6 @@ mpc prev
         ;;
     toggle)
 mpc toggle
-
     notify-send  'Now Playing' "$(mpc -f %artist% | head -1) - $(mpc -f %album% | head -1) ($(mpc -f %date% | head -1))   \n  $(mpc -f %title% | head -1) \n $(mpc -f %time% | head -1)"
         ;;
   
