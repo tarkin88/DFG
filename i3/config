@@ -13,7 +13,7 @@ set $mod Mod4
 # colors
 set $backgr #282A36
 set $foregr #E3E3E3
-set $accent #29C1B6
+set $accent #f26262
 set $urgent #CB5555
 
 # gaps
@@ -22,7 +22,7 @@ set $gaps_outer 3
 # resize
 set $resize_value 2
 # border
-set $border_size 2
+set $border_size 1
 # default terminal
 set $term urxvt
 #Font settings
