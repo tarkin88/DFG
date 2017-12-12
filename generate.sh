@@ -1,4 +1,10 @@
 #!/usr/bin/sh
+# |------------------------------------------|
+# |                Files generate            |
+# |         Author: Francisco Suárez         |
+# |       franksg88 [at] gmail [dot] com     |
+# |               December 2017              |
+# |-------
 # This script needed for create the symlinks for th resources.
 
 echo "Let's do this shit..."
@@ -62,7 +68,7 @@ delete_all $HOME/.ncmpcpp
 $symlink $dots/ncmpcpp $HOME/.ncmpcpp
 #wall
 delete_all $HOME/.wall.jpg 
-$symlink $dots/wall.jp $HOME/.wall.jpg
+$symlink $dots/wall.jpg $HOME/.wall.jpg
 
 echo ". . . . . . . . . . . . "
 #GTK
