@@ -62,13 +62,13 @@ scroll-down = i3wm-wsprev
 
 modules-left =i3 xwindow  
 modules-center =  mpd
-modules-right = cpu memory battery eth wlan volume temperature date
+modules-right = cpu memory battery eth wlan volume date
 
 [module/xwindow]
 type = internal/xwindow
 format = <label>
 label = %title%
-label-maxlen = 65
+label-maxlen = 50
 ;label-foreground = ${color.white}
 
 [module/i3]
