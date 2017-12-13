@@ -14,6 +14,7 @@ margin-bottom = 0
 [color]
 white = #fff
 base = #282A36
+gray =  #fff
 ;brown = #51311a
 brown = #666
 orange = #fbb253
@@ -44,7 +45,7 @@ line-color = ${color.red}
 underline-size = 0
 overline-size = 0
 
-border-bottom-size = 2
+border-bottom-size = 3
 border-bottom-color = ${color.pink}
 
 padding-left = 3
@@ -59,16 +60,16 @@ tray-maxsize = 16
 scroll-up = i3wm-wsnext
 scroll-down = i3wm-wsprev
 
-modules-left = i3 mpd
-modules-center = date
-modules-right = cpu memory battery eth wlan  volume 
-
+modules-left =i3 xwindow  
+modules-center =  mpd
+modules-right = cpu memory battery eth wlan volume temperature date
 
 [module/xwindow]
 type = internal/xwindow
 format = <label>
 label = %title%
-label-maxlen = 75
+label-maxlen = 65
+;label-foreground = ${color.white}
 
 [module/i3]
 type = internal/i3
@@ -91,23 +92,6 @@ label-urgent-background = ${color.base}
 label-urgent-foreground = ${color.red}
 label-urgent-padding = 1
 
-[module/wifi]
-type = internal/network
-interface = wlp3s0
-interval = 1.0
-udspeed-minwidth = 0
-
-format-connected = <label-connected>
-label-connected =  %downspeed:8%
-;format-connected = <ramp-signal> <label-connected>
-;label-connected = %essid%
-format-disconnected = 
-
-ramp-signal-0 = 
-ramp-signal-1 = 
-ramp-signal-2 = 
-ramp-signal-3 = 
-ramp-signal-4 = 
 
 [module/cpu]
 type = internal/cpu
@@ -185,31 +169,23 @@ bar-indicator-foreground = #ff
 bar-indicator-font = 2
 bar-fill = ─
 bar-fill-font = 2
-bar-fill-foreground = #9f78e1
+bar-fill-foreground = ${color.pink}
 bar-empty = ─
 bar-empty-font = 2
 bar-empty-foreground = ${color.brown}
 
 
-[module/backlight-acpi]
-inherit = module/xbacklight
-type = internal/backlight
-card = intel_backlight
-
 
 [module/wlan]
 type = internal/network
-interface = wlp3s0
-interval = 3.0
+interface = wlp2s0
+interval = 5.0
 
 format-connected = <ramp-signal> <label-connected>
-format-connected-underline = #9f78e1
-label-connected = %essid%
+label-connected =  %essid%  
+
 
 format-disconnected =
-;format-disconnected = <label-disconnected>
-;format-disconnected-underline = ${self.format-connected-underline}
-;label-disconnected = %ifname% disconnected
 
 ramp-signal-0 = 
 ramp-signal-1 = 
@@ -220,9 +196,8 @@ ramp-signal-4 = 
 [module/eth]
 type = internal/network
 interface = enp2s0
-interval = 3.0
+interval = 5.0
 
-format-connected-underline = #55aa55
 format-connected-prefix = " "
 label-connected = %local_ip%
 
@@ -231,14 +206,6 @@ format-disconnected =
 ;format-disconnected-underline = ${self.format-connected-underline}
 ;label-disconnected = %ifname% disconnected
 
-
-[module/date]
-type = internal/date
-interval = 30
-label =  %date% %time%
-time =  %H:%M
-time-alt =  %Y-%m-%d
-label-foreground = ${color.pink}
 
 [module/volume]
 type = internal/volume
@@ -258,3 +225,38 @@ bar-volume-fill-font = 2
 bar-volume-empty = ─
 bar-volume-empty-font = 2
 bar-volume-empty-foreground = ${color.brown}
+
+
+[module/temperature]
+type = internal/temperature
+
+; Seconds to sleep between updates
+; Default: 1
+interval = 0.5
+
+; Thermal zone to use
+; To list all the zone types, run 
+; $ for i in /sys/class/thermal/thermal_zone*; do echo "$i: $(<$i/type)"; done
+; Default: 0
+thermal-zone = 0
+
+; Full path of temperature sysfs path
+; Use `sensors` to find preferred temperature source, then run
+; $ for i in /sys/class/hwmon/hwmon*/temp*_input; do echo "$(<$(dirname $i)/name): $(cat ${i%_*}_label 2>/dev/null || echo $(basename ${i%_*})) $(readlink -f $i)"; done
+; to find path to desired file
+; Default reverts to thermal zone setting
+hwmon-path = /sys/devices/platform/coretemp.0/hwmon/hwmon3/temp1_input
+
+; Threshold temperature to display warning label
+; Default: 80
+warn-temperature = 60
+
+
+
+[module/date]
+type = internal/date
+interval = 30
+label =  %date% %time%
+time =  %H:%M
+time-alt =  %Y-%m-%d
+label-foreground = ${color.pink}

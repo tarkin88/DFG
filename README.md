@@ -1,7 +1,14 @@
-# Own Dot Files
+# Generate Dot Files 
 A repository for backup my dotfiles. 
-Needed:
-- Vim 
-- rxvt-unicode
-- ranger
-- openbox
+
+* i3 gaps
+* polybar
+* rofi
+* vim
+* rxvt-unicode
+* ranger
+* openbox
+* mpd 
+* ncmpcpp
+* dunst 
+* compton 

@@ -167,6 +167,8 @@ bindsym $mod+r mode "resize"
 bindsym $mod+Tab workspace back_and_forth
 #Lock screen
 bindsym $mod+x exec "~/.config/bash_scripts/lock.sh -l dimblur"
+#Logout
+bindsym $mod+Shift+x exec oblogout
 #launch ranger [CLI file manager ]
 bindsym $mod+F1 exec $term -e "ranger"
 #launch ncmpcpp [CLI music player based on mpd ]
@@ -210,7 +212,7 @@ for_window [class="Mplayer"] floating enable border pixel 1
 for_window [class="GParted"] floating enable border normal
 for_window [class="Pavucontrol"] floating enable border normal
 for_window [class="Lxappearance"] floating enable border normal
-for_window [class="Ranger"] floating enable border normal
+for_window [class="Oblogout"] floating enable border normal
 
 
 # colors settings
