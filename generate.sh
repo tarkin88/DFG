@@ -4,7 +4,8 @@
 # |         Author: Francisco Suárez         |
 # |       franksg88 [at] gmail [dot] com     |
 # |               December 2017              |
-# |-------
+# |------------------------------------------|
+
 # This script needed for create the symlinks for th resources.
 
 echo "Let's do this shit..."
@@ -40,6 +41,9 @@ echo ". . . ."
 #termite
 delete_all $configs/termite
 $symlink $dots/termite $configs
+#ranger
+delete_all $configs/ranger
+$symlink $dots/ranger $configs
 # i3
 delete_all $configs/i3
 $symlink $dots/i3 $configs
