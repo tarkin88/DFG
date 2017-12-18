@@ -11,9 +11,9 @@ set $mod Mod4
 
 # Global Variables
 # colors
-set $backgr #282A36
+set $backgr #232f39
 set $foregr #E3E3E3
-set $accent #f26262
+set $accent #5fabd9
 set $urgent #CB5555
 
 # gaps

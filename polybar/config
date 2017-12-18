@@ -13,7 +13,7 @@ margin-bottom = 0
 
 [color]
 white = #fff
-base = #282A36
+base = #232f39
 gray =  #fff
 ;brown = #51311a
 brown = #666
@@ -22,9 +22,9 @@ orange2 = #ef7922
 purple = #e58a95
 red = #f1383d
 teal = #199FAE
-pink = #f26262
-pink2 = #f64d64
-pink3 = #FF1838
+blue = #5fabd9
+blue2 = #f64d64
+blue3 = #FF1838
 
 [bar/status_bar]
 ;monitor = eDP-1
@@ -46,7 +46,7 @@ underline-size = 0
 overline-size = 0
 
 border-bottom-size = 3
-border-bottom-color = ${color.pink}
+border-bottom-color = ${color.blue}
 
 padding-left = 3
 padding-right = 3
@@ -77,7 +77,7 @@ strip-wsnumbers = true
 wrapping-scroll = false
 
 label-focused =%name%
-label-focused-foreground = ${color.pink}
+label-focused-foreground = ${color.blue}
 label-focused-background = ${color.base}
 label-focused-padding = 1
 
@@ -152,7 +152,7 @@ bar-progress-width = 10
 bar-progress-indicator = 
 bar-progress-fill = ─
 bar-progress-empty = ─
-bar-progress-foreground-0 = ${color.pink}
+bar-progress-foreground-0 = ${color.blue}
 
 padding-left = 5
 
@@ -169,7 +169,7 @@ bar-indicator-foreground = #ff
 bar-indicator-font = 2
 bar-fill = ─
 bar-fill-font = 2
-bar-fill-foreground = ${color.pink}
+bar-fill-foreground = ${color.blue}
 bar-empty = ─
 bar-empty-font = 2
 bar-empty-foreground = ${color.brown}
@@ -216,7 +216,7 @@ format-muted-prefix = " "
 label-muted = sound muted
 
 bar-volume-width = 10
-bar-volume-foreground-0 = ${color.pink}
+bar-volume-foreground-0 = ${color.blue}
 bar-volume-gradient = false
 bar-volume-indicator = |
 bar-volume-indicator-font = 2
@@ -259,4 +259,4 @@ interval = 30
 label =  %date% %time%
 time =  %H:%M
 time-alt =  %Y-%m-%d
-label-foreground = ${color.pink}
+label-foreground = ${color.blue}

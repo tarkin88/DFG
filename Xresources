@@ -19,90 +19,72 @@ URxvt.font: xft:Monaco:size=10
 
 URxvt*letterSpace:  0
 
-URxvt.perl-ext-common: default,clipboard,tabbedex, matcher
-URxvt.urlLauncher:      /usr/bin/google-chrome-stable
+!URxvt.perl-ext-common: default,clipboard,tabbedex, matcher
+URxvt.perl-ext-common: default,clipboard, matcher
+URxvt.urlLauncher:      /usr/bin/firefox
 URxvt.matcher.button:   1 
 
 ! urxvt tabs settings:
 
-URxvt.tabbed.tabbar-fg: 2
-URxvt.tabbed.tabbar-bg: 0
-URxvt.tabbed.tab-fg: 2
-URxvt.tabbed.tab-bg: 8
-URxvt.tabbed.autohide:  no
-URxvt.tabbed.new-button:  no
-URxvt.tabbed.title: no
+!URxvt.tabbed.tabbar-fg: 2
+!URxvt.tabbed.tabbar-bg: 0
+!URxvt.tabbed.tab-fg: 2
+!URxvt.tabbed.tab-bg: 8
+!URxvt.tabbed.autohide:  no
+!URxvt.tabbed.new-button:  no
+!URxvt.tabbed.title: no
 
 
 !URxvt*borderColor:	#151515
 !URxvt*borderColor: #77c3a9
 URxvt*borderLess:	false
 URxvt*colorBD:		#ffffff
+! ------------------------------------------------------------------------------
+! Terminal Magoon
+! ------------------------------------------------------------------------------
+! Extremely Light Grey & Super Dark Grey Blue & Extremely Light Grey
+*.foreground:   #c5c8c6
+*.background:   #232f39
+*.cursorColor:  #c5c8c6
 
-!! COLORS
+! Super Dark Grey Blue & Light blue
+*.color0:       #232f39
+*.color8:       #6dc6e4
 
-! Misc
-*foreground:         #E8DFD6
-*background:         #344042
-*cursorColor:        #F3D5C9
-*highlightColor:     #009688
-*highlightTextColor: #ef9a9a
+! Darker Blue
+*.color1:       #5fabd9
+*.color9:       #5fabd9
 
-! Black
-*color0:             #37413F
-*color8:             #4B5755
+! Light Blue
+*.color2:       #6dc6e4
+*.color10:      #6dc6e4
 
-! Red
-*color1:             #F99595
-*color9:             #F3D5C9
+! Grey
+*.color3:       #9da8ab
+*.color11:      #9da8ab
 
-! Green
-*color2:             #7CBF9E
-*color10:            #A2D9B1
+! Light Green
+*.color4:       #a1d19d
+*.color12:      #a1d19d
 
-! Yellow
-*color3:             #E5C078
-*color11:            #F9D48C
+! Lighter Grey
+*.color5:       #b3b6c3
+*.color13:      #b3b6c3
 
-! Blue
-*color4:             #7BBAC7
-*color12:            #DFF0EB
+! Super Light Blue
+*.color6:       #a1d2e0
+*.color14:      #a1d2e0
 
-! Magenta
-! TODO: MAke less bright
-*color5:             #FF5879
-*color13:            #FF99A1
-
-! Cyan
-*color6:             #62BDB3
-*color14:            #9ED9D8
-
-! White
-*color7:             #F2F1B9
-*color15:            #F6F6C9
-
-
+! I can't believe it's not white
+*.color7:       #e3e9e8
+*.color15:      #e3e9e8
 
 ! ------------------------------------------------------------------------------
-!                      ROFI Settings
+! ROFI Magoon
 ! ------------------------------------------------------------------------------
-!1st back, 4th selection
-! General
-
-rofi.font:                monaco 11
-rofi.fake-transparency:   false
-rofi.hide-scrollbar:      true
-
-! Enable the extended coloring options
 rofi.color-enabled: true
-
-! Property Name     BG       Border   Separator
-rofi.color-window:  #1d1f21, #b4b7b4, #1d1f21
-
-! Property Name     BG       FG       BG-alt   Head-BG  Head-FG
-rofi.color-normal:  #1d1f21, #c5c8c6, #1d1f21, #1d1f21, #ffffff
-rofi.color-active:  #1d1f21, #81a2be, #1d1f21, #1d1f21, #81a2be
-rofi.color-urgent:  #1d1f21, #cc6666, #1d1f21, #1d1f21, #cc6666
-
-! Set the desired separator style
-rofi.separator-style: solid
+rofi.color-normal:                   argb:00232F39, #E3E9E8, argb:00232F39, argb:FF6DC6E4, argb:FF232F39
+rofi.color-urgent:                   argb:00232F39, #5FABD9, #232F39, #5FABD9, #E3E9E8
+rofi.color-active:                   argb:00232F39, #E3E9E8, #232F39, #6DC6E4, #232F39
+rofi.color-window:                   argb:E6232F39, #232F39, #6DC6E4
+rofi.font: Monaco 11

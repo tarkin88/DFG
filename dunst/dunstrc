@@ -1,7 +1,7 @@
 # <- this tricks vim into using syntax highlighting
 [global]
     # font = Tewi 8
-    font = "FontAwesome, Monaco 11"
+    font = "FontAwesome, Monaco 10"
 
     # allow a small subset of html markup:
     # <b>bold</b>
@@ -21,7 +21,7 @@
     #   %I  iconname (without its path)
     #   %p  progress value if set ([  0%] to [100%]) or nothing
     # Markup is allowed
-    format = "<b>  %s</b>\n%b"
+    format = "<b>  %s</b>\n%b"
 
     # Sort messages by urgency
     sort = yes
@@ -61,7 +61,7 @@
     # right side of the screen.  Y is measured from the top and down respectevly.
     # The width can be negative. In this case the actual width is the
     # screen width minus the width defined in within the geometry option.
-    geometry = "320x5-20+20"
+    geometry = "330x15-5+26"
 
     # The transparency of the window. range: [0; 100]
     # This option will only work if a compositing windowmanager is present (e.g. xcompmgr, compiz, etc..)
@@ -126,7 +126,7 @@
     browser = /usr/bin/google-chrome-stable -new-tab
 
 [frame]
-    width = 3
+    width = 0
     color = "#262627"
 
 [shortcuts]
@@ -151,18 +151,18 @@
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the '#' and following  would be interpreted as a comment.
-    background = "#262626"
-    foreground = "#7BA8B5"
+    background = "#232f39"
+    foreground = "#c5c8c6"
     timeout = 10
 
 [urgency_normal]
     #background = "#E3AD0B"
-	 background = "#262626"
-    foreground = "#D5D2CA"
+	 background = "#232f39"
+    foreground = "#c5c8c6"
     timeout = 10
 
 [urgency_critical]
-    background = "#262626"
+    background = "#232f39"
     foreground = "#D54232"
     timeout = 0
 
@@ -227,8 +227,8 @@
     timeout = 7
     format = "<b>  %s</b>\n%b"
 
-[usb]
-    summary = Automount
+[udiskie]
+    summary = Device
     format = "<b> %s</b>\n%b"
 
 [vol]
