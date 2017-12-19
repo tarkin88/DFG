@@ -26,23 +26,23 @@ notify () {
 # options
 case "$1" in
     "")
-        scrot "${folder_month}/screenshot-${time}.png"
+        scrot "${folder}/screenshot-${time}.png"
         notify
         ;;
     focused)
-        scrot -u "${folder_month}/screenshot-${time}.png"
+        scrot -u "${folder}/screenshot-${time}.png"
         notify
         ;;
     select)
-        scrot -s "${folder_month}/screenshot-${time}.png"
+        scrot -s "${folder}/screenshot-${time}.png"
         notify
         ;;
     delay)
-        scrot -d 3 "${folder_month}/screenshot-${time}.png"
+        scrot -d 3 "${folder}/screenshot-${time}.png"
         notify
         ;;
     low)
-        scrot "${folder_month}/screenshot-${time}.png"
+        scrot "${folder}/screenshot-${time}.png"
         notify
         ;;
 esac
