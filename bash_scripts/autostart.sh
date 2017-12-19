@@ -11,6 +11,7 @@ setxkbmap latam &
 xrdb ~/.Xresources &
 feh --bg-fill ~/.wall.jpg &
 dunst &
+numlockx on &
 (sleep 1s && compton --config ~/.config/compton/compton.conf -cGb) &
 (sleep 1s && urxvtd) &
 (sleep 2s && ~/.config/bash_scripts/launch_polybar.sh) &
