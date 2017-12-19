@@ -25,6 +25,9 @@ set $resize_value 2
 set $border_size 1
 # default terminal
 set $term urxvt
+#Default browser 
+set $browser google-chrome-stable
+
 #Font settings
 font pango:monaco 9
 
@@ -175,8 +178,12 @@ bindsym $mod+F1 exec $term -e "ranger"
 bindsym $mod+F2 exec $term -e "ncmpcpp"
 #launch Pcmanfm
 bindsym $mod+F3 exec pcmanfm
-# take screenshoot with scrot
+#launch browser
+bindsym $mod+F4 exec $browser
+# take screenshot with scrot
 bindsym Print  exec "~/.config/bash_scripts/screenshot.sh"
+# take a screenshot on select area (draw a rectangle)
+bindsym $mod+Print  exec "~/.config/bash_scripts/screenshot.sh select"
 # brightness dec
 bindsym XF86MonBrightnessDown exec xbacklight -dec 15
 # brightness inc
@@ -189,7 +196,6 @@ bindsym XF86AudioNext exec "~/.config/bash_scripts/current_song.sh next"
 bindsym XF86AudioPlay exec "~/.config/bash_scripts/current_song.sh toggle"
 # Play/Pause
 bindsym XF86AudioStop  exec mpc stop
-
 # Mute
 bindsym XF86AudioMute exec "amixer -q sset Master toggle"
 # Volume down
