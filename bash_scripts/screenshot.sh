@@ -9,10 +9,11 @@
 # script : better screenshots & send a notification
 
 # variables
-folder="${HOME}/Imágenes/Screenshots"
+folder="${HOME}/Imágenes/Screenshots/$(date +"%B-%Y")/"
 time=$(date +"%d-%m-%y_%H-%M-%S")
 
 # create a screenshots folder
+
 if ! [[ -d $folder ]]; then
     mkdir -p "$folder"
 fi
@@ -25,23 +26,23 @@ notify () {
 # options
 case "$1" in
     "")
-        scrot "${folder}/screenshot-${time}.png"
+        scrot "${folder_month}/screenshot-${time}.png"
         notify
         ;;
     focused)
-        scrot -u "${folder}/screenshot-${time}.png"
+        scrot -u "${folder_month}/screenshot-${time}.png"
         notify
         ;;
     select)
-        scrot -s "${folder}/screenshot-${time}.png"
+        scrot -s "${folder_month}/screenshot-${time}.png"
         notify
         ;;
     delay)
-        scrot -d 3 "${folder}/screenshot-${time}.png"
+        scrot -d 3 "${folder_month}/screenshot-${time}.png"
         notify
         ;;
     low)
-        scrot "${folder}/screenshot-${time}.png"
+        scrot "${folder_month}/screenshot-${time}.png"
         notify
         ;;
 esac
