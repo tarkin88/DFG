@@ -7,13 +7,12 @@ A repository for backup my dotfiles.
 * vim
 * rxvt-unicode
 * ranger
-* openbox
 * mpd 
 * ncmpcpp
 * dunst 
 * compton 
 * i3lock-color
-* arc theme
+* arc theme (for magoon)
 * magoon theme
 
 ## how to?
