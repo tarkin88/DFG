@@ -1,4 +1,4 @@
-# Generate Dot Files 
+# Dot Files Generator
 A repository for backup my dotfiles. 
 
 * i3 gaps
@@ -14,8 +14,15 @@ A repository for backup my dotfiles.
 * i3lock-color
 * arc theme (for magoon)
 * magoon theme
+* Font Awesome, Monaco and Source Sans
 
 ## how to?
+if is clean install:
+```bash
+chmod +x first_install.sh
+
+./first_install.sh
+```
 
 ```bash
 chmod +x generate.sh
