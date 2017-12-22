@@ -37,6 +37,14 @@ chmod +x 3_genSystemScripts.sh
 
 ./3_genSystemScripts.sh
 ```
+
+Optional can use basic vimrc with pathogen and nerd tree
+
+```bash
+chmod +x 4_better_vim.sh
+
+./4_better_vim.sh
+```
 ## Preview
 
 ![clean](screens/1.png?raw=true "Clean")
