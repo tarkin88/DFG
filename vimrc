@@ -1,3 +1,18 @@
+
+" ------ pathogen ---------------
+
+execute pathogen#infect()
+
+" Nerd Tree
+autocmd vimenter * NERDTree
+
+
+map <C-l> :NERDTreeToggle<CR>
+
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+" ------------------------------
+
 syntax on
 set number
 
@@ -41,3 +56,4 @@ set showmatch
 
 " Set utf8 as standard encoding and en_US as the standard language
 set encoding=utf8
+
