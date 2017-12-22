@@ -5,7 +5,7 @@ A repository for backup my dotfiles.
 * polybar
 * rofi
 * vim
-* rxvt-unicode
+* termite
 * ranger
 * mpd 
 * ncmpcpp
@@ -19,18 +19,24 @@ A repository for backup my dotfiles.
 ## how to?
 if is clean install:
 ```bash
-chmod +x first_install.sh
+chmod +x 1_first_install.sh
 
-./first_install.sh
+./1_first_install.sh
 ```
 Then you can use the generate script 
 
 ```bash
-chmod +x generate.sh
+chmod +x 2_generate.sh
 
-./generate.sh
+./2_generate.sh
 ```
+Finally create some useful symlinks
 
+```bash
+chmod +x 3_genSystemScripts.sh
+
+./3_genSystemScripts.sh
+```
 ## Preview
 
 ![clean](screens/1.png?raw=true "Clean")
