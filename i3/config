@@ -24,7 +24,7 @@ set $resize_value 2
 # border
 set $border_size 1
 # default terminal
-set $term urxvt
+set $term termite
 #Default browser 
 set $browser google-chrome-stable
 
@@ -181,9 +181,9 @@ bindsym $mod+F3 exec pcmanfm
 #launch browser
 bindsym $mod+F4 exec $browser
 # take screenshot with scrot
-bindsym Print  exec "~/.config/bash_scripts/screenshot.sh"
+bindsym Print  exec "screenshot"
 # take a screenshot on select area (draw a rectangle)
-bindsym $mod+Print  exec "~/.config/bash_scripts/screenshot.sh select"
+bindsym $mod+Print exec "screenshot select"
 # brightness dec
 bindsym XF86MonBrightnessDown exec xbacklight -dec 15
 # brightness inc

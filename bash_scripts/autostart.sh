@@ -17,6 +17,7 @@ numlockx on &
 (sleep 2s && ~/.config/bash_scripts/launch_polybar.sh) &
 (sleep 4s && [ ! -s ~/.config/mpd/pid ] && mpd) &
 (sleep 5s && clipit) &
+(sleep 6s && nm-applet) &
 (sleep 7s && ~/.config/bash_scripts/lock.sh -u  ~/.wall.jpg) &
 (sleep 7s && ~/.config/bash_scripts/lock.sh -u  -w ) &
 (sleep 8s && /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 ) &
