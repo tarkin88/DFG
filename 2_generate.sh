@@ -84,5 +84,8 @@ chmod +x $configs/bash_scripts/*
 echo ""
 echo "MPD:"
 mpc update | head -1
+$HOME/.config/bash_scripts/launch_polybar.sh 
 echo ""
 echo "That's all folks!!!"
+
+echo "relaunch Polybar (Press Enter after this)"
