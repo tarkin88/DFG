@@ -23,6 +23,7 @@ chmod +x first_install.sh
 
 ./first_install.sh
 ```
+Then you can use the generate script 
 
 ```bash
 chmod +x generate.sh
