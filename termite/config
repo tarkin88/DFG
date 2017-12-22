@@ -12,47 +12,37 @@ scrollback_lines = 10000
 search_wrap = true
 cursor_blink = system
 cursor_shape = block
-browser = chromium
+browser = google-chrome-stable
 filter_unmatched_urls = true
 #modify_other_keys = false
 
-
 [colors]
-
-# special
+#Super Dark Grey Blue & Light blue
 foreground      = #c5c8c6
 foreground_bold = #c5c8c6
 cursor          = #c5c8c6
-background      = rgba(29, 31, 33, 0.95)
+background      = #232f39
 
-# black
-color0  = #282a2e
-color8  = #373b41
-
-# red
-color1  = #a54242
-color9  = #cc6666
-
-# green
-color2  = #8c9440
-color10 = #b5bd68
-
-# yellow
-color3  = #de935f
-color11 = #f0c674
-
-# blue
-color4  = #5f819d
-color12 = #81a2be
-
-# magenta
-color5  = #85678f
-color13 = #b294bb
-
-# cyan
-color6  = #5e8d87
-color14 = #8abeb7
-
-# white
-color7  = #ececec
-color15 = #c5c8c6
+color0=       #232f39
+color8=       #6dc6e4
+#Darker Blue
+color1=       #5fabd9
+color9=       #5fabd9
+#Light Blue
+color2=       #6dc6e4
+color10=      #6dc6e4
+#Grey
+color3=       #9da8ab
+color11=      #9da8ab
+#Light Green
+color4=       #a1d19d
+color12=      #a1d19d
+#Lighter Grey
+color5=       #b3b6c3
+color13=      #b3b6c3
+#Super Light Blue
+color6=       #a1d2e0
+color14=      #a1d2e0
+#I can't believe it's not white
+color7=       #e3e9e8
+color15=      #e3e9e8
