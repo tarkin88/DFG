@@ -64,6 +64,11 @@ modules-left =i3 xwindow
 modules-center =  mpd
 modules-right = cpu memory battery eth wlan volume date
 
+
+[settings]
+screenchange-reload = true
+
+
 [module/xwindow]
 type = internal/xwindow
 format = <label>

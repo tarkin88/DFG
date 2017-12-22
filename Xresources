@@ -21,7 +21,7 @@ URxvt*letterSpace:  0
 
 !URxvt.perl-ext-common: default,clipboard,tabbedex, matcher
 URxvt.perl-ext-common: default,clipboard, matcher
-URxvt.urlLauncher:      /usr/bin/firefox
+URxvt.urlLauncher:      /usr/bin/google-chrome-stable
 URxvt.matcher.button:   1 
 
 ! urxvt tabs settings:
