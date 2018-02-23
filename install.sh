@@ -7,8 +7,6 @@
 # |                 Tarkin88                 |
 # |------------------------------------------|
 
-symlink="ln -s -f -n"
-
 echo -e "First checking:\n"
 declare -a coreFiles=("./variables.sh" "./functions.sh")
 

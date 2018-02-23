@@ -1,7 +1,5 @@
 #!/usr/bin/bash
 
-symlink="ln -s -f -n"
-
 delete_all() {
 	if  [[ -d "${1}" ]]; then
 		rm -R ${1}
