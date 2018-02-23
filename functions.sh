@@ -16,7 +16,7 @@ read_input_text() {
 
 seek_and_destroy() {
 	if  [ -d "${1}" ]; then
-		rm -R ${1}
+		delete_all ${1}
 		echo -e "${BLUE}[-] ${1} Cleaned"
 	fi
 }
