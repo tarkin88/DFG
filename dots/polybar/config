@@ -13,9 +13,9 @@ inherit = bar/master
 monitor = DVI-D-1
 
 
-modules-left   = clock mpd 
-modules-center = i3
-modules-right  = pkg memory coreuse temperature volume-bar
+modules-left   = i3  mpd 
+modules-center = clock
+modules-right  = pkg memory coreuse temperature wireless-network volume
 
 tray-position = right
 tray-padding = 0

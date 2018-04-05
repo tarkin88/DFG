@@ -3,7 +3,7 @@
 # |       put dot files in right places      |
 # |         Author: Francisco Suárez         |
 # |       franksg88 [at] gmail [dot] com     |
-# |                Feb  2018                 |
+# |                Mar  2018                 |
 # |                 Tarkin88                 |
 # |------------------------------------------|
 
