@@ -1,5 +1,7 @@
 dotsPath=$HOME/.dotfiles
 configPath=$HOME/.config
+packagesList=./packages/packages.txt
+aurPackagesList=./packages/aur_packages.txt
 
 
 RED='\033[00;31m'
@@ -17,3 +19,5 @@ LBLUE='\033[01;34m'
 LPURPLE='\033[01;35m'
 LCYAN='\033[01;36m'
 WHITE='\033[01;37m'
+
+WM='i3'

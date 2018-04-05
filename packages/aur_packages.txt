@@ -1,0 +1,9 @@
+clipit
+inxi
+pacli
+polybar
+rofi-git
+sublime-text-dev 
+ttf-monaco 
+visual-studio-code-bin
+zoom
