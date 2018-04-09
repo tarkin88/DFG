@@ -1,9 +1,9 @@
-clipit
 inxi
 networkmanager-dmenu-git
 pacli
 polybar
 rofi-git
+rofi-greenclip
 sublime-text-dev 
 ttf-monaco 
 visual-studio-code-bin

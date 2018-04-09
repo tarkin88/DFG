@@ -8,6 +8,7 @@
 
 #Primary Key [default Windows key]
 set $mod Mod4
+set $alt Mod1
 
 BACKGROUND
 FOREGROUND
@@ -74,7 +75,6 @@ bindsym $mod+Shift+Return exec $term2
 
 # kill focused window
 bindsym $mod+Shift+q kill
-
 
 # change focus
 bindsym $mod+j focus left
@@ -206,7 +206,10 @@ bindsym XF86AudioMute exec "amixer -q sset Master toggle"
 bindsym XF86AudioLowerVolume exec "amixer -q set Master 3%- unmute"
 # Volume up
 bindsym XF86AudioRaiseVolume exec "amixer -q set Master 3%+ unmute"
-
+# exit 
+bindsym $mod+Shift+x exec ~/.bin/rofr.sh -l
+#clipboard
+bindsym $mod+Shift+h exec ~/.bin/rofr.sh -c
 
 
 # focus rules

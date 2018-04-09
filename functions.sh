@@ -69,10 +69,23 @@ infect_vim() {
 }
 
 seek_and_destroy() {
-	if  [ -d "${1}" ]; then
+	if  [[ -d "${1}" ]]; then
+		delete_all ${1}
+		echo -e "${BLUE}[-] ${1} Cleaned"
+	elif [[ -f "${1}"  ]]; then
 		delete_all ${1}
 		echo -e "${BLUE}[-] ${1} Cleaned"
 	fi
+}
+
+set_permissions() {
+	declare -a FILES=$(ls ${1})
+	for f in $FILES;
+	do	
+		chmod +x ${1}/${f}
+		echo -e "${GREEN}[*] ${f} Permission Applied"
+	done
+	echo -e "${WHITE}"
 }
 
 if_not_create() {
@@ -103,6 +116,7 @@ copy_dots() {
 	copy_files "dots/config" ${configPath} 0
 	copy_files "dots/home" ${HOME} 1
 	copy_files "bin" ${binPath} 0
+	set_permissions ${binPath}
 	configure_devices
 	ask_pathogen 
 }
