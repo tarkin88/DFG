@@ -221,6 +221,7 @@ configure_devices() {
 		echo $BAT
 		echo -e "${BLUE}[-] Check Battery device"
 		replace_line "battery = BAT1" "battery = ${BAT}" ${configPath}/polybar/modules.conf		
+		replace_line "modules-right  = memory coreuse wireless-network volume" "modules-right  = memory coreuse wireless-network volume battery" ${configPath}/polybar/config		
 		echo -e "${GREEN}[*] Battery configuration Applied\n ${WHITE}"
 	fi
 }
