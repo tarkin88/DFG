@@ -215,8 +215,10 @@ configure_devices() {
 	echo -e "${BLUE}[-] Check Monitor Device"
 	replace_line "monitor = MONITOR" "monitor = ${MONITOR}" ${configPath}/polybar/config		
 	echo -e "${GREEN}[*] Monitor Device layout Applied\n ${WHITE}"
-	if [[ -f /sys/class/power_supply/ ]]; then
+
+	if [ -d /sys/class/power_supply/BAT* ]; then
 		BAT=$(ls /sys/class/power_supply/ | grep 'BAT')
+		echo $BAT
 		echo -e "${BLUE}[-] Check Battery device"
 		replace_line "battery = BAT1" "battery = ${BAT}" ${configPath}/polybar/modules.conf		
 		echo -e "${GREEN}[*] Battery configuration Applied\n ${WHITE}"
