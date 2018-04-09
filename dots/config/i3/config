@@ -9,11 +9,16 @@
 #Primary Key [default Windows key]
 set $mod Mod4
 
-# colors
-set $backgr #333333
-set $foregr #cccccc
-set $accent #ebcb8b
-set $urgent #CB5555
+BACKGROUND
+FOREGROUND
+ACCENT
+URGENT
+
+# default colors (uncomment)
+# set $backgr #333333
+# set $foregr #cccccc
+# set $accent #ebcb8b
+# set $urgent #CB5555
 
 # default terminal
 set $term urxvt

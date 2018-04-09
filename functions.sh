@@ -14,7 +14,10 @@ delete_all() {
 }
 
 read_input() {
-	read -p "$prompt1" OPTION
+	#read -p "$prompt1" OPTION
+	read -p "$1: " OPTION
+    echo ""
+    OPTION=`echo "$OPTION" | tr '[:upper:]' '[:lower:]'`
 }
 
 read_input_text() { 
@@ -45,6 +48,7 @@ replace_line() {
       echo -e "failed: ${_search} - ${_filepath}"
     fi
 } 
+
 add_top() {
 	sed -i "1 i\
 	${1}" ${2}
@@ -77,21 +81,6 @@ if_not_create() {
 		echo -e "${BLUE}[-] ${1} Created"
 	fi	
 }
-ask_pathogen() {
-	read_input_text "Do you want use vim pathogen?"
-	if [[ $OPTION == y ]]; then
-		infect_vim
-		add_top "map <C-l> :NERDTreeToggle<CR>" ~/.vimrc
-		add_top "autocmd vimenter * NERDTree" ~/.vimrc
-		add_top "execute pathogen#infect()" ~/.vimrc
-	fi
-}
-ask_dots() {
-	read_input_text "Do you generate dots files?"
-	if [[ $OPTION == y ]]; then
-		copy_dots
-	fi
-}
 
 copy_files() {
 	declare -a FILES=$(ls ${1})
@@ -114,7 +103,7 @@ copy_dots() {
 	copy_files "dots/config" ${configPath} 0
 	copy_files "dots/home" ${HOME} 1
 	copy_files "bin" ${binPath} 0
-	ask_pathogen
+	ask_pathogen 
 }
 
 welcome() {
@@ -131,6 +120,67 @@ info(){
 	pause_function
 }
 
+install_from_list() {
+	sudo pacman -Sy `cat $packagesList` --noconfirm
+}
+
+install_from_aur() {
+	yaourt -S `cat $aurPackagesList` --noconfirm
+}
+
+set_i3_color() {
+	case "${1}" in
+		0)
+			replace_line "BACKGROUND" "set \$backgr ${2}" ${configPath}/i3/config				
+			;;
+		1)
+			replace_line "FOREGROUND" "set \$foregr ${2}" ${configPath}/i3/config	
+			;;	
+		2)
+			replace_line "ACCENT" "set \$accent ${2}" ${configPath}/i3/config	
+			;;	
+		3)
+			replace_line "URGENT" "set \$urgent ${2}" ${configPath}/i3/config	
+			;;	
+	esac
+}
+
+
+i3_custom_theme() {
+	# colors_schemas=('Nord' 'Radio')
+	case "${1}" in
+		"Nord")
+			for index in "${!nord_schema[@]}"; do
+			  set_i3_color $index ${nord_schema[$index]}
+			done
+			;;
+		"Radio")
+			for index in "${!nord_schema[@]}"; do
+			  set_i3_color $index ${radio_schema[$index]}
+			done
+			;;	
+	esac
+	echo -e "${GREEN}[*] ${1} Applied\n ${WHITE}"
+
+}
+
+ask_pathogen() {
+	read_input_text "Do you want use vim pathogen?"
+	if [[ $OPTION == y ]]; then
+		infect_vim
+		add_top "map <C-l> :NERDTreeToggle<CR>" ~/.vimrc
+		add_top "autocmd vimenter * NERDTree" ~/.vimrc
+		add_top "execute pathogen#infect()" ~/.vimrc
+	fi
+	ask_themes
+}
+ask_dots() {
+	read_input_text "Do you generate dots files?"
+	if [[ $OPTION == y ]]; then
+		copy_dots
+	fi
+}
+
 ask_packages() {
 	read_input_text "Do you want install extra packages on packages.txt?"
 	if [[ $OPTION == y ]]; then
@@ -144,10 +194,15 @@ ask_packages() {
 	fi
 }
 
-install_from_list() {
-	sudo pacman -Sy `cat $packagesList` --noconfirm
+ask_themes(){
+	read_input_text "Do you want custom theme?"
+	if [[ $OPTION == y ]]; then
+		for index in "${!colors_schemas[@]}"; do
+	  		echo -e "${BLUE} ${index})${colors_schemas[$index]}${WHITE}\n"
+		done
+		read_input "Choose a theme option: "
+
+		i3_custom_theme ${colors_schemas[$OPTION]}
+	fi		
 }
 
-install_from_aur() {
-	yaourt -S `cat $aurPackagesList` --noconfirm
-}

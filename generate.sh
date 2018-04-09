@@ -32,5 +32,3 @@ ask_packages
 echo -e "\n${CYAN}DONE"
 
 exit 0
-
-

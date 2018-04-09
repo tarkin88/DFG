@@ -2,7 +2,6 @@ packagesList=./packages/packages.txt
 aurPackagesList=./packages/aur_packages.txt
 
 # *NOTE: changes on paths may required change on some scripts
-dotsPath=$HOME/.dotfiles
 configPath=$HOME/.config/
 binPath=$HOME/.bin
 
@@ -23,4 +22,12 @@ LCYAN='\033[01;36m'
 WHITE='\033[01;37m'
 
 # LOG FILE
-LOG="${dotsPath}/`basename ${0}`.log" 
+LOG="${HOME}/`basename ${0}`.log" 
+
+
+# Schemas for i3
+declare -a colors_schemas=('Nord' 'Radio')
+
+# array_order = (backgr foregr accent urgent)
+declare -a nord_schema=('#2f343f' '#d8dee8' '#b48ead' '#bf616a')
+declare -a radio_schema=('#333333' '#cccccc' '#ebcb8b' '#CB5555')
