@@ -10,7 +10,7 @@ include-file = ~/.config/polybar/modules.conf
 inherit = bar/master
 
 ; Use $ xrandr -q | grep " connected" | cut -d ' ' -f1
-monitor = DVI-D-1
+monitor = MONITOR
 
 
 modules-left   = i3  mpd 

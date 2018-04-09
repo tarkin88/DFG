@@ -103,6 +103,7 @@ copy_dots() {
 	copy_files "dots/config" ${configPath} 0
 	copy_files "dots/home" ${HOME} 1
 	copy_files "bin" ${binPath} 0
+	configure_devices
 	ask_pathogen 
 }
 
@@ -206,3 +207,18 @@ ask_themes(){
 	fi		
 }
 
+configure_devices() {
+	echo -e "${BLUE}[-] Check Network interface"
+	replace_line "interface = INTERFACE" "interface = ${IW}" ${configPath}/polybar/modules.conf		
+	echo -e "${GREEN}[*] Network interface Applied\n ${WHITE}"
+
+	echo -e "${BLUE}[-] Check Monitor Device"
+	replace_line "monitor = MONITOR" "monitor = ${MONITOR}" ${configPath}/polybar/config		
+	echo -e "${GREEN}[*] Monitor Device layout Applied\n ${WHITE}"
+	if [[ -f /sys/class/power_supply/ ]]; then
+		BAT=$(ls /sys/class/power_supply/ | grep 'BAT')
+		echo -e "${BLUE}[-] Check Battery device"
+		replace_line "battery = BAT1" "battery = ${BAT}" ${configPath}/polybar/modules.conf		
+		echo -e "${GREEN}[*] Battery configuration Applied\n ${WHITE}"
+	fi
+}

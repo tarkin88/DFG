@@ -31,3 +31,7 @@ declare -a colors_schemas=('Nord' 'Radio')
 # array_order = (backgr foregr accent urgent)
 declare -a nord_schema=('#2f343f' '#d8dee8' '#b48ead' '#bf616a')
 declare -a radio_schema=('#333333' '#cccccc' '#ebcb8b' '#CB5555')
+
+# HW
+IW=$(ip -o link show | awk '{print $2,$9}' | grep 'UP' | awk '{print $1}' | rev | cut -c 2- | rev)
+MONITOR=$(xrandr -q | grep " connected" | cut -d ' ' -f1)
