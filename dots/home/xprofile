@@ -1,0 +1,19 @@
+# .xprofile
+
+XDG_CONFIG_HOME=$HOME/.config
+export XDG_CONFIG_HOME
+
+# include ~/bin in path
+export PATH=$HOME/.bin:$PATH
+
+# include sbin in PATH
+if [ -d "/sbin" ] ; then
+    PATH="/sbin:$PATH"
+fi
+if [ -d "/usr/sbin" ] ; then
+    PATH="/usr/sbin:$PATH"
+fi
+
+if which dbus-launch >/dev/null && test -z "$DBUS_SESSION_BUS_ADDRESS"; then
+    eval `dbus-launch --sh-syntax --exit-with-session`
+fi

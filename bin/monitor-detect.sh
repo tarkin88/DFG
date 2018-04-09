@@ -1,4 +1,9 @@
 #!/usr/bin/sh
+# |------------------------------------------|
+# |         Author: Francisco Suárez         |
+# |            github: tarkin88              |
+# |                April 2018                |
+# |------------------------------------------|
 
 output=$(xrandr -q | grep " connected" | cut -d ' ' -f1)
 

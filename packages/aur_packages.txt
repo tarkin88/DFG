@@ -1,5 +1,6 @@
 clipit
 inxi
+networkmanager-dmenu-git
 pacli
 polybar
 rofi-git

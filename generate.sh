@@ -2,9 +2,11 @@
 # |------------------------------------------|
 # |       put dot files in right places      |
 # |         Author: Francisco Suárez         |
-# |       franksg88 [at] gmail [dot] com     |
-# |                April 2018                |
 # |            github: tarkin88              |
+# |                April 2018                |
+# |                 Credits:                 |
+# |              - helmuthdu                 |
+# |              - addy-dclxvi               |
 # |------------------------------------------|
 
 echo -e "First checking:\n"
@@ -23,8 +25,6 @@ done
 
 welcome
 
-info 
-
 ask_dots
 
 ask_packages
@@ -32,3 +32,5 @@ ask_packages
 echo -e "\n${CYAN}DONE"
 
 exit 0
+
+
