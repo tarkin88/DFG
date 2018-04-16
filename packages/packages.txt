@@ -40,10 +40,10 @@ python-pip
 python-virtualenv
 ranger
 redshift
+rxvt-unicode
+rxvt-unicode-terminfo
 scrot
 slim
-termite
-termite-terminfo
 transmission-gtk
 ttf-font-awesome
 udiskie 
