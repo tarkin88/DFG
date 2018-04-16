@@ -29,6 +29,6 @@ ask_dots
 
 ask_packages
 
-echo -e "\n${CYAN}DONE"
+echo -e "\n${CYAN}That's all [^_^]/\n\n"
 
 exit 0

@@ -56,7 +56,6 @@ add_top() {
 
 infect_vim() {
 	if  [ ! -d ~/.vim/autoload ]; then
-		echo "eciste"
 		mkdir -p ~/.vim/autoload ~/.vim/bundle && \
 		curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 		echo -e "${GREEN}[*] Pathogen  (vim) Installed"
@@ -118,7 +117,6 @@ copy_dots() {
 	copy_files "bin" ${binPath} 0
 	set_permissions ${binPath}
 	configure_devices
-	ask_pathogen 
 }
 
 welcome() {
@@ -160,11 +158,10 @@ set_i3_color() {
 	esac
 }
 
-
 i3_custom_theme() {
 	# colors_schemas=('Nord' 'Radio')
 	case "${1}" in
-		"Nord")
+		"Nord" )
 			for index in "${!nord_schema[@]}"; do
 			  set_i3_color $index ${nord_schema[$index]}
 			done
@@ -179,6 +176,14 @@ i3_custom_theme() {
 
 }
 
+apply_antigen() {
+	if  [ ! -f "${HOME}/antigen.zsh" ]; then
+		curl -L git.io/antigen > antigen.zsh
+	fi	
+	copy_files "dots/antigen" ${HOME} 1
+	echo -e "${GREEN}[*] Antigen applied ${WHITE}\n"
+}
+
 ask_pathogen() {
 	read_input_text "Do you want use vim pathogen?"
 	if [[ $OPTION == y ]]; then
@@ -186,13 +191,21 @@ ask_pathogen() {
 		add_top "map <C-l> :NERDTreeToggle<CR>" ~/.vimrc
 		add_top "autocmd vimenter * NERDTree" ~/.vimrc
 		add_top "execute pathogen#infect()" ~/.vimrc
+		echo -e "\n"
+	else 
+		echo -e "${YELLOW}[-] Passed${WHITE}\n"
 	fi
-	ask_themes
+
 }
 ask_dots() {
 	read_input_text "Do you generate dots files?"
 	if [[ $OPTION == y ]]; then
 		copy_dots
+		ask_themes
+		ask_zsh
+		ask_pathogen
+	else 
+		echo -e "${YELLOW}[-] Passed${WHITE}\n"
 	fi
 }
 
@@ -201,24 +214,39 @@ ask_packages() {
 	if [[ $OPTION == y ]]; then
 		info
 		install_from_list
+	else 
+		echo -e "${YELLOW}[-] Passed${WHITE}\n"
 	fi
 
 	read_input_text "Do you want install aur packages on aur_packages.txt?"
 	if [[ $OPTION == y ]]; then
 		install_from_aur
+	else 
+		echo -e "${YELLOW}[-] Passed${WHITE}\n"
 	fi
 }
 
 ask_themes(){
-	read_input_text "Do you want custom theme?"
-	if [[ $OPTION == y ]]; then
-		for index in "${!colors_schemas[@]}"; do
-	  		echo -e "${BLUE} ${index})${colors_schemas[$index]}${WHITE}\n"
-		done
-		read_input "Choose a theme option: "
+	for index in "${!colors_schemas[@]}"; do
+  		echo -e "\n${BLUE} ${index})${colors_schemas[$index]}${WHITE}\n"
+	done
+	read_input "Choose a theme option (Nord is default): "
 
-		i3_custom_theme ${colors_schemas[$OPTION]}
-	fi		
+	i3_custom_theme ${colors_schemas[$OPTION]}
+}
+
+ask_zsh() {
+	read_input_text "Do you use zsh (Z shell)?"
+	if [[ $OPTION == y ]]; then
+		read_input_text "Do you want to use antigen?"
+		if [[ $OPTION == y ]]; then
+			apply_antigen
+		else 
+			echo -e "${YELLOW}[-] Passed${WHITE}\n"
+		fi
+	else 
+		echo -e "${YELLOW}[-] Passed${WHITE}\n"
+	fi
 }
 
 configure_devices() {

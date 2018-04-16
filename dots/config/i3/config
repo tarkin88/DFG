@@ -15,11 +15,11 @@ FOREGROUND
 ACCENT
 URGENT
 
-# default colors (uncomment)
-# set $backgr #333333
-# set $foregr #cccccc
-# set $accent #ebcb8b
-# set $urgent #CB5555
+# how to apply colors (uncomment)
+# set $backgr COLOR
+# set $foregr COLOR
+# set $accent COLOR
+# set $urgent COLOR
 
 # default terminal
 set $term urxvt
