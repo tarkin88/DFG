@@ -103,12 +103,13 @@ copy_files() {
 	for f in $FILES;
 	do	
 		if [[ ${3} -eq 1 ]]; then
-			seek_and_destroy "${2}/.${f}"		
-			cp -R "${1}/${f}" "${2}/.${f}"
+			seek_and_destroy "${2}/.${f}"	
+			if_not_create ${2}
+			cp -R "./${1}/${f}" "${2}/.${f}"
 		else
 			seek_and_destroy "${2}/${f}"
 			if_not_create ${2}
-			cp -R "${1}/${f}" ${2}
+			cp -R "./${1}/${f}" ${2}
 		fi
 		echo -e "${GREEN}[*] ${f} Copied"
 	done
@@ -119,6 +120,7 @@ copy_dots() {
 	copy_files "dots/config" ${configPath} 0
 	copy_files "dots/home" ${HOME} 1
 	copy_files "bin" ${binPath} 0
+	set_permissions ${configPath}/polybar/modules/
 	set_permissions ${binPath}
 	configure_devices
 }

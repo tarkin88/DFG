@@ -2,7 +2,7 @@ packagesList=./packages/packages.txt
 aurPackagesList=./packages/aur_packages.txt
 
 # *NOTE: changes on paths may required change on some scripts
-configPath=$HOME/.config/
+configPath=$HOME/.config
 binPath=$HOME/.bin
 
 # Colors

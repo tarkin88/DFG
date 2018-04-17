@@ -7,7 +7,6 @@ polybar
 profile-sync-daemon
 rofi-git
 rofi-greenclip
-siji-git
 sublime-text-dev 
 ttf-monaco 
 visual-studio-code-bin
