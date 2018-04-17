@@ -1,0 +1,36 @@
+!! Navy n ivory
+#define color_background    #021B21
+#define color_foreground    #E8DFD6
+#define color_cursorColor   #2E3340
+
+!! black
+#define color_0        #032C36
+#define color_8        #065F73
+
+! red 
+#define color_1        #C2454E
+#define color_9        #EF5847
+
+! green 
+#define color_2        #7CBF9E
+#define color_10       #A2D9B1
+
+! yellow 
+#define color_3        #8A7A63
+#define color_11       #BEB090
+
+! blue 
+#define color_4        #2E3340
+#define color_12       #61778D
+
+! magenta 
+#define color_5        #FF5879
+#define color_13       #FF99A1
+
+! cyan 
+#define color_6        #44B5B1
+#define color_14       #9ED9D8
+
+! white 
+#define color_7        #F2F1B9
+#define color_15       #F6F6C9

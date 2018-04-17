@@ -13,9 +13,9 @@ inherit = bar/master
 monitor = MONITOR
 
 
-modules-left   = i3  mpd 
-modules-center = clock pkg
-modules-right  = memory coreuse wireless-network volume
+modules-left   = clock mpd 
+modules-center = i3 
+modules-right  = pkg memory coreuse wireless-network volume
 
 tray-position = right
 tray-padding = 0

@@ -26,10 +26,10 @@ LOG="${HOME}/`basename ${0}`.log"
 
 
 # Schemas for i3
-declare -a colors_schemas=('Nord' 'Radio')
+declare -a colors_schemas=('NavyNIvory' 'Radio')
 
 # array_order = (backgr foregr accent urgent)
-declare -a nord_schema=('#2f343f' '#d8dee8' '#b48ead' '#bf616a')
+declare -a navy_n_ivory=('#021B21' '#E8DFD6' '#C2454E' '#7CBF9E')
 declare -a radio_schema=('#333333' '#cccccc' '#ebcb8b' '#CB5555')
 
 # HW

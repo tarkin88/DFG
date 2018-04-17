@@ -2,16 +2,14 @@
 ! Import Colour from ~/.xrdb
 ! ------------------------------------------------------------------------------
 
-#include ".xrdb/color/nord"
-#include ".xrdb/rofi/nord"
-#include ".xrdb/dmenu/nord"
+#include ".xrdb/color/navy-n-ivory"
 #include ".xrdb/fonts/monaco"
 
 ! ------------------------------------------------------------------------------
 ! URxvt configs
 ! ------------------------------------------------------------------------------
 
-URxvt.geometry: 		72x18
+URxvt.geometry: 		120x38
 URxvt*letterSpace: 	    +1
 URxvt.lineSpace: 		0
 URxvt*internalBorder:   0
@@ -40,6 +38,39 @@ URxvt*buffered:         false
 URxvt.urgentOnBell: 	True
 
 ! ------------------------------------------------------------------------------
+! Colors Configuration
+! ------------------------------------------------------------------------------
+
+urxvt.background:		color_background
+urxvt.foreground:		color_foreground
+
+urxvt.cursorColor: 		color_cursorColor
+
+urxvt.color0:			color_0
+urxvt.color8:			color_8
+
+urxvt.color1:			color_1
+urxvt.color9:			color_9
+
+urxvt.color2:			color_2
+urxvt.color10:			color_10
+
+urxvt.color3:			color_3
+urxvt.color11:			color_11
+
+urxvt.color4:			color_4
+urxvt.color12:			color_12
+
+urxvt.color5:			color_5
+urxvt.color13:			color_13
+
+urxvt.color6:			color_6
+urxvt.color14:			color_14
+
+urxvt.color7:			color_7
+urxvt.color15: 			color_15
+
+! ------------------------------------------------------------------------------
 ! Xft Font Configuration
 ! ------------------------------------------------------------------------------
 
@@ -50,3 +81,38 @@ Xft.hinting: 1
 Xft.antialias: 1
 Xft.rgba: rgb
                                                            
+
+! ------------------------------------------------------------------------------
+! Rofi Configuration
+! ------------------------------------------------------------------------------
+!
+!	  ├────────────────────rofi.width──────────────────────┤
+!	┬ ╔════════════════════════════════════════════════════╗
+!	│ ║run:query                                           ║ ◀- rofi.color-window[0]
+!	│ ║====================================================║ ◀- rofi.separator-style
+!	│ ║item1░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█║ ◀- rofi.color-normal[0] 
+!	│ ╟───────────────────────────────────────────────────█╢
+!	│ ║item2▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓█║ ◀- selected line
+!	│ ╟───────────────────────────────────────────────────█╢
+!	│ ║item3░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█║
+!	│ ╟───────────────────────────────────────────────────█╢
+!	│ ║item4▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒█║ ◀- rofi.color-normal[2] 
+!	│ ╟───────────────────────────────────────────────────█╢
+!	│ ║item5░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█║
+!	┴ ╚════════════════════════════════════════════════════╝
+!	▲                                                     ▲
+!	│                                                     │
+!	rofi.lines                                            rofi.hide-scrollbar
+!
+
+rofi.color-enabled: true
+rofi.terminal: urxvt
+
+!					main background,		main border color,		separator color
+rofi.color-window: color_background, 		color_1, 				color_3
+
+!line background, text foreground, alt line background, highlighted background,highlighted foreground
+
+rofi.color-normal: color_background, color_foreground, color_background, color_1, color_foreground
+rofi.color-active: color_background, color_foreground, color_background, color_2, color_1
+rofi.color-urgent: color_background, color_foreground, color_background, color_2, color_1

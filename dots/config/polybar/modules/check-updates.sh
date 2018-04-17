@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-BAR_ICON="|  "
+BAR_ICON=""
 
 while true; do
     count=$(checkupdates | wc -l)

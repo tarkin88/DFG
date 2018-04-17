@@ -23,6 +23,7 @@ i3-wm
 jgmenu
 libcaca
 lm_sensors
+libqalculate
 lxappearance
 mplayer
 ncmpcpp

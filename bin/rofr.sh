@@ -1,11 +1,19 @@
 #!/usr/bin/env bash
+# |------------------------------------------|
+# |                   Rofr                   |
+# |             Author: Archlabs             |
+# |        Forked by : Francisco Suárez      |
+# |            github: tarkin88              |
+# |                April 2018                |
+# |------------------------------------------|
 
 Name=$(basename "$0")
 Version="0.1"
+Develop="archlabs"
 
 _usage() {
     cat <<- EOF
-Usage:   $Name [options]
+Usage:   $Name [options] by $Develop
 
 Options:
      -h      Display this message
@@ -14,10 +22,22 @@ Options:
      -w      Switch between open windows
      -r      Program launcher & run dialog
      -c      Select previous clipboard entries
-     -b      Browser search by keyword
+     -b      Screenshots
      -l      Session logout choice
 
 EOF
+}
+
+delay() {
+    DELAY=$(echo " Lock| Logout| Reboot| Shutdown" | \
+        rofi -sep "|" -dmenu -i -p 'Choose a option ' "" -width 20 \
+        -hide-scrollbar -eh 1 -line-padding 4 -padding 20 -lines 4)
+    case "$ANS" in
+        *Lock) betterlockscreen --lock blur ;;
+        *Logout) i3-msg exit ;;
+        *Reboot) systemctl reboot ;;
+        *Shutdown) systemctl poweroff
+    esac
 }
 
 #  Handle command line arguments
@@ -28,13 +48,13 @@ while getopts ":hvqwcbrl" opt; do
             exit 0
             ;;
         v)
-            echo -e "$Name -- Version $Version"
+            echo -e "$Name -- Version $Version by $Develop" 
             exit 0
             ;;
         r)
             rofi -modi run,drun -show drun -line-padding 4 \
                 -columns 2 -padding 50 -hide-scrollbar \
-                -show-icons -drun-icon-theme "ArchLabs-Light"
+                -show-icons -drun-icon-theme "Paper"
             ;;
         w)
             rofi -modi window -show window -hide-scrollbar \
@@ -51,19 +71,33 @@ while getopts ":hvqwcbrl" opt; do
                 -hide-scrollbar
             ;;
         b)
-            surfraw -browser="$BROWSER" $(sr -elvi | awk -F'-' '{print $1}' \
-                | sed '/:/d' | awk '{$1=$1};1' | rofi -hide-scrollbar \
-                -kb-row-select 'Tab' -kb-row-tab 'Control+space' \
-                -dmenu -mesg 'Tab for Autocomplete' -i -p 'Web Search: ' \
-                -padding 50 -line-padding 4)
+            SCREENOPT=$(echo " Full| Area" | \
+                rofi -sep "|" -dmenu -i -p 'Choose a option ' "" -width 15 \
+                -hide-scrollbar -eh 1 -line-padding 4 -padding 20 -lines 4)
+            case "$SCREENOPT" in
+                *Full) 
+                    DELAY=$(echo "0|3|5|10" | \
+                        rofi -sep "|" -dmenu -i -p 'Choose a delay ' "" -width 25 \
+                        -hide-scrollbar -eh 1 -line-padding 4 -padding 20 -lines 4)
+                    scrot '%S.png' -d $DELAY -e 'mv $f $$(xdg-user-dir PICTURES)/Screenshots/screenshot-%d-%m-%y_%H-%M-%S.png'
+                    notify-send "Screenshoot $SCREENOPT"
+                     ;;
+                *Area) 
+                    DELAY=$(echo "0|3|5|10" | \
+                        rofi -sep "|" -dmenu -i -p 'Choose a delay ' "" -width 25 \
+                        -hide-scrollbar -eh 1 -line-padding 4 -padding 20 -lines 4)
+                    scrot -s '%S.png' -d $DELAY -e 'mv $f $$(xdg-user-dir PICTURES)/Screenshots/screenshot-%d-%m-%y_%H-%M-%S.png'
+                    notify-send "Screenshoot $SCREENOPT"
+                     ;;
+            esac
             ;;
         l)
-            ANS=$(echo " Lock| Logout| Reboot| Shutdown" | \
-                rofi -sep "|" -dmenu -i -p 'System: ' "" -width 20 \
+            ANS=$(echo " Lock| Logout| Reboot| Shutdown" | \
+                rofi -sep "|" -dmenu -i -p 'Choose a option ' "" -width 20 \
                 -hide-scrollbar -eh 1 -line-padding 4 -padding 20 -lines 4)
             case "$ANS" in
-                *Lock) i3lock-fancy ;;
-                *Logout) session-logout ;;
+                *Lock) betterlockscreen --lock blur ;;
+                *Logout) i3-msg exit ;;
                 *Reboot) systemctl reboot ;;
                 *Shutdown) systemctl poweroff
             esac

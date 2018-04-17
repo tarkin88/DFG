@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 # |------------------------------------------|
-# |             Autostart Config             |
+# |             Polybar launch               |
 # |         Author: Francisco Suárez         |
 # |            github: tarkin88              |
 # |              April  2018                 |

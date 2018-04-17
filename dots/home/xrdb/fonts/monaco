@@ -1,5 +1,6 @@
 ! fonts
-URxvt*font:				xft:monaco:regular:size=11
-URxvt*boldFont:			xft:monaco:bold:size=11
-URxvt*italicFont:		xft:monaco:italic:size=11
-URxvt*boldItalicFont:	xft:monaco:bold italic:size=11
+
+URxvt.font:           xft:Monaco:pixelsize=13
+URxvt.boldFont:       xft:Monaco:bold:pixelsize=13
+URxvt.italicFont:     xft:Monaco:italic:pixelsize=13
+URxvt.boldItalicFont: xft:Monaco:bold:italic:pixelsize=13

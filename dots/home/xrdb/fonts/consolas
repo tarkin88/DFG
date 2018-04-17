@@ -1,0 +1,6 @@
+! fonts
+
+URxvt.font:           xft:Consolas:pixelsize=13
+URxvt.boldFont:       xft:Consolas:bold:pixelsize=13
+URxvt.italicFont:     xft:Consolas:italic:pixelsize=13
+URxvt.boldItalicFont: xft:Consolas:bold:italic:pixelsize=13

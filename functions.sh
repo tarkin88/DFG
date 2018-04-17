@@ -70,10 +70,10 @@ infect_vim() {
 seek_and_destroy() {
 	if  [[ -d "${1}" ]]; then
 		delete_all ${1}
-		echo -e "${BLUE}[-] ${1} Cleaned"
+		echo -e "${YELLOW}[-] ${1} Cleaned"
 	elif [[ -f "${1}"  ]]; then
 		delete_all ${1}
-		echo -e "${BLUE}[-] ${1} Cleaned"
+		echo -e "${YELLOW}[-] ${1} Cleaned"
 	fi
 }
 
@@ -90,8 +90,12 @@ set_permissions() {
 if_not_create() {
 	if  [ ! -d "${1}" ]; then
 		mkdir -p ${1}
-		echo -e "${BLUE}[-] ${1} Created"
+		echo -e "${YELLOW}[-] ${1} Created"
 	fi	
+}
+xrdb_reload() {
+	xrdb ${HOME}/.Xresources
+	echo -e "${GREEN}[*] X resources reloaded\n ${WHITE}"
 }
 
 copy_files() {
@@ -125,10 +129,10 @@ welcome() {
 }
 
 info(){
-	echo -e "\n${BLUE}Here some info about your system:\n"
-	echo -e "* ${BLUE}You have ${WHITE}$(sudo pacman -Q|wc -l) ${BLUE}Installed\n"
-	echo -e "* ${BLUE}Running under ${WHITE}$(uname -r) ${BLUE} Kernel\n"
-	echo -e "* ${BLUE}On ${WHITE}$(cat /etc/os-release | grep 'PRETTY_NAME' | cut -d '=' -f2 | cut -d '"' -f2)\n"
+	echo -e "\n${YELLOW}Here some info about your system:\n"
+	echo -e "* ${YELLOW}You have ${WHITE}$(sudo pacman -Q|wc -l) ${YELLOW}Installed\n"
+	echo -e "* ${YELLOW}Running under ${WHITE}$(uname -r) ${YELLOW} Kernel\n"
+	echo -e "* ${YELLOW}On ${WHITE}$(cat /etc/os-release | grep 'PRETTY_NAME' | cut -d '=' -f2 | cut -d '"' -f2)\n"
 
 	pause_function
 }
@@ -140,6 +144,7 @@ install_from_list() {
 install_from_aur() {
 	yaourt -S `cat $aurPackagesList` --noconfirm
 }
+
 
 set_i3_color() {
 	case "${1}" in
@@ -159,15 +164,15 @@ set_i3_color() {
 }
 
 i3_custom_theme() {
-	# colors_schemas=('Nord' 'Radio')
+	# colors_schemas=('NavyNIvory' 'Radio')
 	case "${1}" in
-		"Nord" )
-			for index in "${!nord_schema[@]}"; do
-			  set_i3_color $index ${nord_schema[$index]}
+		"NavyNIvory" )
+			for index in "${!navy_n_ivory[@]}"; do
+			  set_i3_color $index ${navy_n_ivory[$index]}
 			done
 			;;
 		"Radio")
-			for index in "${!nord_schema[@]}"; do
+			for index in "${!radio_schema[@]}"; do
 			  set_i3_color $index ${radio_schema[$index]}
 			done
 			;;	
@@ -204,6 +209,7 @@ ask_dots() {
 		ask_themes
 		ask_zsh
 		ask_pathogen
+		xrdb_reload
 	else 
 		echo -e "${YELLOW}[-] Passed${WHITE}\n"
 	fi
@@ -228,7 +234,7 @@ ask_packages() {
 
 ask_themes(){
 	for index in "${!colors_schemas[@]}"; do
-  		echo -e "\n${BLUE} ${index})${colors_schemas[$index]}${WHITE}\n"
+  		echo -e "\n${YELLOW} ${index})${colors_schemas[$index]}${WHITE}\n"
 	done
 	read_input "Choose a theme option (Nord is default): "
 
@@ -250,18 +256,18 @@ ask_zsh() {
 }
 
 configure_devices() {
-	echo -e "${BLUE}[-] Check Network interface"
+	echo -e "${YELLOW}[-] Check Network interface"
 	replace_line "interface = INTERFACE" "interface = ${IW}" ${configPath}/polybar/modules.conf		
 	echo -e "${GREEN}[*] Network interface Applied\n ${WHITE}"
 
-	echo -e "${BLUE}[-] Check Monitor Device"
+	echo -e "${YELLOW}[-] Check Monitor Device"
 	replace_line "monitor = MONITOR" "monitor = ${MONITOR}" ${configPath}/polybar/config		
 	echo -e "${GREEN}[*] Monitor Device layout Applied\n ${WHITE}"
 
 	if [ -d /sys/class/power_supply/BAT* ]; then
 		BAT=$(ls /sys/class/power_supply/ | grep 'BAT')
 		echo $BAT
-		echo -e "${BLUE}[-] Check Battery device"
+		echo -e "${YELLOW}[-] Check Battery device"
 		replace_line "battery = BAT1" "battery = ${BAT}" ${configPath}/polybar/modules.conf		
 		replace_line "modules-right  = memory coreuse wireless-network volume" "modules-right  = memory coreuse wireless-network volume battery" ${configPath}/polybar/config		
 		echo -e "${GREEN}[*] Battery configuration Applied\n ${WHITE}"

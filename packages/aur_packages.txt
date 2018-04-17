@@ -1,3 +1,4 @@
+betterlockscreen
 inxi
 nerd-fonts-complete
 networkmanager-dmenu-git

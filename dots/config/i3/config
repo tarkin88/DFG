@@ -31,7 +31,7 @@ set $term2 termite
 set $resize_value 2
 
 # border
-set $border_size 1
+set $border_size 2
 
 # colors settings
 # class                   border    backgr    text    indicator   child_border
@@ -89,10 +89,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+semicolon move right
+#bindsym $mod+Shift+j move left
+#bindsym $mod+Shift+k move down
+#bindsym $mod+Shift+l move up
+#bindsym $mod+Shift+semicolon move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -173,7 +173,7 @@ bindsym $mod+r mode "resize"
 # similar behavior to windows alt + tab on workspaces
 bindsym $mod+Tab workspace back_and_forth
 
-bindsym Print exec --no-startup-id "scrot '%S.png' -e 'mv $f $$(xdg-user-dir PICTURES)/Screenshots/screenshot-%d-%m-%y_%H-%M-%S.png \; viewnior $$(xdg-user-dir PICTURES)/Screenshots/screenshot-%d-%m-%y_%H-%M-%S.png'"
+bindsym Print exec  exec ~/.bin/rofr.sh -b
 
 
 # File manager
@@ -210,6 +210,12 @@ bindsym XF86AudioRaiseVolume exec "amixer -q set Master 3%+ unmute"
 bindsym $mod+Shift+x exec ~/.bin/rofr.sh -l
 #clipboard
 bindsym $mod+Shift+h exec ~/.bin/rofr.sh -c
+# Calculator
+bindsym $mod+q exec ~/.bin/rofr.sh -q
+# Calculator
+bindsym $mod+Shift+Tab exec ~/.bin/rofr.sh -w
+# lockscreen
+bindsym $mod+shift+l exec betterlockscreen --lock dimblur
 
 
 # focus rules
