@@ -79,14 +79,15 @@ while getopts ":hvqwcbrl" opt; do
                     DELAY=$(echo "0|3|5|10" | \
                         rofi -sep "|" -dmenu -i -p 'Choose a delay ' "" -width 25 \
                         -hide-scrollbar -eh 1 -line-padding 4 -padding 20 -lines 4)
-                    scrot '%S.png' -d $DELAY -e 'mv $f $$(xdg-user-dir PICTURES)/Screenshots/screenshot-%d-%m-%y_%H-%M-%S.png'
+                    sleep 0.3;scrot '%S.png' -d $DELAY -e 'mv $f $$(xdg-user-dir PICTURES)/Screenshots/screenshot-%d-%m-%y_%H-%M-%S.png'
                     notify-send "Screenshoot $SCREENOPT"
                      ;;
                 *Area) 
                     DELAY=$(echo "0|3|5|10" | \
                         rofi -sep "|" -dmenu -i -p 'Choose a delay ' "" -width 25 \
                         -hide-scrollbar -eh 1 -line-padding 4 -padding 20 -lines 4)
-                    scrot -s '%S.png' -d $DELAY -e 'mv $f $$(xdg-user-dir PICTURES)/Screenshots/screenshot-%d-%m-%y_%H-%M-%S.png'
+                    _NEW_DELAY=$(($DELAY + 0.3))
+                    sleep 0.3;scrot '%S.png' -d $DELAY -e 'mv $f $$(xdg-user-dir PICTURES)/Screenshots/screenshot-%d-%m-%y_%H-%M-%S.png'
                     notify-send "Screenshoot $SCREENOPT"
                      ;;
             esac
