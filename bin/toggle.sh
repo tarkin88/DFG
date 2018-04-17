@@ -98,7 +98,7 @@ toggle_xautlock() {
             xset dpms 0 0 0
             xautolock -exit
         else
-            xautolock -time 1 -locker 'betterlockscreen --lock dimblur' -notify 10 -notifier "notify-send -u normal -t 10000 -- 'LOCKING screen'"  &
+            xautolock -time 15 -locker 'betterlockscreen --lock dimblur' -notify 10 -notifier "notify-send -u normal -t 10000 -- 'LOCKING screen'"  &
             xset dpms 900 900 900
         fi
         exit 0
