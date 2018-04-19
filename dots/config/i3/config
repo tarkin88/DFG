@@ -181,6 +181,9 @@ bindsym $mod+F1 workspace 3; layout tabbed; exec [ $(ps h -C pcmanfm | wc -l) = 
 # Ranger
 bindsym $mod+F2 workspace 3; layout tabbed; exec [ $(ps h -C ranger | wc -l) = 0 ] && $term -e "ranger"
 
+bindsym $mod+F4; exec $term -e "ncmpcpp"
+
+
 bindsym $mod+F3 workspace 2; layout tabbed; exec [ $(ps h -C firefox | wc -l) = 0 ] && /usr/bin/firefox
 
 # brightness dec
