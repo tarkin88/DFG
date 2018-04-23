@@ -215,7 +215,7 @@ bindsym $mod+Shift+x exec ~/.bin/rofr.sh -l
 bindsym $mod+Shift+h exec ~/.bin/rofr.sh -c
 # Calculator
 bindsym $mod+q exec ~/.bin/rofr.sh -q
-# Calculator
+# Windows
 bindsym $mod+Shift+Tab exec ~/.bin/rofr.sh -w
 # lockscreen
 bindsym $mod+shift+l exec betterlockscreen --lock dimblur

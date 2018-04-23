@@ -1,5 +1,5 @@
 !! Navy n ivory
-#define color_background    #021B21
+#define color_background    #2A363B
 #define color_foreground    #E8DFD6
 #define color_cursorColor   #2E3340
 

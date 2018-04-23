@@ -108,7 +108,7 @@ toggle_xautlock() {
         if [[ $(pgrep -x "xautolock") ]]; then
             echo "%{F#E8DFD6} off "
         else
-            echo "%{F#7CBF9E} on "
+            echo "%{FCOLOR} on "
         fi
         sleep 2
     done

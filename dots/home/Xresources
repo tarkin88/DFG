@@ -2,7 +2,7 @@
 ! Import Colour from ~/.xrdb
 ! ------------------------------------------------------------------------------
 
-#include ".xrdb/color/navy-n-ivory"
+#include ".xrdb/color/theme"
 #include ".xrdb/fonts/monaco"
 
 ! ------------------------------------------------------------------------------

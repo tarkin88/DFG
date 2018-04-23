@@ -10,7 +10,7 @@
 # |------------------------------------------|
 
 echo -e "First checking:\n"
-declare -a coreFiles=("./variables.sh" "./functions.sh")
+declare -a coreFiles=("./variables.sh" "./functions.sh" "./theme.sh")
 
 for i in ${coreFiles[@]};
 do
@@ -29,6 +29,6 @@ ask_dots
 
 ask_packages
 
-echo -e "\n${CYAN}That's all [^_^]/\n\n"
+reload_all
 
-exit 0
+say_goodbye

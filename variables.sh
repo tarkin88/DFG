@@ -24,14 +24,6 @@ WHITE='\033[01;37m'
 # LOG FILE
 LOG="${HOME}/`basename ${0}`.log" 
 
-
-# Schemas for i3
-declare -a colors_schemas=('NavyNIvory' 'Radio')
-
-# array_order = (backgr foregr accent urgent)
-declare -a navy_n_ivory=('#021B21' '#E8DFD6' '#C2454E' '#7CBF9E')
-declare -a radio_schema=('#333333' '#cccccc' '#ebcb8b' '#CB5555')
-
 # HW
 IW=$(ip -o link show | awk '{print $2,$9}' | grep 'UP' | awk '{print $1}' | rev | cut -c 2- | rev)
 MONITOR=$(xrandr -q | grep " connected" | cut -d ' ' -f1)

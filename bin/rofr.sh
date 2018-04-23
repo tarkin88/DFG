@@ -51,10 +51,10 @@ while getopts ":hvqwcbrl" opt; do
             echo -e "$Name -- Version $Version by $Develop" 
             exit 0
             ;;
-        r)
+        r)r
             rofi -modi run,drun -show drun -line-padding 4 \
-                -columns 2 -padding 50 -hide-scrollbar \
-                -show-icons -drun-icon-theme "Paper"
+               -columns 2 -padding 50 -hide-scrollbar \
+               -show-icons -drun-icon-theme "Paper"
             ;;
         w)
             rofi -modi window -show window -hide-scrollbar \

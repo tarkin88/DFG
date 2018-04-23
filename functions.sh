@@ -93,6 +93,7 @@ if_not_create() {
 		echo -e "${YELLOW}[-] ${1} Created"
 	fi	
 }
+
 xrdb_reload() {
 	xrdb ${HOME}/.Xresources
 	echo -e "${GREEN}[*] X resources reloaded\n ${WHITE}"
@@ -121,7 +122,6 @@ copy_dots() {
 	copy_files "dots/home" ${HOME} 1
 	copy_files "bin" ${binPath} 0
 	set_permissions ${configPath}/polybar/modules/
-	set_permissions ${binPath}
 	configure_devices
 }
 
@@ -147,40 +147,54 @@ install_from_aur() {
 	yaourt -S `cat $aurPackagesList` --noconfirm
 }
 
+set_pip_alias() {
+	ALIAS="alias yy=\"mpv --really-quiet --volume=50 --autofit=30% --geometry=-10-15 --ytdl --ytdl-format='mp4[height<=?720]' -ytdl-raw-options=playlist-start=1\""
+	grep -q -F "${ALIAS}" ${HOME}/.zshrc || echo "${ALIAS}" >> ${HOME}/.zshrc
+	echo -e "${GREEN}[*] PiP(Picture in Picture) set as Alias -> 'yy' \n ${WHITE}"
+}
 
-set_i3_color() {
-	case "${1}" in
+set_colors() {
+
+	case ${1} in
 		0)
 			replace_line "BACKGROUND" "set \$backgr ${2}" ${configPath}/i3/config				
+			replace_line "background = #2A363B" "background = ${2}" ${configPath}/polybar/master.conf				
+			replace_line "#2A363B" "${2}" ${HOME}/.xrdb/color/theme
+			replace_line "COLOR_BACKGROUND" "\"${2}\"" ${configPath}/dunst/dunstrc
 			;;
 		1)
+
 			replace_line "FOREGROUND" "set \$foregr ${2}" ${configPath}/i3/config	
-			;;	
+			replace_line "foreground = #E8DFD6" "foreground = ${2}" ${configPath}/polybar/master.conf
+			replace_line "#E8DFD6" "${2}" ${HOME}/.xrdb/color/theme				
+			;;
 		2)
 			replace_line "ACCENT" "set \$accent ${2}" ${configPath}/i3/config	
-			;;	
+			replace_line "accent     = #E84A5F" "accent     = ${2}" ${configPath}/polybar/master.conf				
+			replace_line "FCOLOR" "F${2}" ${binPath}/toggle.sh		
+			replace_line "#2E3340" "${2}" ${HOME}/.xrdb/color/theme				
+			;;
 		3)
-			replace_line "URGENT" "set \$urgent ${2}" ${configPath}/i3/config	
-			;;	
+			replace_line "URGENT" "set \$urgent ${1}" ${configPath}/i3/config	
+			;;
 	esac
 }
 
-i3_custom_theme() {
-	# colors_schemas=('NavyNIvory' 'Radio')
-	case "${1}" in
-		"NavyNIvory" )
-			for index in "${!navy_n_ivory[@]}"; do
-			  set_i3_color $index ${navy_n_ivory[$index]}
-			done
-			;;
-		"Radio")
-			for index in "${!radio_schema[@]}"; do
-			  set_i3_color $index ${radio_schema[$index]}
-			done
-			;;	
-	esac
-	echo -e "${GREEN}[*] ${1} Applied\n ${WHITE}"
-
+ask_themes(){
+	read_input_text "Do you want apply a custom theme?(check variables.sh)"
+	if [[ $OPTION == y ]]; then
+		for index in "${!navy_n_ivory_schema[@]}"; do
+			set_colors $index ${navy_n_ivory_schema[$index]}
+		done
+			echo -e "${GREEN}[*] Theme i3 Applied \n ${WHITE}"
+			echo -e "${GREEN}[*] Theme Polybar Applied \n ${WHITE}"
+			echo -e "${GREEN}[*] Theme Terminal Applied \n ${WHITE}"
+	else 
+		echo -e "${YELLOW}[-] Passed${WHITE}\n"
+		for index in "${!default_schema[@]}"; do
+			set_colors $index ${default_schema[$index]}
+		done
+	fi
 }
 
 apply_antigen() {
@@ -211,7 +225,9 @@ ask_dots() {
 		ask_themes
 		ask_zsh
 		ask_pathogen
+		set_pip_alias
 		xrdb_reload
+		set_permissions ${binPath}
 	else 
 		echo -e "${YELLOW}[-] Passed${WHITE}\n"
 	fi
@@ -232,15 +248,6 @@ ask_packages() {
 	else 
 		echo -e "${YELLOW}[-] Passed${WHITE}\n"
 	fi
-}
-
-ask_themes(){
-	for index in "${!colors_schemas[@]}"; do
-  		echo -e "\n${YELLOW} ${index})${colors_schemas[$index]}${WHITE}\n"
-	done
-	read_input "Choose a theme option (Nord is default): "
-
-	i3_custom_theme ${colors_schemas[$OPTION]}
 }
 
 ask_zsh() {
@@ -274,4 +281,21 @@ configure_devices() {
 		replace_line "modules-right  = memory coreuse wireless-network volume" "modules-right  = memory coreuse wireless-network volume battery" ${configPath}/polybar/config		
 		echo -e "${GREEN}[*] Battery configuration Applied\n ${WHITE}"
 	fi
+}
+
+say_goodbye() {
+	END_MESSAGE="That's all [^_^]/"
+
+	echo -e "\n${CYAN}${END_MESSAGE}\n\n"
+
+	if ! pgrep "dunst" >/dev/null 2>&1 ; then
+		dunst &
+	fi
+	notify-send DFG "${END_MESSAGE}" -t 0
+
+	exit 0
+}
+
+reload_all() {
+	${binPath}/launch_polybar.sh
 }
