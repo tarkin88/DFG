@@ -172,6 +172,7 @@ set_colors() {
 			replace_line "ACCENT" "set \$accent ${2}" ${configPath}/i3/config	
 			replace_line "accent     = #E84A5F" "accent     = ${2}" ${configPath}/polybar/master.conf				
 			replace_line "FCOLOR" "F${2}" ${binPath}/toggle.sh		
+			replace_line "FCOLOR" "F${2}" ${binPath}/spotify-info.sh
 			replace_line "#2E3340" "${2}" ${HOME}/.xrdb/color/theme				
 			;;
 		3)

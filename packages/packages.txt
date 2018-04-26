@@ -35,6 +35,7 @@ mpd
 mpv
 ncmpcpp
 pcmanfm
+playerctl
 polkit-gnome 
 powerline-fonts
 pygtk

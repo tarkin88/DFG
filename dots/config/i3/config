@@ -6,9 +6,10 @@
 # |                April 2018                |
 # |------------------------------------------|
 
+# ================================= VARIABLES ====================================================
+#
 #Primary Key [default Windows key]
 set $mod Mod4
-set $alt Mod1
 
 BACKGROUND
 FOREGROUND
@@ -25,7 +26,7 @@ URGENT
 set $term urxvt
 
 # secondary 
-set $term2 termite
+set $term2 xfce4-terminal
 
 # resize
 set $resize_value 2
@@ -33,6 +34,10 @@ set $resize_value 2
 # border
 set $border_size 2
 
+set $BROWSER firefox
+
+# ================================= STYLES ====================================================
+#
 # colors settings
 # class                   border    backgr    text    indicator   child_border
 client.focused            $backgr   $backgr   $accent $accent   $accent
@@ -63,9 +68,9 @@ floating_modifier $mod
 
 
 # start dmenu (a program launcher)
-#bindsym $mod+d exec dmenu_run
+# ================================= SHORTCUTS ====================================================
+#
 bindsym $mod+d exec rofi -show run
-#bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # start a terminal
 bindsym $mod+Return exec $term
@@ -168,41 +173,33 @@ mode "resize" {
         bindsym Escape mode "default"
 }
 
+# ============================= CUSTOM SHORTCUTS ====================================================
+#
 bindsym $mod+r mode "resize"
-
 # similar behavior to windows alt + tab on workspaces
 bindsym $mod+Tab workspace back_and_forth
-
+#ScreenShots
 bindsym Print exec  exec ~/.bin/rofr.sh -b
-
-
 # File manager
 bindsym $mod+F1 workspace 3; layout tabbed; exec [ $(ps h -C pcmanfm | wc -l) = 0 ] && /usr/bin/pcmanfm
 # Ranger
 bindsym $mod+F2 workspace 3; layout tabbed; exec [ $(ps h -C ranger | wc -l) = 0 ] && $term -e "ranger"
-
+# CLI Media Player
 bindsym $mod+F4; exec $term -e "ncmpcpp"
-
-
-bindsym $mod+F3 workspace 2; layout tabbed; exec [ $(ps h -C firefox | wc -l) = 0 ] && /usr/bin/firefox
-
+# Browser
+bindsym $mod+F3 workspace 2; layout tabbed; exec [ $(ps h -C $BROWSER | wc -l) = 0 ] && $BROWSER
 # brightness dec
 bindsym XF86MonBrightnessDown exec xbacklight -dec 15
-
 # brightness inc
 bindsym XF86MonBrightnessUp exec xbacklight -inc 15
-
 # Previous
-bindsym XF86AudioPrev exec "mpc prev"
-
+bindsym XF86AudioPrev exec playerctl -p spotify previous
 # Next
-bindsym XF86AudioNext exec "mpc next"
-
+bindsym XF86AudioNext exec playerctl -p spotify next
 # Play/Pause
-bindsym XF86AudioPlay exec "mpc toggle"
-
+bindsym XF86AudioPlay exec playerctl -p spotify play-pause
 # Play/Pause
-bindsym XF86AudioStop  exec mpc stop
+bindsym XF86AudioStop  exec playerctl -p spotify stop
 # Mute
 bindsym XF86AudioMute exec "amixer -q sset Master toggle"
 # Volume down
@@ -221,7 +218,8 @@ bindsym $mod+Shift+Tab exec ~/.bin/rofr.sh -w
 bindsym $mod+shift+l exec betterlockscreen --lock dimblur
 
 
-# focus rules
+# ================================= RULES ====================================================
+#
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="bubble"] floating enable
 for_window [window_role="task_dialog"] floating enable
@@ -236,5 +234,6 @@ for_window [title="^alsamixer$"] floating enable border normal
 for_window [title="^pacli$"] floating enable border normal
 for_window [class=Viewnior|Galculator|feh|Audacious|File-roller|Lxappearance|Lxtask|Pavucontrol] floating enable
 
-# autorun
+# ================================= AUTORUN ====================================================
+#
 exec --no-startup-id ~/.bin/autostart.sh
