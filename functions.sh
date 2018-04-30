@@ -274,13 +274,14 @@ configure_devices() {
 	replace_line "monitor = MONITOR" "monitor = ${MONITOR}" ${configPath}/polybar/config		
 	echo -e "${GREEN}[*] Monitor Device layout Applied\n ${WHITE}"
 
+	echo -e "${YELLOW}[-] Check Battery device"
 	if [ -d /sys/class/power_supply/BAT* ]; then
 		BAT=$(ls /sys/class/power_supply/ | grep 'BAT')
-		echo $BAT
-		echo -e "${YELLOW}[-] Check Battery device"
 		replace_line "battery = BAT1" "battery = ${BAT}" ${configPath}/polybar/modules.conf		
-		replace_line "modules-right  = memory coreuse wireless-network volume" "modules-right  = memory coreuse wireless-network volume battery" ${configPath}/polybar/config		
+		replace_line "MODULES_RIGHT" "modules-right  = memory coreuse wireless-network volume battery" ${configPath}/polybar/config		
 		echo -e "${GREEN}[*] Battery configuration Applied\n ${WHITE}"
+	else
+		replace_line "MODULES_RIGHT" "modules-right  = memory coreuse wireless-network volume" ${configPath}/polybar/config		
 	fi
 }
 

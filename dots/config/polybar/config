@@ -15,7 +15,8 @@ monitor = MONITOR
 
 modules-left   = clock mpd spotify
 modules-center = i3 
-modules-right  = pkg toggle_xautlock memory coreuse wireless-network volume
+MODULES_RIGHT
+;modules-right  = pkg toggle_xautlock memory coreuse wireless-network volume
 
 tray-position = right
 tray-padding = 0
