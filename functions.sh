@@ -278,10 +278,10 @@ configure_devices() {
 	if [ -d /sys/class/power_supply/BAT* ]; then
 		BAT=$(ls /sys/class/power_supply/ | grep 'BAT')
 		replace_line "battery = BAT1" "battery = ${BAT}" ${configPath}/polybar/modules.conf		
-		replace_line "MODULES_RIGHT" "modules-right  = memory coreuse wireless-network volume battery" ${configPath}/polybar/config		
+		replace_line "MODULES_RIGHT" "modules-right  = pkg toggle_xautlock memory coreuse wireless-network volume battery" ${configPath}/polybar/config		
 		echo -e "${GREEN}[*] Battery configuration Applied\n ${WHITE}"
 	else
-		replace_line "MODULES_RIGHT" "modules-right  = memory coreuse wireless-network volume" ${configPath}/polybar/config		
+		replace_line "MODULES_RIGHT" "modules-right  = pkg toggle_xautlock memory coreuse wireless-network volume" ${configPath}/polybar/config		
 	fi
 }
 
