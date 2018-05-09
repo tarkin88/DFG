@@ -12,7 +12,7 @@ numlockx on &
 betterlockscreen -w &
 ~/.bin/launch_polybar.sh &
 sleep 1s; greenclip daemon &
-sleep 2s; compton --config ~/.config/compton.conf  &
+sleep 2s; compton --config ~/.config/compton/compton.conf  &
 sleep 2s; redshift -l "20.6596:-103.3496" -t 6800:4300 -g 0.8 -m vidmode &
 sleep 4s; udiskie -aT &
 sleep 4s; [ ! -s ~/.config/mpd/pid ] && mpd &

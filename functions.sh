@@ -128,6 +128,9 @@ copy_dots() {
 welcome() {
 	echo -e "\n${WHITE} Welcome!"
 	echo -e "\n${WHITE} This is a script generate many dots\n"
+	print_line
+	echo -e "${CYAN} PACKAGES${WHITE}\n"
+	print_line
 }
 
 info(){
@@ -198,6 +201,10 @@ ask_themes(){
 	fi
 }
 
+set_monitor_variable() {
+	MONITOR=$(xrandr -q | grep " connected" | cut -d ' ' -f1)
+}
+
 apply_antigen() {
 	if  [ ! -f "${HOME}/antigen.zsh" ]; then
 		curl -L git.io/antigen > antigen.zsh
@@ -220,6 +227,9 @@ ask_pathogen() {
 
 }
 ask_dots() {
+	print_line
+	echo -e "${CYAN} DOT FILES${WHITE}\n"
+	print_line
 	read_input_text "Do you generate dots files?"
 	if [[ $OPTION == y ]]; then
 		copy_dots
@@ -266,6 +276,8 @@ ask_zsh() {
 }
 
 configure_devices() {
+	set_monitor_variable
+
 	echo -e "${YELLOW}[-] Check Network interface"
 	replace_line "interface = INTERFACE" "interface = ${IW}" ${configPath}/polybar/modules.conf		
 	echo -e "${GREEN}[*] Network interface Applied\n ${WHITE}"

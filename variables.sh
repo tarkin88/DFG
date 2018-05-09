@@ -26,4 +26,3 @@ LOG="${HOME}/`basename ${0}`.log"
 
 # HW
 IW=$(ip -o link show | awk '{print $2,$9}' | grep 'UP' | awk '{print $1}' | rev | cut -c 2- | rev)
-MONITOR=$(xrandr -q | grep " connected" | cut -d ' ' -f1)

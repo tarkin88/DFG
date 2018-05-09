@@ -6,11 +6,9 @@ awesome-terminal-fonts
 base-devel
 ccache
 compton
-cython
 dunst
 evince
-firefox
-firefox-i18n-es-mx 
+feh
 galculator
 gparted
 gsimplecal
@@ -18,9 +16,7 @@ hddtemp
 highlight
 htop
 hunspell
-hunspell-es 
 i3-wm 
-jgmenu
 libcaca
 lm_sensors
 libqalculate
@@ -28,8 +24,6 @@ lxappearance
 mplayer
 ncmpcpp
 nitrogen
-nodejs
-npm
 numlockx
 mpd
 mpv
@@ -39,15 +33,12 @@ playerctl
 polkit-gnome 
 powerline-fonts
 pygtk
-python-pip
-python-virtualenv
 ranger
 redshift
 rxvt-unicode
 rxvt-unicode-terminfo
 scrot
 slim
-transmission-gtk
 ttf-font-awesome
 udiskie 
 viewnior

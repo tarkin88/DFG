@@ -25,9 +25,9 @@ done
 
 welcome
 
-ask_dots
-
 ask_packages
+
+ask_dots
 
 reload_all
 
