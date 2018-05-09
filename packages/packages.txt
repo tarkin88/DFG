@@ -38,7 +38,7 @@ redshift
 rxvt-unicode
 rxvt-unicode-terminfo
 scrot
-slim
+slimv
 ttf-font-awesome
 udiskie 
 viewnior

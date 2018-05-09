@@ -207,7 +207,7 @@ set_monitor_variable() {
 
 apply_antigen() {
 	if  [ ! -f "${HOME}/antigen.zsh" ]; then
-		curl -L git.io/antigen > antigen.zsh
+		curl -L git.io/antigen > ${HOME}/antigen.zsh
 	fi	
 	copy_files "dots/antigen" ${HOME} 1
 	echo -e "${GREEN}[*] Antigen applied ${WHITE}\n"
