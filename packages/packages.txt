@@ -6,6 +6,7 @@ awesome-terminal-fonts
 base-devel
 ccache
 compton
+dmenu
 dunst
 evince
 feh
