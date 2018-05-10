@@ -8,7 +8,7 @@ ccache
 compton
 dmenu
 dunst
-evince
+epdfview
 feh
 galculator
 gparted
@@ -39,7 +39,7 @@ redshift
 rxvt-unicode
 rxvt-unicode-terminfo
 scrot
-slimv
+slim
 ttf-font-awesome
 udiskie 
 viewnior

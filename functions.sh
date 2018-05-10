@@ -127,7 +127,7 @@ copy_dots() {
 
 welcome() {
 	echo -e "\n${WHITE} Welcome!"
-	echo -e "\n${WHITE} This is a script generate many dots\n"
+	echo -e "\n${WHITE} This script generate many dots\n"
 	print_line
 	echo -e "${CYAN} PACKAGES${WHITE}\n"
 	print_line
@@ -143,7 +143,7 @@ info(){
 }
 
 install_from_list() {
-	sudo pacman -Sy `cat $packagesList` --noconfirm
+	sudo pacman -Sy `cat $packagesList`
 }
 
 install_from_aur() {
