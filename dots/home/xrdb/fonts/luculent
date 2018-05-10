@@ -1,0 +1,8 @@
+! fonts
+
+URxvt.font:           xft:Luculent:pixelsize=13
+URxvt.boldFont:       xft:Luculent:bold:pixelsize=13
+URxvt.italicFont:     xft:Luculent:italic:pixelsize=13
+URxvt.boldItalicFont: xft:Luculent:bold:italic:pixelsize=13
+URxvt.letterSpace: 0
+URxvt.lineSpace: 0

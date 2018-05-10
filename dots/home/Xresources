@@ -3,7 +3,7 @@
 ! ------------------------------------------------------------------------------
 
 #include ".xrdb/color/theme"
-#include ".xrdb/fonts/monaco"
+#include ".xrdb/fonts/luculent"
 
 ! ------------------------------------------------------------------------------
 ! URxvt configs
@@ -11,7 +11,6 @@
 
 URxvt.geometry: 		120x38
 URxvt*letterSpace: 	    +1
-URxvt.lineSpace: 		0
 URxvt*internalBorder:   0
 URxvt*externalBorder:   0
 URxvt*depth:            32

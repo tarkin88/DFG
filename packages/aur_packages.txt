@@ -7,4 +7,5 @@ polybar
 profile-sync-daemon
 rofi-git
 rofi-greenclip
+ttf-luculent
 ttf-monaco 
