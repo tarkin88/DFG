@@ -3,7 +3,7 @@
 # |       put dot files in right places      |
 # |         Author: Francisco Suárez         |
 # |            github: tarkin88              |
-# |                April 2018                |
+# |                May   2018                |
 # |                 Credits:                 |
 # |              - helmuthdu                 |
 # |              - addy-dclxvi               |

@@ -2,7 +2,7 @@
 # |------------------------------------------|
 # |         Author: Francisco Suárez         |
 # |            github: tarkin88              |
-# |                April 2018                |
+# |                May 2018                  |
 # |  Some functions come from Helmuthdu Aui  |
 # |            github: helmuthdu             |
 # |------------------------------------------|
@@ -142,12 +142,45 @@ info(){
 	pause_function
 }
 
+is_installed() {
+    package="$1";
+    check="$(sudo pacman -Qs --color always "${package}" | grep "local" | grep "${package} ")";
+    if [ -n "${check}" ] ; then
+        echo 1; #'1' means 'true' in Bash
+        return; #true
+    fi;
+    echo 0; #'0' means 'false' in Bash
+    return; #false
+}
+
 install_from_list() {
-	sudo pacman -Sy `cat $packagesList`
+	echo -e "${GREEN}[ ] Check for no installed packages \n ${WHITE}"
+	declare -a to_install=()
+	for package in `cat $packagesList`;
+	do
+		 if [[ $(is_installed "${package}") == 0 ]]; then
+			to_install+=(${package})
+	        continue;
+    	fi;
+	done
+
+	sudo pacman -Sy ${to_install}
+	echo -e "${GREEN}[*] Packages installed \n ${WHITE}"
 }
 
 install_from_aur() {
-	yaourt -S `cat $aurPackagesList` --noconfirm
+	echo -e "${GREEN}[ ] Check for no installed packages \n ${WHITE}"
+	declare -a to_install=()
+	for package in `cat $aurPackagesList`;
+	do
+		 if [[ $(is_installed "${package}") == 0 ]]; then
+			to_install+=(${package})
+	        continue;
+    	fi;
+	done
+
+	yaourt -Sy ${to_install} --noconfirm
+	echo -e "${GREEN}[*] Packages installed \n ${WHITE}"
 }
 
 set_pip_alias() {
@@ -185,6 +218,7 @@ set_colors() {
 }
 
 ask_themes(){
+	echo -e "${WHITE}"
 	read_input_text "Do you want apply a custom theme?(check variables.sh)"
 	if [[ $OPTION == y ]]; then
 		for index in "${!navy_n_ivory_schema[@]}"; do
