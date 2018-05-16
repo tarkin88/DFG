@@ -14,6 +14,7 @@ DFG is a simple script for install packages and tools for a better and comfortab
 - Music Player: `spotify` and `mpd` with `ncmpcpp`
 - Terminal: `rxvt-unicode`
 - Text Editor: `vim`
+- Some extras
 
 
 ## Usage
@@ -29,3 +30,7 @@ DFG is a simple script for install packages and tools for a better and comfortab
 - Helmuthdu [Github](https://github.com/helmuthdu) for inspiration on some functions
 - Archlabs Web [Web](https://archlabslinux.com) for some configurations like polybar.
 - The great community on [unixporn](https://www.reddit.com/r/unixporn)
+
+## ToDo 
+- Screenshots
+- Keybindings table
