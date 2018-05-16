@@ -10,13 +10,12 @@ include-file = ~/.config/polybar/modules.conf
 inherit = bar/master
 
 ; Use $ xrandr -q | grep " connected" | cut -d ' ' -f1
-monitor = MONITOR
+monitor = DVI-D-1
 
 
-modules-left   = clock mpd spotify
-modules-center = i3 
-MODULES_RIGHT
-;modules-right  = pkg toggle_xautlock memory coreuse wireless-network volume
+modules-left   = clock i3
+modules-center = spotify
+modules-right  = pkg toggle_xautlock memory coreuse wireless-network volume 
 
 tray-position = right
 tray-padding = 0

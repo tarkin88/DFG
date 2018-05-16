@@ -61,9 +61,13 @@ infect_vim() {
 		echo -e "${GREEN}[*] Pathogen  (vim) Installed"
 		git clone https://github.com/scrooloose/nerdtree.git ~/.vim/bundle/nerdtree
 		echo -e "${GREEN}[*] Nerd Tree (vim) Installed"
+		git clone https://github.com/ctrlpvim/ctrlp.vim.git ~/.vim/bundle/ctrlp.vim
+		echo -e "${GREEN}[*] Ctrl P (vim) Installed"
+
 	else
 		echo -e "${GREEN}[*] Pathogen  (vim) already exist"
 		echo -e "${GREEN}[*] Nerd Tree  (vim) already exist${WHITE}"
+		echo -e "${GREEN}[*] Ctrl P (vim) already exist${WHITE}"
 	fi
 }
 
@@ -194,19 +198,16 @@ set_colors() {
 	case ${1} in
 		0)
 			replace_line "BACKGROUND" "set \$backgr ${2}" ${configPath}/i3/config				
-			replace_line "background = #2A363B" "background = ${2}" ${configPath}/polybar/master.conf				
 			replace_line "#2A363B" "${2}" ${HOME}/.xrdb/color/theme
 			replace_line "COLOR_BACKGROUND" "\"${2}\"" ${configPath}/dunst/dunstrc
 			;;
 		1)
 
 			replace_line "FOREGROUND" "set \$foregr ${2}" ${configPath}/i3/config	
-			replace_line "foreground = #E8DFD6" "foreground = ${2}" ${configPath}/polybar/master.conf
 			replace_line "#E8DFD6" "${2}" ${HOME}/.xrdb/color/theme				
 			;;
 		2)
 			replace_line "ACCENT" "set \$accent ${2}" ${configPath}/i3/config	
-			replace_line "accent     = #E84A5F" "accent     = ${2}" ${configPath}/polybar/master.conf				
 			replace_line "FCOLOR" "F${2}" ${binPath}/toggle.sh		
 			replace_line "FCOLOR" "F${2}" ${binPath}/spotify-info.sh
 			replace_line "#2E3340" "${2}" ${HOME}/.xrdb/color/theme				
@@ -251,8 +252,11 @@ ask_pathogen() {
 	read_input_text "Do you want use vim pathogen?"
 	if [[ $OPTION == y ]]; then
 		infect_vim
+		add_top ":helptags ~/.vim/bundle/ctrlp.vim/doc" ~/.vimrc
+		add_top "set runtimepath^=~/.vim/bundle/ctrlp.vim" ~/.vimrc
 		add_top "map <C-l> :NERDTreeToggle<CR>" ~/.vimrc
-		add_top "autocmd vimenter * NERDTree" ~/.vimrc
+		add_top "autocmd StdinReadPre * let s:std_in=1" ~/.vimrc
+		add_top "autocmd VimEnter * if argc() == 0 && !exists(\"s:std_in\") | NERDTree | endif" ~/.vimrc
 		add_top "execute pathogen#infect()" ~/.vimrc
 		echo -e "\n"
 	else 

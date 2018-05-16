@@ -40,34 +40,28 @@ URxvt.urgentOnBell: 	True
 ! Colors Configuration
 ! ------------------------------------------------------------------------------
 
-urxvt.background:		color_background
-urxvt.foreground:		color_foreground
+*.cursorColor: 		color_cursorColor
 
-urxvt.cursorColor: 		color_cursorColor
+*.background:		color_background
+*.foreground:		color_foreground
 
-urxvt.color0:			color_0
-urxvt.color8:			color_8
+*.color0:			color_0
+*.color8:			color_8
+*.color1:			color_1
+*.color9:			color_9
+*.color2:			color_2
+*.color10:			color_10
+*.color3:			color_3
+*.color11:			color_11
+*.color4:			color_4
+*.color12:			color_12
+*.color5:			color_5
+*.color13:			color_13
+*.color6:			color_6
+*.color14:			color_14
+*.color7:			color_7
+*.color15: 			color_15
 
-urxvt.color1:			color_1
-urxvt.color9:			color_9
-
-urxvt.color2:			color_2
-urxvt.color10:			color_10
-
-urxvt.color3:			color_3
-urxvt.color11:			color_11
-
-urxvt.color4:			color_4
-urxvt.color12:			color_12
-
-urxvt.color5:			color_5
-urxvt.color13:			color_13
-
-urxvt.color6:			color_6
-urxvt.color14:			color_14
-
-urxvt.color7:			color_7
-urxvt.color15: 			color_15
 
 ! ------------------------------------------------------------------------------
 ! Xft Font Configuration
