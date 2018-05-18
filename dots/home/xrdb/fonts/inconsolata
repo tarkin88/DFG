@@ -1,0 +1,2 @@
+! fonts
+URxvt.font: xft:Inconsolata\ for\ Powerline:medium:pixelsize=14:antialias=true:hinting=true

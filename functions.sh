@@ -240,6 +240,28 @@ set_monitor_variable() {
 	MONITOR=$(xrandr -q | grep " connected" | cut -d ' ' -f1)
 }
 
+configure_devices() {
+	set_monitor_variable
+
+	echo -e "${YELLOW}[-] Check Network interface"
+	replace_line "interface = INTERFACE" "interface = ${IW}" ${configPath}/polybar/modules.conf		
+	echo -e "${GREEN}[*] Network interface Applied\n ${WHITE}"
+
+	echo -e "${YELLOW}[-] Check Monitor Device"
+	echo "monitor = ${MONITOR}" >> ${configPath}/polybar/config
+	echo -e "${GREEN}[*] Monitor Device layout Applied\n ${WHITE}"
+
+	echo -e "${YELLOW}[-] Check Battery device"
+	if [ -d /sys/class/power_supply/BAT* ]; then
+		BAT=$(ls /sys/class/power_supply/ | grep 'BAT')
+		replace_line "battery = BAT1" "battery = ${BAT}" ${configPath}/polybar/modules.conf		
+		replace_line "MODULES_RIGHT" "modules-right  = pkg toggle_xautlock memory coreuse wireless-network volume battery" ${configPath}/polybar/config		
+		echo -e "${GREEN}[*] Battery configuration Applied\n ${WHITE}"
+	else
+		replace_line "MODULES_RIGHT" "modules-right  = pkg toggle_xautlock memory coreuse wireless-network volume" ${configPath}/polybar/config		
+	fi
+}
+
 apply_antigen() {
 	if  [ ! -f "${HOME}/antigen.zsh" ]; then
 		curl -L git.io/antigen > ${HOME}/antigen.zsh
@@ -313,27 +335,6 @@ ask_zsh() {
 	fi
 }
 
-configure_devices() {
-	set_monitor_variable
-
-	echo -e "${YELLOW}[-] Check Network interface"
-	replace_line "interface = INTERFACE" "interface = ${IW}" ${configPath}/polybar/modules.conf		
-	echo -e "${GREEN}[*] Network interface Applied\n ${WHITE}"
-
-	echo -e "${YELLOW}[-] Check Monitor Device"
-	replace_line "monitor = MONITOR" "monitor = ${MONITOR}" ${configPath}/polybar/config		
-	echo -e "${GREEN}[*] Monitor Device layout Applied\n ${WHITE}"
-
-	echo -e "${YELLOW}[-] Check Battery device"
-	if [ -d /sys/class/power_supply/BAT* ]; then
-		BAT=$(ls /sys/class/power_supply/ | grep 'BAT')
-		replace_line "battery = BAT1" "battery = ${BAT}" ${configPath}/polybar/modules.conf		
-		replace_line "MODULES_RIGHT" "modules-right  = pkg toggle_xautlock memory coreuse wireless-network volume battery" ${configPath}/polybar/config		
-		echo -e "${GREEN}[*] Battery configuration Applied\n ${WHITE}"
-	else
-		replace_line "MODULES_RIGHT" "modules-right  = pkg toggle_xautlock memory coreuse wireless-network volume" ${configPath}/polybar/config		
-	fi
-}
 
 say_goodbye() {
 	END_MESSAGE="That's all [^_^]/"

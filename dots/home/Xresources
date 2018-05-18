@@ -3,14 +3,12 @@
 ! ------------------------------------------------------------------------------
 
 #include ".xrdb/color/theme"
-#include ".xrdb/fonts/luculent"
+#include ".xrdb/fonts/inconsolata"
 
 ! ------------------------------------------------------------------------------
 ! URxvt configs
 ! ------------------------------------------------------------------------------
 
-URxvt.geometry: 		120x38
-URxvt*letterSpace: 	    +1
 URxvt*internalBorder:   0
 URxvt*externalBorder:   0
 URxvt*depth:            32
@@ -35,7 +33,8 @@ URxvt.underlineURLs:    true
 URxvt.urlButton:        1
 URxvt*buffered:         false          
 URxvt.urgentOnBell: 	True
-
+!URxvt*letterSpace: 	    +1
+!URxvt.geometry: 		120x38
 ! ------------------------------------------------------------------------------
 ! Colors Configuration
 ! ------------------------------------------------------------------------------

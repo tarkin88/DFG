@@ -47,3 +47,4 @@ w3m
 xarchiver
 xautolock
 youtube-dl
+xorg-xrandr
