@@ -242,6 +242,8 @@ set_monitor_variable() {
 
 configure_devices() {
 	set_monitor_variable
+	
+	IW=$(ip -o link show | awk '{print $2,$9}' | grep 'UP' | awk '{print $1}' | rev | cut -c 2- | rev)
 
 	echo -e "${YELLOW}[-] Check Network interface"
 	replace_line "interface = INTERFACE" "interface = ${IW}" ${configPath}/polybar/modules.conf		
