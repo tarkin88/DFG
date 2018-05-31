@@ -276,7 +276,6 @@ ask_pathogen() {
 	read_input_text "Do you want use vim pathogen?"
 	if [[ $OPTION == y ]]; then
 		infect_vim
-		add_top ":helptags ~/.vim/bundle/ctrlp.vim/doc" ~/.vimrc
 		add_top "set runtimepath^=~/.vim/bundle/ctrlp.vim" ~/.vimrc
 		add_top "map <C-l> :NERDTreeToggle<CR>" ~/.vimrc
 		add_top "autocmd StdinReadPre * let s:std_in=1" ~/.vimrc
