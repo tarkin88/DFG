@@ -16,7 +16,6 @@ hddtemp
 highlight
 htop
 hunspell
-i3-wm 
 libcaca
 lm_sensors
 libqalculate

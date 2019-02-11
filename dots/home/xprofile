@@ -1,3 +1,4 @@
+#!/bin/sh
 # .xprofile
 
 XDG_CONFIG_HOME=$HOME/.config
@@ -18,5 +19,7 @@ if which dbus-launch >/dev/null && test -z "$DBUS_SESSION_BUS_ADDRESS"; then
     eval `dbus-launch --sh-syntax --exit-with-session`
 fi
 
+xset s off && xset -dpms 
+#xset b off
 export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=lcd'
 

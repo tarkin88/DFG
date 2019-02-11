@@ -2,7 +2,6 @@ betterlockscreen
 awesome-terminal-fonts
 inxi
 networkmanager-dmenu-git
-pacli
 polybar
 profile-sync-daemon
 rofi-git
