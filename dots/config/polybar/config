@@ -9,10 +9,10 @@ include-file = ~/.config/polybar/modules.conf
 [bar/status_bar]
 inherit = bar/master
 
-modules-left   = clock i3
-modules-center = spotify
-modules-right  = pkg toggle_xautlock memory coreuse wireless-network volume 
+modules-left   = clock spotify 
+modules-center = i3
+modules-right  = pkg memory coreuse wireless-network 
 
-tray-position = right
-tray-padding = 0
-tray-maxsize = 16
+#tray-position = right
+#tray-padding = 0
+#tray-maxsize = 16

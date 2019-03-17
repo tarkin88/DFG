@@ -4,6 +4,5 @@ inxi
 networkmanager-dmenu-git
 polybar
 profile-sync-daemon
-rofi-git
 rofi-greenclip
 ttf-monaco 

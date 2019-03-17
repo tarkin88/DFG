@@ -2,11 +2,11 @@
 # |------------------------------------------|
 # |       put dot files in right places      |
 # |         Author: Francisco Suárez         |
-# |            github: tarkin88              |
-# |                May   2018                |
-# |                 Credits:                 |
-# |              - helmuthdu                 |
-# |              - addy-dclxvi               |
+# |            github: tarkin88                  |
+# |                March  201 9                     |
+# |                 Credits:               			      |
+# |              - helmuthdu                        |
+# |              - addy-dclxvi               		 |	
 # |------------------------------------------|
 
 echo -e "First checking:\n"
