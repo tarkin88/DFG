@@ -2,7 +2,7 @@
 # |------------------------------------------|
 # |         Author: Francisco Suárez         |
 # |            github: tarkin88              |
-# |                May 2018                  |
+# |                Jun 2019                  |
 # |  Some functions come from Helmuthdu Aui  |
 # |            github: helmuthdu             |
 # |------------------------------------------|
@@ -170,7 +170,7 @@ set_colors() {
 	case ${1} in
 		0)
 			replace_line "BACKGROUND" "set \$backgr ${2}" ${configPath}/i3/config				
-			replace_line "#2A363B" "${2}" ${HOME}/.xrdb/color/theme
+			replace_line "#383a3d" "${2}" ${HOME}/.xrdb/color/theme
 			replace_line "COLOR_BACKGROUND" "\"${2}\"" ${configPath}/dunst/dunstrc
 			;;
 		1)
@@ -213,16 +213,16 @@ set_monitor_variable() {
 }
 
 configure_devices() {
-	set_monitor_variable
+	#set_monitor_variable
 	
-	IW=$(ip -o link show | awk '{print $2,$9}' | grep 'UP' | awk '{print $1}' | rev | cut -c 2- | rev)
+	IW=$(ip -o link show | awk '{print $2,$9}' | grep 'UP' | grep 'wl' | awk '{print $1}' | rev | cut -c 2- | rev)
 
-	echo -e "${YELLOW}[-] Check Network interface"
-	replace_line "interface = INTERFACE" "interface = ${IW}" ${configPath}/polybar/modules.conf		
+	echo -e "${YELLOW}[-] Check Network interface: ${IW}"
+	replace_line "interface = WIFI" "interface = ${IW}" ${configPath}/polybar/modules.conf
 	echo -e "${GREEN}[*] Network interface Applied\n ${WHITE}"
 
 	echo -e "${YELLOW}[-] Check Monitor Device"
-	echo "monitor = ${MONITOR}" >> ${configPath}/polybar/config
+	#echo "monitor = ${MONITOR}" >> ${configPath}/polybar/config
 	echo -e "${GREEN}[*] Monitor Device layout Applied\n ${WHITE}"
 
 	echo -e "${YELLOW}[-] Check Battery device"

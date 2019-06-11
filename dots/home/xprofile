@@ -22,4 +22,5 @@ fi
 xset s off && xset -dpms 
 #xset b off
 export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=lcd'
+export _JAVA_AWT_WM_NONREPARENTING=1 
 

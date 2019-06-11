@@ -1,4 +1,5 @@
 betterlockscreen
+bitwarden-rofi
 awesome-terminal-fonts
 inxi
 networkmanager-dmenu-git

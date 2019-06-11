@@ -3,6 +3,15 @@
 # array_order = (backgr foregr accent urgent)
 
 declare -a navy_n_ivory_schema=(
+	'#383a3d' 
+	'#E8DFD6' 
+	'#8CC3D5' 
+	'#7CBF9E'
+	)
+
+
+
+declare -a navy_n_ivory_schema_back=(
 	'#283739' 
 	'#E8DFD6' 
 	'#E84A5F' 

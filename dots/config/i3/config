@@ -3,7 +3,7 @@
 # |               i3 wm Config               |
 # |         Author: Francisco Suárez         |
 # |            github: tarkin88              |
-# |                April 2018                |
+# |                 Jun 2019                 |
 # |------------------------------------------|
 
 # ================================= VARIABLES ====================================================
@@ -23,18 +23,18 @@ URGENT
 # set $urgent COLOR
 
 # default terminal
-set $term urxvt
+set $term alacritty
 
 # secondary 
-set $term2 xfce4-terminal
+set $term2 termite
 
 # resize
-set $resize_value 2
+set $resize_value 4
 
 # border
-set $border_size 2
+set $border_size 1
 
-set $BROWSER firefox
+set $BROWSER google-chrome
 
 # ================================= STYLES ====================================================
 #
@@ -46,7 +46,10 @@ client.focused_inactive   $backgr   $backgr   $accent $accent   $accent
 client.urgent             $backgr   $backgr   $accent $urgent   $urgent
 
 #Font settings
-font pango:monaco 9
+font pango:hack 11
+
+#Disable  mouse focus
+focus_follows_mouse no
 
 ## set workspaces
 set $ws1  "1: 1"
@@ -60,6 +63,7 @@ set $ws8  "8: 8"
 
 # Border
 new_window pixel $border_size
+
 #new_window normal $border_size
 new_float pixel $border_size
 
@@ -179,11 +183,11 @@ bindsym $mod+r mode "resize"
 # similar behavior to windows alt + tab on workspaces
 bindsym $mod+Tab workspace back_and_forth
 #ScreenShots
-bindsym Print exec  exec ~/.bin/rofr.sh -b
+bindsym Print exec ~/.bin/rofr.sh -s
 # File manager
-bindsym $mod+F1 workspace 3; layout tabbed; exec [ $(ps h -C pcmanfm | wc -l) = 0 ] && /usr/bin/pcmanfm
+bindsym $mod+F1 workspace 4; layout tabbed; exec [ $(ps h -C pcmanfm | wc -l) = 0 ] && /usr/bin/pcmanfm
 # Ranger
-bindsym $mod+F2 workspace 3; layout tabbed; exec [ $(ps h -C ranger | wc -l) = 0 ] && $term -e "ranger"
+bindsym $mod+F2 workspace 4; layout tabbed; exec [ $(ps h -C ranger | wc -l) = 0 ] && $term -e "ranger"
 # CLI Media Player
 bindsym $mod+F4; exec $term -e "ncmpcpp"
 # Browser
@@ -216,7 +220,8 @@ bindsym $mod+q exec ~/.bin/rofr.sh -q
 bindsym $mod+Shift+Tab exec ~/.bin/rofr.sh -w
 # lockscreen
 bindsym $mod+shift+l exec betterlockscreen --lock dimblur
-
+# Bitwarden
+bindsym $mod+Shift+b exec ~/.bin/rofr.sh -b
 
 # ================================= RULES ====================================================
 #
@@ -229,9 +234,9 @@ for_window [window_type="menu"] floating enable
 for_window [class="GParted"] floating enable border normal
 for_window [class="Gnome-mplayer"] floating enable border normal
 for_window [title="^ncmpcpp$"] floating enable border normal
+for_window [title="^spotify$"] floating enable border normal
 for_window [title="^htop$"] floating enable border normal
 for_window [title="^alsamixer$"] floating enable border normal
-for_window [title="^pacli$"] floating enable border normal
 for_window [class=Viewnior|Galculator|feh|Audacious|File-roller|Lxappearance|Lxtask|Pavucontrol] floating enable
 
 # ================================= AUTORUN ====================================================

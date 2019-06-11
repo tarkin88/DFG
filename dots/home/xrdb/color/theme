@@ -1,5 +1,5 @@
 !! Navy n ivory
-#define color_background    #2A363B
+#define color_background    #383a3d
 #define color_foreground    #E8DFD6
 #define color_cursorColor   #2E3340
 
@@ -24,8 +24,8 @@
 #define color_12       #61778D
 
 ! magenta 
-#define color_5        #FF5879
-#define color_13       #FF99A1
+#define color_5        #37BDE8
+#define color_13       #85D0E8
 
 ! cyan 
 #define color_6        #44B5B1

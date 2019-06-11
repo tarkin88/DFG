@@ -45,3 +45,4 @@ w3m
 xarchiver
 xautolock
 xorg-xrandr
+xsel

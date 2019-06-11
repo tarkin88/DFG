@@ -22,7 +22,8 @@ Options:
      -w      Switch between open windows
      -r      Program launcher & run dialog
      -c      Select previous clipboard entries
-     -b      Screenshots
+     -b      Bitwarden plugin
+     -s      Screenshots
      -l      Session logout choice
 
 EOF
@@ -41,7 +42,7 @@ delay() {
 }
 
 #  Handle command line arguments
-while getopts ":hvqwcbrl" opt; do
+while getopts ":hvqwcbrls" opt; do
     case $opt in
         h)
             _usage
@@ -70,7 +71,10 @@ while getopts ":hvqwcbrl" opt; do
                 -line-padding 4 -show "clipboard:greenclip print" \
                 -hide-scrollbar
             ;;
-        b)
+        b) 
+			bwmenu --show-password
+			;;
+        s)
             SCREENOPT=$(echo " Full| Area" | \
                 rofi -sep "|" -dmenu -i -p 'Choose a option ' "" -width 15 \
                 -hide-scrollbar -eh 1 -line-padding 4 -padding 20 -lines 4)
