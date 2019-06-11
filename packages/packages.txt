@@ -1,6 +1,7 @@
 acpi
 adobe-source-sans-pro-fonts
 arandr
+alacritty
 atool
 awesome-terminal-fonts
 ccache
@@ -22,7 +23,6 @@ libqalculate
 lxappearance
 mplayer
 ncmpcpp
-nitrogen
 numlockx
 mpd
 mpv
@@ -34,8 +34,6 @@ powerline-fonts
 ranger
 redshift
 rofi
-rxvt-unicode
-rxvt-unicode-terminfo
 scrot
 slim
 ttf-font-awesome

@@ -12,7 +12,7 @@ DFG is a simple script for install packages and tools for a better and comfortab
 - Launcher: `rofi`
 - File manager: `pcmanfm` and `ranger`
 - Music Player: `spotify` and `mpd` with `ncmpcpp`
-- Terminal: `rxvt-unicode`
+- Terminal: `alacritty`
 - Text Editor: `vim`
 - Some extras
 
