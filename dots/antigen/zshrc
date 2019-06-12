@@ -1,5 +1,5 @@
 source ~/antigen.zsh
-
+TERM_PROGRAM="alacritty"
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
 
@@ -9,25 +9,22 @@ antigen bundle pip
 antigen bundle command-not-found
 antigen bundle git-flow-avh
 antigen bundle zdharma/fast-syntax-highlighting
+antigen bundle zsh-users/zsh-autosuggestions
+antigen bundle zsh-users/zsh-completions
+antigen bundle marzocchi/zsh-notify
 
-#POWERLEVEL9K_INSTALLATION_PATH=$ANTIGEN_BUNDLES/bhilburn/powerlevel9k
-#antigen theme bhilburn/powerlevel9k powerlevel9k
 
 # Load the theme.
+SPACESHIP_PROMPT_ADD_NEWLINE=false
+SPACESHIP_CHAR_SUFFIX=" "
+SPACESHIP_USER_SHOW=needed
+SPACESHIP_BATTERY_SHOW=true
+
 antigen bundle denysdovhan/spaceship-prompt
+
 
 # Tell Antigen that you're done.
 antigen apply
-
-export PATH=$HOME/.bin:$HOME/.bin/yarn/bin:$PATH
-export EDITOR='vim'
-
-
-# Android Variables
-#export ANDROID_HOME=/opt/android-sdk
-#PATH=$PATH:$ANDROID_HOME/tools
-#PATH=$PATH:$ANDROID_HOME/platform-tools  
-
 
 
 setopt AUTO_CD # No cd needed to change directories
@@ -42,5 +39,50 @@ setopt HIST_REDUCE_BLANKS # Remove superfluous blanks before recording entry.
 setopt HIST_SAVE_NO_DUPS # Don't write duplicate entries in the history file.
 setopt INC_APPEND_HISTORY # Write to the history file immediately, not when the shell exits.
 setopt SHARE_HISTORY # Share history between all sessions.
+HISTFILE=$HOME/.zsh_history
+HISTSIZE=100000
+SAVEHIST=$HISTSIZE
+setopt correct_all # autocorrect commands
 
-SPACESHIP_PROMPT_FIRST_PREFIX_SHOW=true
+setopt auto_list # automatically list choices on ambiguous completion
+setopt auto_menu # automatically use menu completion
+setopt always_to_end # move cursor to end if word had one match
+
+
+zstyle ':completion:*' menu select # select completions with arrow keys
+zstyle ':completion:*' group-name '' # group results by category
+zstyle ':completion:::::' completer _expand _complete _ignored _approximate # enable approximate matches for completion
+
+# colored-man-pages
+# source: https://github.com/xero/dotfiles/blob/master/zsh/.zsh/colored-man-pages.zsh
+export LESS_TERMCAP_mb=$'\E[01;31m'
+export LESS_TERMCAP_md=$'\E[01;38;5;74m'
+export LESS_TERMCAP_me=$'\E[0m'
+export LESS_TERMCAP_se=$'\E[0m'
+export LESS_TERMCAP_so=$'\E[38;33;246m'
+export LESS_TERMCAP_ue=$'\E[0m'
+export LESS_TERMCAP_us=$'\E[04;38;5;146m'
+
+
+# Security
+
+alias checkrootkits="sudo rkhunter --update; sudo rkhunter --propupd; sudo rkhunter --check"
+alias checkvirus="clamscan --recursive=yes --infected /home"
+alias updateantivirus="sudo freshclam"
+
+# environment
+export PATH=$HOME/.bin:$HOME/.bin/yarn/bin:$PATH
+export EDITOR=nvim
+export SUDO_EDITOR=$EDITOR
+export VISUAL=$EDITOR
+export SYSTEMD_EDITOR=$EDITOR
+export BROWSER=google-chrome-stable
+export CC=clang
+export CXX=clang++
+export GPG_TTY=$(tty)
+export TERM="screen-256color"
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+export QT_STYLE_OVERRIDE='gtk2'
+export LC_ALL=es_MX.UTF-8
+
+
