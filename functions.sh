@@ -269,7 +269,7 @@ ask_dots() {
 		ask_themes
 		ask_zsh
 		ask_pathogen
-		set_pip_alias
+		# set_pip_alias
 		xrdb_reload
 		set_permissions ${binPath}
 	else 

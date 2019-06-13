@@ -13,14 +13,10 @@ antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-completions
 antigen bundle marzocchi/zsh-notify
 
-
 # Load the theme.
-SPACESHIP_PROMPT_ADD_NEWLINE=false
-SPACESHIP_CHAR_SUFFIX=" "
 SPACESHIP_USER_SHOW=needed
-SPACESHIP_BATTERY_SHOW=true
 
-antigen bundle denysdovhan/spaceship-prompt
+antigen theme denysdovhan/spaceship-prompt
 
 
 # Tell Antigen that you're done.
@@ -63,6 +59,19 @@ export LESS_TERMCAP_so=$'\E[38;33;246m'
 export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[04;38;5;146m'
 
+# environment
+export PATH=$HOME/.bin:$HOME/.bin/yarn/bin:$PATH
+export EDITOR=vim
+export SUDO_EDITOR=$EDITOR
+export VISUAL=$EDITOR
+export SYSTEMD_EDITOR=$EDITOR
+export BROWSER=google-chrome-stable
+export TERM="screen-256color"
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+export QT_STYLE_OVERRIDE='gtk2'
+export LC_ALL=es_MX.UTF-8
+
+# ALIAS
 
 # Security
 
@@ -70,19 +79,5 @@ alias checkrootkits="sudo rkhunter --update; sudo rkhunter --propupd; sudo rkhun
 alias checkvirus="clamscan --recursive=yes --infected /home"
 alias updateantivirus="sudo freshclam"
 
-# environment
-export PATH=$HOME/.bin:$HOME/.bin/yarn/bin:$PATH
-export EDITOR=nvim
-export SUDO_EDITOR=$EDITOR
-export VISUAL=$EDITOR
-export SYSTEMD_EDITOR=$EDITOR
-export BROWSER=google-chrome-stable
-export CC=clang
-export CXX=clang++
-export GPG_TTY=$(tty)
-export TERM="screen-256color"
-export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
-export QT_STYLE_OVERRIDE='gtk2'
-export LC_ALL=es_MX.UTF-8
-
-
+# float video (a.k.a. pip)
+alias yy="mpv --really-quiet --volume=50 --autofit=40% --geometry=-10-15 --ytdl --ytdl-format='mp4[height<=?1080]' -ytdl-raw-options=playlist-start=1"
