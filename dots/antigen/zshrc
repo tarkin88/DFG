@@ -14,10 +14,19 @@ antigen bundle zsh-users/zsh-completions
 antigen bundle marzocchi/zsh-notify
 
 # Load the theme.
-SPACESHIP_USER_SHOW=needed
+antigen bundle agkozak/agkozak-zsh-prompt
 
-antigen theme denysdovhan/spaceship-prompt
+# theme customization
+AGKOZAK_COLORS_EXIT_STATUS=red
+AGKOZAK_COLORS_USER_HOST=green
+AGKOZAK_COLORS_PATH=grey
+AGKOZAK_COLORS_BRANCH_STATUS=cyan
+AGKOZAK_COLORS_PROMPT_CHAR=white
 
+AGKOZAK_BLANK_LINES=1
+
+AGKOZAK_PROMPT_CHAR=( ❯ ❯ ❮ )
+AGKOZAK_COLORS_PROMPT_CHAR='cyan'
 
 # Tell Antigen that you're done.
 antigen apply
@@ -66,7 +75,6 @@ export SUDO_EDITOR=$EDITOR
 export VISUAL=$EDITOR
 export SYSTEMD_EDITOR=$EDITOR
 export BROWSER=google-chrome-stable
-export TERM="screen-256color"
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 export QT_STYLE_OVERRIDE='gtk2'
 export LC_ALL=es_MX.UTF-8
