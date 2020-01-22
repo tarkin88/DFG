@@ -6,11 +6,12 @@
 # |            github: tarkin88              |
 # |------------------------------------------|
 
-setxkbmap latam &
+setxkbmap es &
 numlockx on &
+xrandr --output eDP1 --mode 1920x1080 --pos 0x0 --rotate normal --output HDMI1 --primary --mode 3440x1440 --pos 1920x0 --rotate normal --output VIRTUAL1 --off;
+sleep 1s; betterlockscreen -w &
 sleep 1s; greenclip daemon &
 sleep 2s; ~/.bin/launch_polybar.sh &
-sleep 2s; betterlockscreen -w &
 sleep 2s; dunst &
 sleep 2s; ~/.bin/bt-connect.sh &
 sleep 3s; compton --config ~/.config/compton/compton.conf &

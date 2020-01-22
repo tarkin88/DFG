@@ -3,7 +3,7 @@
 # |               i3 wm Config               |
 # |         Author: Francisco Suárez         |
 # |            github: tarkin88              |
-# |                 Jun 2019                 |
+# |                 Jan 2020                 |
 # |------------------------------------------|
 
 # ================================= VARIABLES ====================================================
@@ -25,7 +25,7 @@ URGENT
 # default terminal
 set $term alacritty
 
-# secondary 
+# secondary
 set $term2 termite
 
 # resize
@@ -35,6 +35,20 @@ set $resize_value 4
 set $border_size 1
 
 set $BROWSER google-chrome
+
+# GAPS settings
+# i3-gaps from https://github.com/Airblader/i3
+# Disable window titlebars entirely
+for_window [class="^.*"] border pixel 3
+
+# Set inner/outer gaps
+gaps inner 10
+gaps outer 5
+# Smart gaps (gaps used if only more than one container on the workspace)
+smart_gaps on
+# Smart borders (draw borders around container only if it is not the only container on this workspace) 
+# on|no_gaps (on=always activate and no_gaps=only activate if the gap size to the edge of the screen is 0)
+smart_borders on
 
 # ================================= STYLES ====================================================
 #
@@ -210,7 +224,7 @@ bindsym XF86AudioMute exec "amixer -q sset Master toggle"
 bindsym XF86AudioLowerVolume exec "amixer -q set Master 3%- unmute"
 # Volume up
 bindsym XF86AudioRaiseVolume exec "amixer -q set Master 3%+ unmute"
-# exit 
+# exit
 bindsym $mod+Shift+x exec ~/.bin/rofr.sh -l
 #clipboard
 bindsym $mod+Shift+h exec ~/.bin/rofr.sh -c
@@ -222,6 +236,47 @@ bindsym $mod+Shift+Tab exec ~/.bin/rofr.sh -w
 bindsym $mod+shift+l exec betterlockscreen --lock dimblur
 # Bitwarden
 bindsym $mod+Shift+b exec ~/.bin/rofr.sh -b
+
+# ================================= GAPS ====================================================
+
+# Press $mod+Shift+g to enter the gap mode. Choose o or i for modifying outer/inner gaps. 
+# Press one of + / - (in-/decrement for current workspace) or 0 (remove gaps for current workspace). If you also press Shift with these keys, the change will be global for all workspaces.
+set $mode_gaps Gaps: (o) outer, (i) inner
+set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
+set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
+bindsym $mod+Shift+g mode "$mode_gaps"
+
+mode "$mode_gaps" {
+        bindsym o      mode "$mode_gaps_outer"
+        bindsym i      mode "$mode_gaps_inner"
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+mode "$mode_gaps_inner" {
+        bindsym plus  gaps inner current plus 5
+        bindsym minus gaps inner current minus 5
+        bindsym 0     gaps inner current set 0
+
+        bindsym Shift+plus  gaps inner all plus 5
+        bindsym Shift+minus gaps inner all minus 5
+        bindsym Shift+0     gaps inner all set 0
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+mode "$mode_gaps_outer" {
+        bindsym plus  gaps outer current plus 5
+        bindsym minus gaps outer current minus 5
+        bindsym 0     gaps outer current set 0
+
+        bindsym Shift+plus  gaps outer all plus 5
+        bindsym Shift+minus gaps outer all minus 5
+        bindsym Shift+0     gaps outer all set 0
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
 
 # ================================= RULES ====================================================
 #
