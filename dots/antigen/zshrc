@@ -1,5 +1,7 @@
 source ~/antigen.zsh
-TERM_PROGRAM="alacritty"
+
+TERM_PROGRAM="kitty"
+
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
 
@@ -29,7 +31,6 @@ AGKOZAK_COLORS_PROMPT_CHAR='cyan'
 
 # Tell Antigen that you're done.
 antigen apply
-
 
 setopt AUTO_CD # No cd needed to change directories
 setopt BANG_HIST # Treat the '!' character specially during expansion.
@@ -68,7 +69,7 @@ export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[04;38;5;146m'
 
 # environment
-export PATH=$HOME/.bin:$HOME/.bin/yarn/bin:$PATH
+export PATH=$HOME/.bin:$PATH
 export EDITOR=vim
 export SUDO_EDITOR=$EDITOR
 export VISUAL=$EDITOR
@@ -81,10 +82,19 @@ export LC_ALL=es_MX.UTF-8
 # ALIAS
 
 # Security
-
 alias checkrootkits="sudo rkhunter --update; sudo rkhunter --propupd; sudo rkhunter --check"
 alias checkvirus="clamscan --recursive=yes --infected /home"
 alias updateantivirus="sudo freshclam"
 
+alias gcd="git checkout develop"
+alias logs="git log  --color --graph --pretty --abbrev-commit | command less -r"
+alias state="git status -sb"
+alias stage="git add ."
+alias unstage="git reset"
+alias commit="git commit"
+alias vim="nvim"
+
 # float video (a.k.a. pip)
 alias yy="mpv --really-quiet --volume=50 --autofit=40% --geometry=-10-15 --ytdl --ytdl-format='mp4[height<=?1080]' -ytdl-raw-options=playlist-start=1"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

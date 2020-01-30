@@ -23,10 +23,10 @@ URGENT
 # set $urgent COLOR
 
 # default terminal
-set $term alacritty
+set $term kitty
 
 # secondary
-set $term2 termite
+set $term2 alacriitty
 
 # resize
 set $resize_value 4

@@ -1,0 +1,205 @@
+"██╗   ██╗██╗███╗   ███╗
+"██║   ██║██║████╗ ████║
+"██║   ██║██║██╔████╔██║
+"╚██╗ ██╔╝██║██║╚██╔╝██║
+" ╚████╔╝ ██║██║ ╚═╝ ██║
+"  ╚═══╝  ╚═╝╚═╝     ╚═╝
+
+" Directorio de plugins
+call plug#begin('~/.local/share/nvim/plugged')
+
+Plug 'mhinz/vim-startify'  " Show a start screen
+" Aquí irán los plugins a instalar
+Plug 'scrooloose/nerdtree'  "explorar de archivos
+Plug 'xuyuanp/nerdtree-git-plugin'
+Plug 'joshdick/onedark.vim' "One Dark Theme
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'  " Temas para airline
+Plug 'Yggdroot/indentLine'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'Shougo/neco-syntax'  " Fuente general de auto completado
+Plug 'wokalski/autocomplete-flow'
+Plug 'ervandew/supertab'
+Plug 'Shougo/echodoc.vim'
+Plug 'sirver/ultisnips'
+Plug 'honza/vim-snippets'
+Plug 'w0rp/ale'
+Plug 'sheerun/vim-polyglot'
+Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
+Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
+Plug 'othree/html5.vim', { 'for': 'html' }
+Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
+Plug 'ludovicchabant/vim-gutentags'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+Plug 'haya14busa/incsearch.vim'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-eunuch'
+Plug 'jiangmiao/auto-pairs'
+Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-commentary' " comment with powers
+Plug 'luochen1990/rainbow' " rainbow_parentheses
+Plug 'editorconfig/editorconfig-vim'
+
+call plug#end()
+
+set colorcolumn=120  " Set & show limit column
+set number
+set termguicolors  " Activa true colors en la terminal
+set scrolloff=3  " Display at least 3 lines around you cursor
+
+set diffopt+=vertical  " Always use vertical diffs
+
+" ## Indentation
+set autoindent			" automatically set indent of new line
+set smartindent
+set laststatus=2		" show the status line all the time
+set autoread			" detect when a file is changed
+
+set smarttab " tab respects 'tabstot', 'shiftwidth', and 'softtabstop'
+set tabstop=4
+set shiftwidth=2
+set softtabstop=2
+set shiftround
+set expandtab
+
+let mapleader = ','		" set the <leader>
+
+
+" ## Spellchecker
+
+set spelllang=en,es
+
+colorscheme onedark  " Activa tema onedark
+
+let g:NERDTreeChDirMode = 2  " Cambia el directorio actual al nodo padre actual
+
+map <F2> :NERDTreeToggle<CR>
+
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+let g:airline#extensions#tabline#enabled = 1  " Mostrar buffers abiertos (como pestañas)
+let g:airline#extensions#tabline#fnamemod = ':t'  " Mostrar sólo el nombre del archivo
+
+" Cargar fuente Powerline y símbolos (ver nota)
+let g:airline_powerline_fonts = 1
+
+set noshowmode  " No mostrar el modo actual (ya lo muestra la barra de estado)
+
+" No mostrar en ciertos tipos de buffers y archivos
+let g:indentLine_fileTypeExclude = ['text', 'sh', 'help', 'terminal']
+let g:indentLine_bufNameExclude = ['NERD_tree.*', 'term:.*']
+
+" Activar deoplete al iniciar Neovim
+let g:deoplete#enable_at_startup = 1
+
+" neosnippet
+let g:neosnippet#enable_completed_snippet = 1
+
+" Cerrar automaticamente la ventana de vista previa (donde se muestra documentación, si existe)
+augroup deopleteCompleteDoneAu
+  autocmd!
+  autocmd CompleteDone * silent! pclose!
+augroup END
+
+let g:SuperTabDefaultCompletionType = '<c-n>'
+
+set noshowmode  " No mostrar el modo actual (echodoc hace uso de este espacio)
+
+" Activar echodoc al iniciar Neovim
+let g:echodoc_enable_at_startup = 1
+
+" Expandir snippet con Ctrl + j
+let g:UltiSnipsExpandTrigger = '<c-j>'
+
+" Ir a siguiente ubicacion con Ctrl + j
+let g:UltiSnipsJumpForwardTrigger = '<c-j>'
+" Ir a anterior ubicacion con Ctrl + k
+let g:UltiSnipsJumpBackwardTrigger = '<c-k>'
+
+
+" Mostrar mejor mensajes de error
+let g:ale_echo_msg_error_str = 'E'
+let g:ale_echo_msg_warning_str = 'W'
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+
+let g:gutentags_ctags_tagfile = '.tags'
+
+" Ejecutar comandos con alt-enter :Commands
+let g:fzf_commands_expect = 'alt-enter'
+" Guardar historial de búsquedas
+let g:fzf_history_dir = '~/.local/share/fzf-history'
+
+" Empezar a buscar presionando Ctrl + p
+nnoremap <C-p> :Files<CR>
+
+" Maps requeridos
+map /  <Plug>(incsearch-forward)
+map ?  <Plug>(incsearch-backward)
+
+" Quitar resaltado luego de buscar
+let g:incsearch#auto_nohlsearch = 1
+
+
+set updatetime=250
+
+map <leader>ut :UndotreeToggle<cr>
+
+" ====== Tab Mapping"
+"""""""""""""""""""""
+map <leader>tc :tabnew<cr>
+map <leader>te :tabedit
+map <leader>tq :tabclose<cr>
+map <leader>to :tabonly<cr>
+map <leader>tn :tabnext<cr>
+map <leader>tp :tabprevious<cr>
+map <leader>tf :tabfirst<cr>
+map <leader>tl :tablast<cr>
+map <leader>tm :tabmove<cr>
+
+
+" ====== Call Windows"
+""""""""""""""""""""""
+map <leader>wl :Windows<cr>
+map <C-h> :call WinMove('h')<cr>
+map <C-j> :call WinMove('j')<cr>
+map <C-k> :call WinMove('k')<cr>
+map <C-l> :call WinMove('l')<cr>
+" Window movement shortcuts
+" move to the window in the direction shown, or create a new window
+function! WinMove(key)
+    let t:curwin = winnr()
+    exec "wincmd ".a:key
+    if (t:curwin == winnr())
+        if (match(a:key,'[jk]'))
+            wincmd v
+        else
+            wincmd s
+        endif
+        exec "wincmd ".a:key
+    endif
+  endfunction
+
+let g:ale_fixers = {
+ \ '*': [
+ \ 'remove_trailing_lines',
+ \ 'trim_whitespace'],
+ \ 'javascript': ['eslint'],
+ \ }
+
+"let g:ale_completion_enabled = 1
+
+"let g:ale_sign_error = '❌'
+" let g:ale_sign_warning = '⚠️'
+
+let g:ale_fix_on_save = 1
+let g:ale_sign_column_always = 1
+
+"let g:ale_open_list = 1
+" Set this if you want to.
+" This can be useful if you are combining ALE with
+" some other plugin which sets quickfix errors, etc.
+"let g:ale_keep_list_window_open = 1
+"let NERDTreeShowHidden=1
