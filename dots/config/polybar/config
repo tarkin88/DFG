@@ -6,23 +6,13 @@
 include-file = ~/.config/polybar/master.conf
 include-file = ~/.config/polybar/modules.conf
 
-[bar/left_bar]
+[bar/main_bar]
 inherit = bar/master
-monitor = eDP1
-modules-left   = filesystem memory coreuse pkg   
+monitor = DVI-D-0
+monitor-fallback = HDMI-0
+modules-left   = spotify
 modules-center = i3
-modules-right  = wireless-network
-
-
-[bar/right_bar]
-inherit = bar/master
-monitor = HDMI1
-monitor-fallback = eDP1
-monitor-strict = false
-modules-left   = clock spotify
-modules-center = i3
-modules-right  = alsa battery
-
+modules-right  = filesystem memory coreuse clock
 
 #tray-position = right
 #tray-padding = 0

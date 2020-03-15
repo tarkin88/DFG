@@ -6,4 +6,4 @@ networkmanager-dmenu-git
 polybar
 profile-sync-daemon
 rofi-greenclip
-ttf-monaco 
+ttf-monaco

@@ -3,7 +3,7 @@
 # |               i3 wm Config               |
 # |         Author: Francisco Suárez         |
 # |            github: tarkin88              |
-# |                 Jan 2020                 |
+# |               March 2020                 |
 # |------------------------------------------|
 
 # ================================= VARIABLES ====================================================
@@ -23,10 +23,7 @@ URGENT
 # set $urgent COLOR
 
 # default terminal
-set $term kitty
-
-# secondary
-set $term2 alacriitty
+set $term alacritty
 
 # resize
 set $resize_value 4
@@ -46,7 +43,7 @@ gaps inner 10
 gaps outer 5
 # Smart gaps (gaps used if only more than one container on the workspace)
 smart_gaps on
-# Smart borders (draw borders around container only if it is not the only container on this workspace) 
+# Smart borders (draw borders around container only if it is not the only container on this workspace)
 # on|no_gaps (on=always activate and no_gaps=only activate if the gap size to the edge of the screen is 0)
 smart_borders on
 
@@ -239,7 +236,7 @@ bindsym $mod+Shift+b exec ~/.bin/rofr.sh -b
 
 # ================================= GAPS ====================================================
 
-# Press $mod+Shift+g to enter the gap mode. Choose o or i for modifying outer/inner gaps. 
+# Press $mod+Shift+g to enter the gap mode. Choose o or i for modifying outer/inner gaps.
 # Press one of + / - (in-/decrement for current workspace) or 0 (remove gaps for current workspace). If you also press Shift with these keys, the change will be global for all workspaces.
 set $mode_gaps Gaps: (o) outer, (i) inner
 set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)

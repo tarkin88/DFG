@@ -1,6 +1,6 @@
 source ~/antigen.zsh
 
-TERM_PROGRAM="kitty"
+TERM_PROGRAM="alacritty"
 
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
@@ -43,7 +43,8 @@ setopt HIST_IGNORE_SPACE # Don't record an entry starting with a space.
 setopt HIST_REDUCE_BLANKS # Remove superfluous blanks before recording entry.
 setopt HIST_SAVE_NO_DUPS # Don't write duplicate entries in the history file.
 setopt INC_APPEND_HISTORY # Write to the history file immediately, not when the shell exits.
-setopt SHARE_HISTORY # Share history between all sessions.
+setopt SHARE_HISTORY # Share history between all sessions.\
+
 HISTFILE=$HOME/.zsh_history
 HISTSIZE=100000
 SAVEHIST=$HISTSIZE
@@ -69,17 +70,16 @@ export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[04;38;5;146m'
 
 # environment
-export PATH=$HOME/.bin:$PATH
-export EDITOR=vim
+# export PATH=$HOME/.bin:$PATH
+export EDITOR=nvim
 export SUDO_EDITOR=$EDITOR
 export VISUAL=$EDITOR
 export SYSTEMD_EDITOR=$EDITOR
 export BROWSER=google-chrome-stable
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 export QT_STYLE_OVERRIDE='gtk2'
-export LC_ALL=es_MX.UTF-8
+export LC_ALL=en_US.UTF-8
 
-# ALIAS
 
 # Security
 alias checkrootkits="sudo rkhunter --update; sudo rkhunter --propupd; sudo rkhunter --check"
