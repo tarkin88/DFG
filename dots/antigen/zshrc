@@ -83,8 +83,15 @@ alias stage="git add ."
 alias unstage="git reset"
 alias commit="git commit"
 alias vim="nvim"
+alias d="kitty +kitten diff"
+alias icat="kitty +kitten icat"
 
 # float video (a.k.a. pip)
 alias yy="mpv --really-quiet --volume=50 --autofit=40% --geometry=-10-15 --ytdl --ytdl-format='mp4[height<=?1080]' -ytdl-raw-options=playlist-start=1"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+autoload -Uz compinit
+compinit
+# Completion for kitty
+kitty + complete setup zsh | source /dev/stdin

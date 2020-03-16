@@ -26,7 +26,7 @@ URGENT
 set $term kitty
 
 # resize
-set $resize_value 4
+set $resize_value 5
 
 # border
 set $border_size 1
@@ -39,8 +39,8 @@ set $BROWSER google-chrome
 for_window [class="^.*"] border pixel 3
 
 # Set inner/outer gaps
-gaps inner 10
-gaps outer 5
+gaps inner 8
+gaps outer 4
 # Smart gaps (gaps used if only more than one container on the workspace)
 smart_gaps on
 # Smart borders (draw borders around container only if it is not the only container on this workspace)

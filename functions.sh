@@ -54,20 +54,13 @@ add_top() {
 	${1}" ${2}
 }
 
-infect_vim() {
-	if  [ ! -d ~/.vim/autoload ]; then
-		mkdir -p ~/.vim/autoload ~/.vim/bundle && \
-		curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
-		echo -e "${GREEN}[*] Pathogen  (vim) Installed"
-		git clone https://github.com/scrooloose/nerdtree.git ~/.vim/bundle/nerdtree
-		echo -e "${GREEN}[*] Nerd Tree (vim) Installed"
-		git clone https://github.com/ctrlpvim/ctrlp.vim.git ~/.vim/bundle/ctrlp.vim
-		echo -e "${GREEN}[*] Ctrl P (vim) Installed"
-
+power_for_vim() {
+	if  [ ! -d ~/.vim ]; then
+      curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+		echo -e "${GREEN}[*] Vim Plug  (vim) Installed"
 	else
-		echo -e "${GREEN}[*] Pathogen  (vim) already exist"
-		echo -e "${GREEN}[*] Nerd Tree  (vim) already exist${WHITE}"
-		echo -e "${GREEN}[*] Ctrl P (vim) already exist${WHITE}"
+		echo -e "${GREEN}[*] Vim Plug  (vim) already exist"
 	fi
 }
 
@@ -244,21 +237,7 @@ apply_antigen() {
 	echo -e "${GREEN}[*] Antigen applied ${WHITE}\n"
 }
 
-ask_pathogen() {
-	read_input_text "Do you want use vim pathogen?"
-	if [[ $OPTION == y ]]; then
-		infect_vim
-		add_top "set runtimepath^=~/.vim/bundle/ctrlp.vim" ~/.vimrc
-		add_top "map <C-l> :NERDTreeToggle<CR>" ~/.vimrc
-		add_top "autocmd StdinReadPre * let s:std_in=1" ~/.vimrc
-		add_top "autocmd VimEnter * if argc() == 0 && !exists(\"s:std_in\") | NERDTree | endif" ~/.vimrc
-		add_top "execute pathogen#infect()" ~/.vimrc
-		echo -e "\n"
-	else
-		echo -e "${YELLOW}[-] Passed${WHITE}\n"
-	fi
 
-}
 ask_dots() {
 	print_line
 	echo -e "${CYAN} DOT FILES${WHITE}\n"
@@ -268,7 +247,7 @@ ask_dots() {
 		copy_dots
 		ask_themes
 		ask_zsh
-		# set_pip_alias
+        power_for_vim
 		xrdb_reload
 		set_permissions ${binPath}
 	else

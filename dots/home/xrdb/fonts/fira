@@ -1,0 +1,6 @@
+! fonts
+
+URxvt.font:           xft:Fira Code:pixelsize=13
+URxvt.boldFont:       xft:Fira Code:bold:pixelsize=13
+URxvt.italicFont:     xft:FiraCode:italic:pixelsize=13
+URxvt.boldItalicFont: xft:Fira Code:bold:italic:pixelsize=13
