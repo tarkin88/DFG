@@ -8,8 +8,8 @@ include-file = ~/.config/polybar/modules.conf
 
 [bar/main_bar]
 inherit = bar/master
-monitor = DVI-D-0
-monitor-fallback = HDMI-0
+monitor = HDMI-0
+monitor-fallback = DVI-D-0
 modules-left   = spotify
 modules-center = i3
 modules-right  = filesystem memory coreuse clock

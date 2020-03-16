@@ -292,11 +292,6 @@ say_goodbye() {
 
 	echo -e "\n${CYAN}${END_MESSAGE}\n\n"
 
-	if ! pgrep "dunst" >/dev/null 2>&1 ; then
-		dunst &
-	fi
-	notify-send DFG "${END_MESSAGE}" -t 0
-
 	exit 0
 }
 

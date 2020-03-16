@@ -2,10 +2,10 @@ configuration {
     modi: "combi,windowcd,run";
     lines: 30;
     columns: 1;
-    font: "hack 16";
+    font: "Fira Code 17";
     bw: 0;
     location: 1;
-    padding: 0;
+    padding: 3;
     fixed-num-lines: true;
     show-icons: false;
     sidebar-mode: false;
@@ -87,7 +87,7 @@ window {
     border-color: @x14;
     border-radius: 0px;
     padding: 40;
-    width: 35%;
+    width: 27%;
     height: 100%;
 }
 mainbox {
