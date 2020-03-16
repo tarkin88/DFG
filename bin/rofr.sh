@@ -4,12 +4,12 @@
 # |             Author: Archlabs             |
 # |        Forked by : Francisco Suárez      |
 # |            github: tarkin88              |
-# |                April 2018                |
+# |                 March 2020               |
 # |------------------------------------------|
 
 Name=$(basename "$0")
-Version="0.1"
-Develop="archlabs"
+Version="0.4"
+Develop="archlabs, tunned by Frank"
 
 _usage() {
     cat <<- EOF
@@ -22,7 +22,7 @@ Options:
      -w      Switch between open windows
      -r      Program launcher & run dialog
      -c      Select previous clipboard entries
-     -b      Bitwarden plugin
+     -e      Emoji insert
      -s      Screenshots
      -l      Session logout choice
 
@@ -42,17 +42,17 @@ delay() {
 }
 
 #  Handle command line arguments
-while getopts ":hvqwcbrls" opt; do
+while getopts ":hvqwcerls" opt; do
     case $opt in
         h)
             _usage
             exit 0
             ;;
         v)
-            echo -e "$Name -- Version $Version by $Develop" 
+            echo -e "$Name -- Version $Version by $Develop"
             exit 0
             ;;
-        r)r
+        r)
             rofi -modi run,drun -show drun -line-padding 4 \
                -columns 2 -padding 50 -hide-scrollbar \
                -show-icons -drun-icon-theme "Paper"
@@ -62,31 +62,32 @@ while getopts ":hvqwcbrls" opt; do
                 -eh 1 -padding 50 -line-padding 4
             ;;
         q)
-            rofi -modi "calc:qalc +u8 -nocurrencies" -padding 50 \
-                -show "calc:qalc +u8 -nocurrencies" -line-padding 4 \
+            rofi -show calc -modi calc -no-show-match -no-sort  \
+                -line-padding 4 \
                 -hide-scrollbar
+            ;;
+        e)
+            rofimoji --skin-tone 'medium-light'
             ;;
         c)
             rofi -modi "clipboard:greenclip print" -padding 50 \
                 -line-padding 4 -show "clipboard:greenclip print" \
-                -hide-scrollbar
+                -hide-scrollbar ; \
+                sleep 0.5; xdotool type $(xclip -o -selection clipboard)
             ;;
-        b) 
-			bwmenu --show-password
-			;;
-        s)
+       s)
             SCREENOPT=$(echo " Full| Area" | \
                 rofi -sep "|" -dmenu -i -p 'Choose a option ' "" -width 15 \
                 -hide-scrollbar -eh 1 -line-padding 4 -padding 20 -lines 4)
             case "$SCREENOPT" in
-                *Full) 
+                *Full)
                     DELAY=$(echo "0|3|5|10" | \
                         rofi -sep "|" -dmenu -i -p 'Choose a delay ' "" -width 25 \
                         -hide-scrollbar -eh 1 -line-padding 4 -padding 20 -lines 4)
                     sleep 0.3;scrot '%S.png' -d $DELAY -e 'mv $f $$(xdg-user-dir PICTURES)/Screenshots/screenshot-%d-%m-%y_%H-%M-%S.png'
                     notify-send "Screenshoot $SCREENOPT"
                      ;;
-                *Area) 
+                *Area)
                     DELAY=$(echo "0|3|5|10" | \
                         rofi -sep "|" -dmenu -i -p 'Choose a delay ' "" -width 25 \
                         -hide-scrollbar -eh 1 -line-padding 4 -padding 20 -lines 4)

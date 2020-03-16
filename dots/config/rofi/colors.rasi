@@ -1,21 +1,28 @@
 * {
-    xbg:    #383a3d;
-    xfg:    #FDFDFD;
-    x0:     #383a3d;
-    x1:     #37BDE8;
-    x2:     #5ADECD;
-    x3:     #F2A272;
-    x4:     #8897F4;
-    x5:     #C574DD;
-    x6:     #79E6F3;
-    x7:     #FDFDFD;
-    x8:     #414458;
-    x9:     #FF4971;
-    x10:    #18E3C8;
-    x11:    #FF8037;
-    x12:    #556FFF;
-    /*x13:    #B043D1;*/
-    x13:    #37BDE8;
-    x14:    #3FDCEE;
-    x15:    #FDFDFD;
+    xbg:    #002635;
+    xfg:    #e6e6dc;
+
+    x0:     #00384d;
+    x8:     #517f8d;
+
+    x1:     #c43061;
+    x9:     #ff5a67;
+
+    x2:     #7fc06e;
+    x10:    #9cf087;
+
+    x3:     #f08e48;
+    x11:    #ffcc1b;
+
+    x4:     #1c8db2;
+    x12:    #7eb2dd;
+
+    x5:     #c694ff;
+    x13:    #fb94ff;
+
+    x6:     #00cccc;
+    x14:    #00ffff;
+
+    x7:     #77929e;
+    x15:    #b7cff9;
 }

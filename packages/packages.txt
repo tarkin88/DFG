@@ -43,5 +43,6 @@ vim
 w3m
 xarchiver
 xautolock
+xdotool
 xorg-xrandr
 xsel

@@ -125,19 +125,19 @@ element normal.urgent {
 }
 element normal.active {
     background-color: rgba (0,0,0,0%);
-    text-color:       @x5;
+    text-color:       @x6;
 }
 element selected.normal {
     background-color: rgba (0,0,0,0%);
-    text-color:       @x13;
+    text-color:       @x6;
 }
 element selected.urgent {
     background-color: rgba (0,0,0,0%);
-    text-color:       @x13;
+    text-color:       @x6;
 }
 element selected.active {
     background-color: rgba (0,0,0,0%);
-    text-color:       @x13;
+    text-color:       @x6;
 }
 element alternate.normal {
     background-color: rgba (0,0,0,0%);
@@ -149,7 +149,7 @@ element alternate.urgent {
 }
 element alternate.active {
     background-color: rgba (0,0,0,0%);
-    text-color:       @x5;
+    text-color:       @x6;
 }
 scrollbar {
     width:        4px ;

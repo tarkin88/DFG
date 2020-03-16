@@ -196,9 +196,9 @@ bindsym $mod+Tab workspace back_and_forth
 #ScreenShots
 bindsym Print exec ~/.bin/rofr.sh -s
 # File manager
-bindsym $mod+F1 workspace 4; layout tabbed; exec [ $(ps h -C pcmanfm | wc -l) = 0 ] && /usr/bin/pcmanfm
+bindsym $mod+F1 exec [ $(ps h -C pcmanfm | wc -l) = 0 ] && /usr/bin/pcmanfm
 # Ranger
-bindsym $mod+F2 workspace 4; layout tabbed; exec [ $(ps h -C ranger | wc -l) = 0 ] && $term -e "ranger"
+bindsym $mod+F2 exec [ $(ps h -C ranger | wc -l) = 0 ] && $term -e "ranger"
 # CLI Media Player
 bindsym $mod+F4; exec $term -e "ncmpcpp"
 # Browser
@@ -232,7 +232,7 @@ bindsym $mod+Shift+Tab exec ~/.bin/rofr.sh -w
 # lockscreen
 bindsym $mod+shift+l exec betterlockscreen --lock dimblur
 # Bitwarden
-bindsym $mod+Shift+b exec ~/.bin/rofr.sh -b
+bindsym $mod+Shift+b exec ~/.bin/rofr.sh -e
 
 # ================================= GAPS ====================================================
 
