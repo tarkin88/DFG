@@ -23,7 +23,7 @@ URGENT
 # set $urgent COLOR
 
 # default terminal
-set $term alacritty
+set $term kitty
 
 # resize
 set $resize_value 4
