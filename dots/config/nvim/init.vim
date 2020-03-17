@@ -43,6 +43,11 @@ set termguicolors  " Activa true colors en la terminal
 set diffopt+=vertical  " Always use vertical diffs
 set scrolloff=2  " Display at least 3 lines around you cursor
 
+" cursor
+set cursorline
+hi CursorLine ctermbg=235
+highlight Cursor ctermbg=Green
+
 " Indentation
 set autoindent			" automatically set indent of new line
 set smartindent
@@ -58,21 +63,22 @@ set noshowmode  " hide vim mode, airline show it
 " coc (intellisense)
 set hidden
 set nobackup
+set noswapfile " get rid of swapfiles everywhere
 set nowritebackup
 set updatetime=300
 set shortmess+=c
 set signcolumn=yes
 
+set omnifunc=syntaxcomplete#Complete
+set completefunc=LanguageClient#complete
+set list
+
 
 " - - - - - - - - Plugins settings - - - - - - - - - -
-"colorscheme gruvbox
 colorscheme rigel
-
-" colorscheme xcodedark
-"colorscheme monokai_pro
 " Git Blamer
 let g:blamer_enabled = 1
-let g:blamer_delay = 1500
+let g:blamer_delay = 2500
 let g:blamer_show_in_visual_modes = 0
 let g:blamer_template = '<summary> | <committer> | <committer-time>'
 let g:blamer_prefix = ' -> '
@@ -101,35 +107,34 @@ let g:NERDTreeChDirMode = 2  " Change focus to actual node
 let NERDTreeShowHidden = 1
 let NERDTreeMinimalUI = 1
 let NERDTreeQuitOnOpen=1
+let g:NERDTreeWinPos              = 'left'
+let g:NERDTreeWinSize             = 30
+let g:NERDTreeStatusline          = "  "
+let g:NERDTreeDirArrowExpandable  = '+'
+let g:NERDTreeDirArrowCollapsible = '-'
+
+
 
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 "lightline
 let g:rigel_lightline = 1
 let g:lightline = { 'colorscheme': 'rigel' }
-" airline
-"let g:airline#extensions#tabline#enabled = 1  " show buffers as tabs
-"let g:airline#extensions#tabline#fnamemod = ':t'  " show filename
-"let g:airline#extensions#bufferline#enabled = 1
-"let g:airline_powerline_fonts = 1 "load powerline fonts
-"let g:airline_theme='deus'
-"let g:airline_theme='gruvbox'
-"let g:airline_left_sep = ''
-"let g:airline_left_alt_sep = ''
-"let g:airline_right_sep = ''
-"let g:airline#extensions#ale#enabled = 1
-
 " identline
 let g:indentLine_fileTypeExclude = ['text', 'sh', 'help', 'terminal']
 let g:indentLine_bufNameExclude = ['NERD_tree.*', 'term:.*']
+let g:indentLine_char_list = ['|', '¦', '┆', '┊']
+
 " neosnippet
 let g:neosnippet#enable_completed_snippet = 1
 " Ale, lintern
 let g:ale_echo_msg_error_str = 'E'
 let g:ale_echo_msg_warning_str = 'W'
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
-let g:ale_sign_error = '.'
-let g:ale_sign_warning = '.'
+let g:ale_set_signs             = 1
+let g:ale_use_deprecated_neovim = 1
+let g:ale_sign_error            = '> '
+let g:ale_sign_warning          = '! '
 let g:ale_set_loclist = 0
 let g:ale_set_quickfix = 1
 let g:ale_fixers = {
@@ -141,16 +146,19 @@ let g:ale_fixers = {
 let g:ale_completion_enabled = 1
 let g:ale_set_highlights = 1
 let g:ale_fix_on_save = 1
-"let g:ale_open_list = 1
-"let g:ale_keep_list_window_open = 1
-"let g:ale_list_window_size = 4
+let g:ale_list_window_size = 4
+hi ALEErrorSign ctermfg=01 ctermbg=00
+hi ALEWarningSign ctermfg=06 ctermbg=00
+
 " gitgutter
 let g:gitgutter_override_sign_column_highlight = 0
-let g:gitgutter_sign_added                     = '┃'
-let g:gitgutter_sign_modified                  = '┃'
-let g:gitgutter_sign_removed                   = '┃'
-let g:gitgutter_sign_removed_first_line        = '┃'
-let g:gitgutter_sign_modified_removed          = '┃'
+let g:gitgutter_sign_added                     = '+'
+let g:gitgutter_sign_modified                  = '±'
+let g:gitgutter_sign_removed                   = '-'
+let g:gitgutter_sign_removed_first_line        = '×'
+let g:gitgutter_sign_modified_removed          = '×'
+
+
 " coc
 autocmd CursorHold * silent call CocActionAsync('highlight') "Highlight symbol under cursor on CursorHold
 let g:coc_global_extensions = [
@@ -184,6 +192,8 @@ endif
 if !exists('g:undotree_SetFocusWhenToggle')
     let g:undotree_SetFocusWhenToggle = 1
 endif
+
+
 "- - - - - - - - - - - KeyMaps - - - - - - - - - - -
 let mapleader = ','		" set the <leader>
 nmap <F2> :NERDTreeToggle<CR>
