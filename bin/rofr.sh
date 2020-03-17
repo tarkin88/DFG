@@ -72,8 +72,7 @@ while getopts ":hvqwcerls" opt; do
         c)
             rofi -modi "clipboard:greenclip print" -padding 50 \
                 -line-padding 4 -show "clipboard:greenclip print" \
-                -hide-scrollbar ; \
-                sleep 0.5; xdotool type $(xclip -o -selection clipboard)
+                -hide-scrollbar ;
             ;;
        s)
             SCREENOPT=$(echo " Full| Area" | \
