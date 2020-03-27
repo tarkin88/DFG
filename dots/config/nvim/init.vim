@@ -23,7 +23,8 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'dense-analysis/ale'
 Plug 'sheerun/vim-polyglot'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-
+Plug 'Shougo/neosnippet.vim'
+Plug 'Shougo/neosnippet-snippets'
 call plug#end()
 
 
@@ -63,11 +64,6 @@ set list
 
 
 " - - - - - - - - - - - - -Plugins Settings- - - - - - - - - - - - - -
-" Deoplete
-" let g:deoplete#enable_at_startup = 1
-"autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
-"set splitbelow
-"inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 " neomake
 let g:neomake_python_enabled_makers = ['pylint']
 call neomake#configure#automake('nrwi', 500)
@@ -160,6 +156,7 @@ let g:coc_global_extensions = [
       \ 'coc-emmet',
       \ 'coc-css',
       \ 'coc-python',
+      \ 'coc-neosnippet',
       \ ]
 
 " Ale, lintern
@@ -248,10 +245,15 @@ nmap <silent> cy <Plug>(coc-type-definition)
 nmap <silent> ci <Plug>(coc-implementation)
 nmap <silent> cr <Plug>(coc-references)
 " Use <TAB> for select selections ranges, needs server support, like: coc-tsserver, coc-python
-nmap <silent> <TAB> <Plug>(coc-range-select)
-xmap <silent> <TAB> <Plug>(coc-range-select)
+"nmap <silent> <TAB> <Plug>(coc-range-select)
+"xmap <silent> <TAB> <Plug>(coc-range-select)
 inoremap <silent><expr> <c-space> coc#refresh()
-
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>"
+inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
 
 " - - - - - - - - - - - - - - - Functions - - - - - - - - - - - - - - -
 " Loop through denite options and enable them
