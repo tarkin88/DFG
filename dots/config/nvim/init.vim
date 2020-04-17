@@ -15,16 +15,21 @@ Plug 'airblade/vim-gitgutter' " shows a git diff
 Plug 'editorconfig/editorconfig-vim'
 Plug 'mhinz/vim-startify'  " Show a start screen
 Plug 'itchyny/lightline.vim'
+Plug 'maximbaz/lightline-ale'
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'APZelos/blamer.nvim'
 Plug 'Yggdroot/indentLine' " displaying thin vertical lines
 Plug 'tpope/vim-surround'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'dense-analysis/ale'
+Plug 'posva/vim-vue'
 Plug 'sheerun/vim-polyglot'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
+Plug 'wakatime/vim-wakatime'
+Plug 'leafOfTree/vim-vue-plugin'
+Plug 'mattn/emmet-vim'
 call plug#end()
 
 
@@ -101,7 +106,47 @@ let g:blamer_template = '<summary> | <committer> | <committer-time>'
 let g:blamer_prefix = ' -> '
 "lightline
 let g:rigel_lightline = 1
-let g:lightline = { 'colorscheme': 'rigel' }
+
+let g:lightline = {
+      \ 'colorscheme': 'rigel',
+      \ 'active': {
+      \   'left': [ ['mode', 'paste' ],
+      \             [ 'readonly', 'filename' ] ],
+      \   'right': [ [ 'lineinfo' ],
+      \              [ 'percent' ],
+      \              [ 'fileformat', 'fileencoding', 'filetype' ] ,
+      \              [ 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_infos', 'linter_ok' ]
+      \]
+      \ },
+      \ 'component_function': {
+      \   'filename': 'LightlineFilename',
+      \ },
+      \ }
+
+
+let g:lightline.component_expand = {
+      \  'linter_checking': 'lightline#ale#checking',
+      \  'linter_infos': 'lightline#ale#infos',
+      \  'linter_warnings': 'lightline#ale#warnings',
+      \  'linter_errors': 'lightline#ale#errors',
+      \  'linter_ok': 'lightline#ale#ok',
+      \ }
+
+
+let g:lightline.component_type = {
+      \     'linter_checking': 'right',
+      \     'linter_infos': 'right',
+      \     'linter_warnings': 'warning',
+      \     'linter_errors': 'error',
+      \     'linter_ok': 'right',
+      \ }
+
+
+let g:lightline#ale#indicator_checking = "\uf110"
+let g:lightline#ale#indicator_infos = "\uf129"
+let g:lightline#ale#indicator_warnings = "\uf071"
+let g:lightline#ale#indicator_errors = "\uf05e"
+let g:lightline#ale#indicator_ok = "\uf00c"
 " identline
 let g:indentLine_fileTypeExclude = ['text', 'sh', 'help', 'terminal']
 let g:indentLine_bufNameExclude = ['NERD_tree.*', 'term:.*']
@@ -165,12 +210,15 @@ let g:ale_echo_msg_warning_str = 'W'
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 let g:ale_set_signs             = 1
 let g:ale_use_deprecated_neovim = 1
-let g:ale_sign_error            = '> '
-let g:ale_sign_warning          = '! '
-let g:ale_set_loclist = 0
-let g:ale_set_quickfix = 1
+let g:ale_sign_column_always = 1
+let g:ale_sign_error            = "\uf05e"
+let g:ale_sign_warning          = "\uf071"
+
+let g:ale_linter_aliases = {'vue': ['vue', 'javascript']}
+
 let g:ale_fixers = {
       \ '*': [ 'remove_trailing_lines', 'trim_whitespace'],
+      \ 'vue': [ 'prettier', 'eslint'],
       \ 'javascript': ['prettier', 'eslint'],
       \ 'python': [
       \ 'yapf',
@@ -185,16 +233,23 @@ let g:ale_fixers = {
 let g:ale_completion_enabled = 1
 let g:ale_set_highlights = 1
 let g:ale_fix_on_save = 1
-let g:ale_list_window_size = 4
-hi ALEErrorSign ctermfg=01 ctermbg=00
-hi ALEWarningSign ctermfg=06 ctermbg=00
-
+let g:ale_list_window_size = 8
+let g:ale_open_list = 0
+let g:ale_set_loclist = 0
+let g:ale_set_quickfix = 1
+let g:ale_keep_list_window_open = 1
+" vim vue plugin
+let g:vim_vue_plugin_load_full_syntax = 1
+" emmet
+let g:user_emmet_install_global = 1
 
 " - - - - - - - - - - - - - - - keybinding - - - - - - - - - - - - - -
 let mapleader = ','     " set the <leader>
 
 nmap <F2> :NERDTreeToggle<CR> " Open nerdtree
 nnoremap <F3> :UndotreeToggle<cr> " Open undo tree
+nmap <F4> :syntax sync fromstart<CR>
+
 " basic shortcuts
 nnoremap <C-S> :w<CR>
 vnoremap <C-S> <esc>:w<CR>
@@ -254,6 +309,7 @@ inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>"
 inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
+
 
 " - - - - - - - - - - - - - - - Functions - - - - - - - - - - - - - - -
 " Loop through denite options and enable them
@@ -342,3 +398,22 @@ function! LinterStatus() abort
         \   all_errors
         \)
 endfunction
+
+
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
+
+
+function! LightlineFilename()
+  let filename = expand('%:t') !=# '' ? expand('%:t') : '[No Name]'
+  let modified = &modified ? ' +' : ''
+  return filename . modified
+endfunction
+" - - - - - - - - - - -  Commands - - - - - - - - - - - - - -
+command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')

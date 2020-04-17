@@ -2,12 +2,12 @@ configuration {
     modi: "combi,windowcd,run";
     lines: 30;
     columns: 1;
-    font: "Fira Code 17";
+    font: "Fira Code 18";
     bw: 0;
     location: 1;
     padding: 3;
     fixed-num-lines: true;
-    show-icons: false;
+    show-icons: true;
     sidebar-mode: false;
     combi-modi: "window,run";
     separator-style: "none";

@@ -3,6 +3,7 @@ adobe-source-sans-pro-fonts
 arandr
 atool
 awesome-terminal-fonts
+blueberry
 ccache
 dmenu
 dunst
