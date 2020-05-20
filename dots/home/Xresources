@@ -2,7 +2,7 @@
 ! Import Colour from ~/.xrdb
 ! ------------------------------------------------------------------------------
 
-#include ".xrdb/color/theme"
+#include ".xrdb/color/gruvbox"
 #include ".xrdb/fonts/fira"
 
 ! ------------------------------------------------------------------------------

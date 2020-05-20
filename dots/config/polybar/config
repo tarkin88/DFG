@@ -8,11 +8,11 @@ include-file = ~/.config/polybar/modules.conf
 
 [bar/main_bar]
 inherit = bar/master
-monitor = HDMI-0
-monitor-fallback = DVI-D-0
-modules-left   = mpd
+monitor = eDP1
+monitor-fallback = HDMI
+modules-left   = spotify
 modules-center = i3
-modules-right  = bluetooth temperature filesystem memory alsa wired-network clock
+modules-right  = bluetooth temperature filesystem memory alsa wireless-network battery clock
 
 #tray-position = right
 #tray-padding = 0

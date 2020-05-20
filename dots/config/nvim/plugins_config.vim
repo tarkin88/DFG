@@ -4,12 +4,14 @@
 " ============================================================================ "
 
 " Color scheme
-let g:onedark_terminal_italics=1
-let g:onedark_termcolors=1
-colorscheme onedark
+"
+let g:srcery_italic = 1
 
- autocmd BufEnter * call ncm2#enable_for_buffer()
-    set completeopt=noinsert,menuone,noselect
+colorscheme srcery
+
+"let g:gruvbox_contrast_dark="hard"
+"let g:gruvbox_italic=1
+"colorscheme gruvbox
 
 
 " == ulti snippets
@@ -18,26 +20,6 @@ let g:UltiSnipsJumpForwardTrigger	= "<c-j>"
 let g:UltiSnipsJumpBackwardTrigger	= "<c-k>"
 let g:UltiSnipsRemoveSelectModeMappings = 0
 
-
-    Plug 'autozimu/LanguageClient-neovim', {
-        \ 'branch': 'next',
-        \ 'do': 'bash install.sh',
-        \ }
-    let g:LanguageClient_serverCommands = {
-                \ 'vue': ['vls'],
-                \ 'rust': ['rls'],
-                \ }
-
-    " read
-    " https://github.com/autozimu/LanguageClient-neovim/pull/514#issuecomment-404463033
-    " for contents of settings.json for vue-language-server
-    let g:LanguageClient_settingsPath = $WORKSPACE_DIR . '/.vim/settings.json'
-    let g:LanguageClient_completionPreferTextEdit = 1
-    autocmd BufNewFile,BufRead *.vue set filetype=vue
-    autocmd filetype vue LanguageClientStart
-
-    " the suddennly popup of diagnostics sign is kind of annoying
-    let g:LanguageClient_diagnosticsSignsMax = 0
 
 " == nerdtree
 let g:NERDTreeHighlightFolders = 1
@@ -83,7 +65,7 @@ let g:lightline#ale#indicator_warnings = "\uf071"
 let g:lightline#ale#indicator_errors = "\uf05e"
 let g:lightline#ale#indicator_ok = "\uf00c"
 let g:lightline = {
-  \ 'colorscheme': 'onedark',
+  \ 'colorscheme': 'srcery',
   \ }
 
 
@@ -110,15 +92,6 @@ endif
 if !exists('g:undotree_SetFocusWhenToggle')
   let g:undotree_SetFocusWhenToggle = 1
 endif
-
-
-" == deoplete
-"let g:deoplete#enable_at_startup = 1
-
-
-" == neomake
-"let g:neomake_python_enabled_makers = ['pylint']
-"call neomake#configure#automake('nrwi', 500)
 
 
 " == jedi
@@ -159,7 +132,6 @@ let g:ale_open_list = 0
 let g:ale_set_loclist = 0
 let g:ale_set_quickfix = 1
 let g:ale_keep_list_window_open = 1
-set omnifunc=ale#completion#OmniFunc
 let g:ale_completion_tsserver_autoimport = 1
 
 
@@ -180,3 +152,55 @@ let g:neosnippet#snippets_directory='~/.config/nvim/snippets'
 " == clap
 let g:clap_layout = { 'relative': 'editor' }
 let g:clap_open_action={'ctrl-t': 'tab split', 'ctrl-x': 'split', 'ctrl-v': 'vsplit' }
+
+" SuperTab
+let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
+
+" LSP and Vista config
+let g:lsp_diagnostics_enabled = 0
+let g:lsp_signs_enabled = 1         " enable signs
+let g:lsp_diagnostics_echo_cursor = 1 " enable echo under cursor when in normal mode
+
+highlight link LspErrorText GruvboxRedSign " requires gruvbox
+highlight clear LspWarningLine
+
+set foldmethod=expr
+  \ foldexpr=lsp#ui#vim#folding#foldexpr()
+  \ foldtext=lsp#ui#vim#folding#foldtext()
+
+let g:LanguageClient_serverCommands = {
+    \ 'vue': ['vls']
+    \ }
+
+let g:lsp_settings = {
+\   'pyls': {
+\     'workspace_config': {
+\       'pyls': {
+\         'configurationSources': ['flake8']
+\       }
+\     }
+\   },
+\}
+
+let g:vista_executive_for = {
+\ 'python': 'vim_lsp',
+\ }
+
+let g:vista_ignore_kinds = ['Variable']
+
+" Goyo
+let g:goyo_width=130
+
+" Vim vue
+let g:vue_pre_processors = ['scss']
+
+
+" startify
+let g:startify_bookmarks = [ {'n': '~/.config/nvim/init.vim'}, '~/.zshrc' ]
+let g:startify_custom_header = 'startify#pad(startify#fortune#boxed())'
+let g:startify_files_number=5
+let g:startify_lists = [
+            \ { 'type': 'files',     'header': ['   Files']            },
+            \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
+            \ { 'type': 'sessions',  'header': ['   Sessions']       },
+            \ ]

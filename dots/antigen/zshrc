@@ -13,7 +13,6 @@ antigen bundle zsh-users/zsh-completions
 
 # Load the theme.
 antigen bundle agkozak/agkozak-zsh-prompt
-
 # theme customization
 AGKOZAK_COLORS_EXIT_STATUS=red
 AGKOZAK_COLORS_USER_HOST=green
@@ -25,7 +24,6 @@ AGKOZAK_BLANK_LINES=1
 
 AGKOZAK_PROMPT_CHAR=( ❯ ❯ ❮ )
 AGKOZAK_COLORS_PROMPT_CHAR='cyan'
-
 # Tell Antigen that you're done.
 antigen apply
 
@@ -83,15 +81,47 @@ alias stage="git add ."
 alias unstage="git reset"
 alias commit="git commit"
 alias vim="nvim"
-alias d="kitty +kitten diff"
-alias icat="kitty +kitten icat"
 
-# float video (a.k.a. pip)
-alias yy="mpv --really-quiet --volume=50 --autofit=40% --geometry=-10-15 --ytdl --ytdl-format='mp4[height<=?1080]' -ytdl-raw-options=playlist-start=1"
+## FZF FUNCTIONS ##
+
+# fo [FUZZY PATTERN] - Open the selected file with the default editor
+#   - Bypass fuzzy finder if there's only one match (--select-1)
+#   - Exit if there's no match (--exit-0)
+fo() {
+  local files
+  IFS=$'\n' files=($(fzf-tmux --query="$1" --multi --select-1 --exit-0))
+  [[ -n "$files" ]] && ${EDITOR:-nvim} "${files[@]}"
+}
+
+# fh [FUZZY PATTERN] - Search in command history
+fh() {
+  print -z $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed 's/ *[0-9]* *//')
+}
+
+# fbr [FUZZY PATTERN] - Checkout specified branch
+# Include remote branches, sorted by most recent commit and limited to 30
+fgb() {
+  local branches branch
+  branches=$(git for-each-ref --count=30 --sort=-committerdate refs/heads/ --format="%(refname:short)") &&
+  branch=$(echo "$branches" |
+           fzf-tmux -d $(( 2 + $(wc -l <<< "$branches") )) +m) &&
+  git checkout $(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##")
+}
+
+# fuzzy grep via rg and open in vim with line number
+fgr() {
+  local file
+  local line
+
+  read -r file line <<<"$(rg --no-heading --line-number $@ | fzf -0 -1 | awk -F: '{print $1, $2}')"
+
+  if [[ -n $file ]]
+  then
+     nvim $file +$line
+  fi
+}
 
 # [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 autoload -Uz compinit
 compinit
-# Completion for kitty
-kitty + complete setup zsh | source /dev/stdin

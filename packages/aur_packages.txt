@@ -1,5 +1,4 @@
 betterlockscreen
-bitwarden-rofi
 awesome-terminal-fonts
 inxi
 networkmanager-dmenu-git
@@ -8,4 +7,3 @@ polybar
 profile-sync-daemon
 rofi-greenclip
 rofi-calc
-ttf-monaco

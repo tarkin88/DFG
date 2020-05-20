@@ -163,19 +163,17 @@ set_colors() {
 	case ${1} in
 		0)
 			replace_line "BACKGROUND" "set \$backgr ${2}" ${configPath}/i3/config
-			replace_line "#383a3d" "${2}" ${HOME}/.xrdb/color/theme
 			replace_line "COLOR_BACKGROUND" "\"${2}\"" ${configPath}/dunst/dunstrc
 			;;
 		1)
 
 			replace_line "FOREGROUND" "set \$foregr ${2}" ${configPath}/i3/config
-			replace_line "#E8DFD6" "${2}" ${HOME}/.xrdb/color/theme
 			;;
 		2)
+      echo ${2}
 			replace_line "ACCENT" "set \$accent ${2}" ${configPath}/i3/config
-			replace_line "FCOLOR" "F${2}" ${binPath}/toggle.sh
 			replace_line "FCOLOR" "F${2}" ${binPath}/spotify-info.sh
-			replace_line "#2E3340" "${2}" ${HOME}/.xrdb/color/theme
+			replace_line "#2E3340" "${2}" ${HOME}/.xrdb/color/gruvbox
 			;;
 		3)
 			replace_line "URGENT" "set \$urgent ${1}" ${configPath}/i3/config

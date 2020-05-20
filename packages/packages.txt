@@ -22,13 +22,9 @@ libcaca
 lm_sensors
 libqalculate
 lxappearance
-mplayer
-ncmpcpp
 neovim
 numlockx
-mpd
 mpv
-ncmpcpp
 pcmanfm
 playerctl
 polkit-gnome
@@ -40,7 +36,6 @@ scrot
 slim
 ttf-font-awesome
 viewnior
-vim
 w3m
 xarchiver
 xautolock

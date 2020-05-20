@@ -31,21 +31,9 @@ set $resize_value 5
 # border
 set $border_size 1
 
-set $BROWSER google-chrome
+set $BROWSER xdg-open
 
-# GAPS settings
-# i3-gaps from https://github.com/Airblader/i3
-# Disable window titlebars entirely
-for_window [class="^.*"] border pixel 3
-
-# Set inner/outer gaps
-gaps inner 8
-gaps outer 4
-# Smart gaps (gaps used if only more than one container on the workspace)
-smart_gaps on
-# Smart borders (draw borders around container only if it is not the only container on this workspace)
-# on|no_gaps (on=always activate and no_gaps=only activate if the gap size to the edge of the screen is 0)
-smart_borders on
+for_window [class="^.*"] border pixel 2
 
 # ================================= STYLES ====================================================
 #
@@ -208,17 +196,17 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 15
 # brightness inc
 bindsym XF86MonBrightnessUp exec xbacklight -inc 15
 # Previous
-#bindsym XF86AudioPrev exec playerctl -p spotify previous
-bindsym XF86AudioPrev exec "mpc prev; sleep 0.5s; sh -c '~/.bin/ncmpcppp_cover.sh'"
+bindsym XF86AudioPrev exec playerctl -p spotify previous
+#bindsym XF86AudioPrev exec "mpc prev; sleep 0.5s; sh -c '~/.bin/ncmpcppp_cover.sh'"
 # Next
-#bindsym XF86AudioNext exec playerctl -p spotify next
-bindsym XF86AudioNext exec "mpc next; sleep 0.5s; sh -c '~/.bin/ncmpcppp_cover.sh'"
+bindsym XF86AudioNext exec playerctl -p spotify next
+#bindsym XF86AudioNext exec "mpc next; sleep 0.5s; sh -c '~/.bin/ncmpcppp_cover.sh'"
 # Play/Pause
-#bindsym XF86AudioPlay exec playerctl -p spotify play-pause
-bindsym XF86AudioPlay exec "mpc toggle; sleep 0.5s; sh -c '~/.bin/ncmpcppp_cover.sh'"
+bindsym XF86AudioPlay exec playerctl -p spotify play-pause
+#bindsym XF86AudioPlay exec "mpc toggle; sleep 0.5s; sh -c '~/.bin/ncmpcppp_cover.sh'"
 # STOP
-#bindsym XF86AudioStop  exec playerctl -p spotify stop
-bindsym XF86AudioStop  exec "mpc stop"
+bindsym XF86AudioStop  exec playerctl -p spotify stop
+#bindsym XF86AudioStop  exec "mpc stop"
 # Mute
 bindsym XF86AudioMute exec "amixer -q sset Master toggle"
 # Volume down
@@ -287,10 +275,7 @@ for_window [window_role="task_dialog"] floating enable
 for_window [window_role="Preferences"] floating enable
 for_window [window_type="dialog"] floating enable
 for_window [window_type="menu"] floating enable
-for_window [class="GParted"] floating enable border normal
-for_window [class="Gnome-mplayer"] floating enable border n
-for_window [title="^alsamixer$"] floating enable border normal
-for_window [class=Viewnior|Galculator|feh|Audacious|File-roller|Lxappearance|Lxtask|Pavucontrol] floating enable
+for_window [class=Viewnior|Galculator|feh|Audacious|File-roller|Lxappearance|Lxtask] floating enable
 
 # ================================= AUTORUN ====================================================
 #
