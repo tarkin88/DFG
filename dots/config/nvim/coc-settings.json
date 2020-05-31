@@ -1,0 +1,94 @@
+{
+  // explorer
+  "explorer.width": 35,
+  "explorer.file.root.template": "[icon] [title] [root] ",
+  "explorer.icon.enableNerdfont": true,
+  "explorer.previewAction.onHover": true,
+  "explorer.icon.enableVimDevicons": true,
+  "explorer.toggle": true,
+  "explorer.position": "left",
+  "explorer.quitOnOpen": true,
+  "explorer.file.child.template": "[git | 2] [selection | clip | 1] [indent][icon | 1] [diagnosticError & 1][filename omitCenter 1][modified][readonly] [linkIcon & 1][link growRight 1 omitCenter 5][size]",
+  "explorer.file.child.labelingTemplate": "[fullpath][link][diagnosticWarning][diagnosticError][size][readonly][modified]",
+  "explorer.buffer.child.template": "[selection | 1] [bufnr] [name][modified][readonly] ",
+  "explorer.buffer.child.labelingTemplate": "[name][bufname][modified][readonly]",
+  "explorer.datetime.format": "HH:mm:ss dd/MM/yy",
+  "explorer.sources": [
+    {
+      "name": "buffer",
+      "expand": true
+    },
+    {
+      "name": "file",
+      "expand": true
+    }
+  ],
+  "explorer.keyMappings": {
+    "<cr>": ["expandable?", "expand", "open"],
+    "v": "open:vsplit"
+  },
+
+  // suggestions
+  "suggest.echodocSupport": true,
+  "diagnostic.displayByAle": true,
+  // TODO add more labels and give them cool glyphs
+  "suggest.completionItemKindLabels": {
+    "text": "t",
+    "method": "m",
+    "function": ""
+  },
+
+  // diagnostics
+  "diagnostic.errorSign": " ",
+  "diagnostic.warningSign": " ",
+  "diagnostic.infoSign": "",
+  "diagnostic.hintSign": " ",
+  "diagnostic.virtualText": true,
+
+  // list
+  "list.indicator": ">",
+  "list.selectedSignText": " ",
+
+  // autoformat
+  "coc.preferences.formatOnSaveFiletypes": [
+    "css",
+    "markdown",
+    "javascript",
+    "graphql",
+    "html",
+    "yaml",
+    "json",
+    "python"
+  ],
+  "coc.preferences.hoverTarget": "float",
+
+  // python config
+  "python.linting.enabled": true,
+  "python.linting.pylintEnabled": true,
+  "python.formatting.provider": "black",
+  //"python.jediEnabled": false,
+  //"python.formatting.blackPath": "~/Proyectos/pythonEnvs/nvim/bin/black",
+  // "python.linting.pylintPath": "~/Proyectos/pythonEnvs/nvim/bin/pylint",
+  // "python.condaPath": "~/Proyectos/pythonEnvs/nvim/bin/conda",
+  //"python.sortImports.path": "~/Proyectos/pythonEnvs/nvim/bin/isort",
+  //  "python.jediPath": "~/Proyectos/pythonEnvs/nvim/lib/python3.8/site-packages",
+
+  // snippets
+  "snippets.ultisnips.directories": ["UltiSnips", "~/.config/nvim/snips"],
+  "snippets.userSnippetsDirectory": "~/.config/nvim/snips",
+
+  // emmet
+  "emmet.includeLanguages": {
+    "vue-html": "html",
+    "javascript": "javascriptreact"
+  },
+
+  "languageserver": {
+    "bash": {
+      "command": "bash-language-server",
+      "args": ["start"],
+      "filetypes": ["sh"],
+      "ignoredRootPaths": ["~"]
+    }
+  }
+}
