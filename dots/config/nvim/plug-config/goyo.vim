@@ -1,21 +1,33 @@
-nmap <leader><ENTER> :Goyo<CR>
+nmap <M-Enter> :Goyo<CR>
 
+let g:goyo_width=125
 
-let g:goyo_width=130
-
-
+let s:save_option = {}
 function! s:goyo_enter()
+  let s:save_option['showmode'] = &showmode
+  let s:save_option['showcmd'] = &showcmd
+  let s:save_option['scrolloff'] = &scrolloff
   set noshowmode
-  set number
   set noshowcmd
   set scrolloff=999
+  if exists(':Limelight') == 2
+    Limelight
+    let s:save_option['limelight'] = 1
+  endif
 endfunction
 
 function! s:goyo_leave()
-  set showmode
-  set showcmd
-  set scrolloff=5
+  let &showmode = s:save_option['showmode']
+  let &showcmd = s:save_option['showcmd']
+  let &scrolloff = s:save_option['scrolloff']
+  if get(s:save_option,'limelight', 0)
+    execute 'Limelight!'
+  endif
 endfunction
 
-autocmd! User GoyoEnter nested call <SID>goyo_enter()
-autocmd! User GoyoLeave nested call <SID>goyo_leave()
+augroup goyo_map
+  autocmd! User GoyoEnter nested call <SID>goyo_enter()
+  autocmd! User GoyoLeave nested call <SID>goyo_leave()
+augroup END
+
+" vim:set et sw=2:

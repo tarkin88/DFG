@@ -18,6 +18,7 @@ nnoremap <silent><A-v> :vsplit <CR>
 " horizontal split
 nnoremap <silent><A-h> :split <CR>
 
+nnoremap <silent><Tab> <C-w>
 
 " Better indenting
 vnoremap < <gv
@@ -39,4 +40,4 @@ nnoremap <silent> <M-Up>    :resize +2<CR>
 nnoremap <silent> <M-Right>    :vertical resize -2<CR>
 nnoremap <silent> <M-Left>    :vertical resize +2<CR>
 
-
+nnoremap  <silent>   <tab> <C-w>w <CR>

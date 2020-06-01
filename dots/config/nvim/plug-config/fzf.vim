@@ -1,13 +1,13 @@
 nnoremap <C-p> :Files<Cr>
 nnoremap <C-b> :Buffers<Cr>
-nnoremap <leader>f :Rg<CR>
-nnoremap <leader>t :Tags<CR>
-nnoremap <leader>m :Marks<CR>
+nnoremap <M-f> :Rg<CR>
+nnoremap <M-t> :Tags<CR>
+nnoremap <M-m> :Marks<CR>
 
 "This is the default extra key bindings
 let g:fzf_action = {
   \ 'ctrl-t': 'tab split',
-  \ 'ctrl-x': 'split',
+  \ 'ctrl-h': 'split',
   \ 'ctrl-v': 'vsplit' }
 
 " Enable per-command history.
@@ -16,9 +16,7 @@ let g:fzf_action = {
 " explicitly bind the keys to down and up in your $FZF_DEFAULT_OPTS.
 let g:fzf_history_dir = '~/.local/share/fzf-history'
 let g:fzf_buffers_jump = 1
-
 let g:fzf_tags_command = 'ctags -R'
-
 let g:fzf_layout = {'up':'~90%',
       \   'window': {
       \   'width': 0.85,
@@ -30,8 +28,7 @@ let g:fzf_layout = {'up':'~90%',
       \ } }
 
 let $FZF_DEFAULT_OPTS = '--layout=reverse --inline-info'
-let $FZF_DEFAULT_COMMAND="rg --files --hidden --glob '!.git/**'"
-"-g '!{node_modules,.git}'
+let $FZF_DEFAULT_COMMAND="rg --files --hidden --glob '!.git/**' -g '!{node_modules,.git,autoload}'"
 
 " Customize fzf colors to match your color scheme
 let g:fzf_colors =
@@ -50,12 +47,14 @@ let g:fzf_colors =
   \ 'header':  ['fg', 'Comment'] }
 
 "Get Files
+"
+"
 command! -bang -nargs=? -complete=dir Files
-    \ call fzf#vim#files(<q-args>, fzf#vim#with_preview({'options': ['--layout=reverse', '--inline-info']}, 'right:65%'), <bang>0)
+    \ call fzf#vim#files(<q-args>, fzf#vim#with_preview({'options': ['--layout=reverse', '--inline-info']}, 'right:40%'), <bang>0)
 
 
 command! -bang -nargs=*  All
-  \ call fzf#run(fzf#wrap({'source': 'rg --files --hidden --no-ignore-vcs --glob "!{node_modules/*,.git/*}"', 'down': '40%', 'options': '--expect=ctrl-t,ctrl-x,ctrl-v --multi --reverse' }))
+  \ call fzf#run(fzf#wrap({'source': 'rg --files --hidden --no-ignore-vcs --glob "!{autoload/*,node_modules/*,.git/*}"', 'down': '40%', 'options': '--expect=ctrl-t,ctrl-h,ctrl-v --multi --reverse' }))
 
 " Get text in files with Rg
 " command! -bang -nargs=* Rg

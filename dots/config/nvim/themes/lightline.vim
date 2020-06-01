@@ -1,7 +1,7 @@
 set noshowmode
 
 let g:lightline = {
-      \ 'colorscheme': 'wombat',
+      \ 'colorscheme': 'forest_night',
       \ }
 
 let g:lightline.component_function = {

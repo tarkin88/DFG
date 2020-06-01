@@ -12,10 +12,9 @@ source $HOME/.config/nvim/keys/mappings.vim
 source $HOME/.config/nvim/vim-plug/plugins.vim
 
 " Themes
+source $HOME/.config/nvim/themes/forest.vim
 source $HOME/.config/nvim/themes/lightline.vim
-source $HOME/.config/nvim/themes/highlight-yank.vim
-source $HOME/.config/nvim/themes/one.vim
-"source $HOME/.config/nvim/themes/srcery.vim
+source $HOME/.config/nvim/themes/highlightyank.vim
 
 " Plugins
 source $HOME/.config/nvim/plug-config/ale.vim
@@ -25,12 +24,13 @@ source $HOME/.config/nvim/plug-config/coc.vim
 source $HOME/.config/nvim/plug-config/fzf.vim
 source $HOME/.config/nvim/plug-config/gitgutter.vim
 source $HOME/.config/nvim/plug-config/goyo.vim
+source $HOME/.config/nvim/plug-config/gutentags.vim
 source $HOME/.config/nvim/plug-config/identline.vim
+source $HOME/.config/nvim/plug-config/nerdcommenter.vim
 source $HOME/.config/nvim/plug-config/ultisnippets.vim
 source $HOME/.config/nvim/plug-config/undotree.vim
 source $HOME/.config/nvim/plug-config/vista.vim
 source $HOME/.config/nvim/plug-config/webdevicons.vim
-
 
 if !empty(glob("./paths.vim"))
   source $HOME/.config/nvim/paths.vim
