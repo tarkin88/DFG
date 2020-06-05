@@ -10,6 +10,7 @@ antigen bundle git-flow-avh
 antigen bundle zdharma/fast-syntax-highlighting
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-completions
+antigen bundle 'wfxr/forgit'
 
 # Load the theme.
 antigen bundle agkozak/agkozak-zsh-prompt
@@ -121,7 +122,30 @@ fgr() {
   fi
 }
 
-# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+_systemctl_unit_state() {
+  typeset -gA _sys_unit_state
+  _sys_unit_state=( $(__systemctl list-unit-files "$PREFIX*" | awk '{print $1, $2}') ) }
 
+ [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+[[ -r "/usr/share/z/z.sh" ]] && source /usr/share/z/z.sh
+
+
+unalias z
+z() {
+  if [[ -z "$*" ]]; then
+    cd "$(_z -l 2>&1 | fzf +s --tac | sed 's/^[0-9,.]* *//')"
+  else
+    _last_z_args="$@"
+    _z "$@"
+  fi
+}
+
+zz() {
+  cd "$(_z -l 2>&1 | sed 's/^[0-9,.]* *//' | fzf -q "$_last_z_args")"
+}
+alias j=z
+alias jj=zz
 autoload -Uz compinit
 compinit
+

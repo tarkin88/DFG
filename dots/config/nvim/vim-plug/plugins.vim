@@ -32,7 +32,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
   " Intellisense
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
-  "Plug 'posva/vim-vue'
 
   " lint engine
   Plug 'dense-analysis/ale'
@@ -40,7 +39,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   " Status Line
   Plug 'itchyny/lightline.vim'
   Plug 'maximbaz/lightline-ale'
-  Plug 'bling/vim-bufferline'
 
   " Snippets are separated from the engine. Add this if you want them:
   Plug 'SirVer/ultisnips'
@@ -61,10 +59,10 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'junegunn/goyo.vim'
 
   " debug
-  Plug 'vim-vdebug/vdebug'
+  Plug 'SkyLeach/pudb.vim'
 
   " Making stuff
-  Plug 'neomake/neomake'
+  "Plug 'neomake/neomake'
   Plug 'mattn/emmet-vim'
   Plug 'ntpeters/vim-better-whitespace'
   Plug 'Yggdroot/indentLine'
@@ -72,6 +70,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'machakann/vim-highlightedyank'
   Plug 'editorconfig/editorconfig-vim'
   Plug 'ludovicchabant/vim-gutentags'
+  Plug 'tmhedberg/SimpylFold'
+
 call plug#end()
 
 " Automatically install missing plugins on startup

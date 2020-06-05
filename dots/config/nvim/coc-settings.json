@@ -1,4 +1,9 @@
 {
+  "suggest.enablePreview": true,
+  "suggest.timeout": 3000,
+  "suggest.maxPreviewWidth": 70,
+  "suggest.echodocSupport": true,
+  "codeLens.enable": true,
   // explorer
   "explorer.width": 35,
   "explorer.file.root.template": "[icon] [title] [root] ",
@@ -23,7 +28,6 @@
   },
 
   // suggestions
-  "suggest.echodocSupport": true,
   // "diagnostic.displayByAle": true,
   // TODO add more labels and give them cool glyphs
   "suggest.completionItemKindLabels": {

@@ -27,6 +27,7 @@ source $HOME/.config/nvim/plug-config/goyo.vim
 source $HOME/.config/nvim/plug-config/gutentags.vim
 source $HOME/.config/nvim/plug-config/identline.vim
 source $HOME/.config/nvim/plug-config/nerdcommenter.vim
+source $HOME/.config/nvim/plug-config/simplyfold.vim
 source $HOME/.config/nvim/plug-config/ultisnippets.vim
 source $HOME/.config/nvim/plug-config/undotree.vim
 source $HOME/.config/nvim/plug-config/vista.vim
