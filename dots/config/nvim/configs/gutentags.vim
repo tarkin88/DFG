@@ -1,7 +1,7 @@
 " configs
 let g:gutentags_add_default_project_roots = '0'
 let g:gutentags_project_root = ['package.json', '.git', 'tags']
-let g:gutentags_cache_dir = expand('~/.cache/nvim/ctags/')
+let g:gutentags_cache_dir = expand('~/.ctags/')
 
 let g:gutentags_generate_on_new = 1
 let g:gutentags_generate_on_missing = 1

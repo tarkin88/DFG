@@ -12,11 +12,11 @@ vnoremap <C-c> "+y
 " similar ctrl A
 nnoremap <C-A> ggvG$
 
-" vertical split
-nnoremap <silent><A-v> :vsplit <CR>
-
-" horizontal split
-nnoremap <silent><A-h> :split <CR>
+" Move selected line / block of text in visual mode
+xnoremap J :move '>+1<CR>gv-gv
+xnoremap K :move '<-2<CR>gv-gv
+xnoremap <silent> <C-S-Up> :move '<-2<CR>
+xnoremap <silent> <C-S-Down> :move '>+1<CR>
 
 nnoremap <silent><Tab> <C-w>
 
@@ -35,9 +35,18 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
 " Use alt + hjkl to resize windows
-nnoremap <silent> <M-Down>    :resize -2<CR>
-nnoremap <silent> <M-Up>    :resize +2<CR>
-nnoremap <silent> <M-Right>    :vertical resize -2<CR>
-nnoremap <silent> <M-Left>    :vertical resize +2<CR>
+nnoremap <silent> <M-S-Down>    :resize -2<CR>
+nnoremap <silent> <M-S-Up>    :resize +2<CR>
+nnoremap <silent> <M-S-Right>    :vertical resize -2<CR>
+nnoremap <silent> <M-S-Left>    :vertical resize +2<CR>
 
 nnoremap  <silent>   <tab> <C-w>w <CR>
+
+nnoremap <silent> <M-Right> :bnext<CR>
+nnoremap <silent> <M-Left> :bprevious<CR>
+nnoremap <silent> <M-Down> :bd<CR>
+
+
+" Easy CAPS
+inoremap <c-u> <ESC>viwUi
+nnoremap <c-u> viwU<Esc>

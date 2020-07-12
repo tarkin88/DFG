@@ -1,26 +1,23 @@
+set updatetime=300
+
 let g:coc_global_extensions = [
     \ 'coc-actions',
     \ 'coc-css',
-    \ 'coc-cssmodules',
     \ 'coc-emmet',
     \ 'coc-eslint',
-    \ 'coc-explorer',
     \ 'coc-highlight',
     \ 'coc-html',
     \ 'coc-json',
+    \ 'coc-jedi',
     \ 'coc-lists',
+    \ 'coc-neosnippet',
     \ 'coc-marketplace',
-    \ 'coc-pairs',
     \ 'coc-prettier',
     \ 'coc-python',
     \ 'coc-snippets',
-    \ 'coc-svg',
     \ 'coc-ultisnips',
     \ 'coc-vimlsp',
     \ 'coc-vetur',
-    \ 'coc-webpack',
-    \ 'coc-xml',
-    \ 'coc-yaml',
     \ 'coc-yank',
     \ ]
 
@@ -83,15 +80,6 @@ augroup mygroup
   autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 augroup end
 
-" Applying codeAction to the selected region.
-" Example: `<leader>aap` for current paragraph
-" xmap <leader>a  <Plug>(coc-codeaction-selected)
-" nmap <leader>a  <Plug>(coc-codeaction-selected)
-
-" Remap keys for applying codeAction to the current line.
-" nmap <leader>ac  <Plug>(coc-codeaction)
-" Apply AutoFix to problem on the current line.
-" nmap <leader>qf  <Plug>(coc-fix-current)
 
 " Introduce function text object
 " NOTE: Requires 'textDocument.documentSymbol' support from the language server.
@@ -114,51 +102,3 @@ command! -nargs=? Fold :call     CocAction('fold', <f-args>)
 
 " Add `:OR` command for organize imports of the current buffer.
 command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
-
-
-" Explorer
-let g:coc_explorer_global_presets = {
-      \  'vim': {
-      \     'position': 'left',
-      \     'quit-on-open': v:true,
-      \     'buffer-child-template': '[selection | 1] [bufnr] [name][modified][readonly] ',
-      \     'file-child-template': '[git | 2] [selection | clip | 1] [indent][icon | 1] [filename growRight 1 omitCenter 1][modified][diagnosticError & 1]',
-      \     'file-child-labeling-template': '[fullpath][size][modified][readonly] [diagnosticWarning | 1] [diagnosticError | 1]',
-      \ },
-      \  'floating': {
-      \      'position': 'floating',
-      \   },
-\   'floatingLeftside': {
-\      'position': 'floating',
-\      'floating-position': 'left-center',
-\      'floating-width': 50,
-\   },
-\   'floatingRightside': {
-\      'position': 'floating',
-\      'floating-position': 'right-center',
-\      'floating-width': 50,
-\   },
-\   'simplify': {
-\     'file.child.template': '[selection | clip | 1] [indent][icon | 1] [filename omitCenter 1]'
-\   }
-\ }
-
-nmap <F2> :CocCommand explorer <CR>
-
-autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | endif
-
-" Snippets
-" Use <C-l> for trigger snippet expand.
-imap <C-l> <Plug>(coc-snippets-expand)
-
-" Use <C-j> for select text for visual placeholder of snippet.
-vmap <C-j> <Plug>(coc-snippets-select)
-
-" Use <C-j> for jump to next placeholder, it's default of coc.nvim
-let g:coc_snippet_next = '<c-j>'
-
-" Use <C-k> for jump to previous placeholder, it's default of coc.nvim
-let g:coc_snippet_prev = '<c-k>'
-
-" Use <C-j> for both expand and jump (make expand higher priority.)
-imap <C-j> <Plug>(coc-snippets-expand-jump)

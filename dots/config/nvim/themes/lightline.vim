@@ -1,7 +1,10 @@
 set noshowmode
 
+" let g:lightline = {
+      " \ 'colorscheme': 'sonokai',
+      " \ }
 let g:lightline = {
-      \ 'colorscheme': 'forest_night',
+      \ 'colorscheme': 'srcery',
       \ }
 
 let g:lightline.component_function = {

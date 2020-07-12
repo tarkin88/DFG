@@ -13,5 +13,5 @@ if !exists('g:undotree_SetFocusWhenToggle')
   let g:undotree_SetFocusWhenToggle = 1
 endif
 
-nnoremap <F3> :UndotreeToggle<cr> 
+nnoremap <F3> :UndotreeToggle<cr>
 

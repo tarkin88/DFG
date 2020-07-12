@@ -24,6 +24,7 @@ set formatoptions-=cro                  " Stop newline continution of comments
   set laststatus=2                        " Always display the status line
   set number                              " Line numbers
   set cursorline                          " Enable highlighting of the current line
+  " set cursorcolumn                        " Enable highlighting of the current column
   set background=dark                     " tell vim what the background color looks like
   set noshowmode                          " We don't need to see things like -- INSERT -- anymore
   set nobackup                            " This is recommended by coc
@@ -40,7 +41,9 @@ set formatoptions-=cro                  " Stop newline continution of comments
 
   set autochdir                           " Your working directory will always be the same as your working directory
   set foldcolumn=2                        " Folding abilities
+  set colorcolumn=120
 
 
   au! BufWritePost $MYVIMRC source %      " auto source when writing to init.vm alternatively you can run :source $MYVIMRC
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
