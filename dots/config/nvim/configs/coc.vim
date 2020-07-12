@@ -3,7 +3,9 @@ set updatetime=300
 let g:coc_global_extensions = [
     \ 'coc-actions',
     \ 'coc-css',
+    \ 'coc-bookmark',
     \ 'coc-emmet',
+    \ 'coc-explorer',
     \ 'coc-eslint',
     \ 'coc-highlight',
     \ 'coc-html',
@@ -102,3 +104,11 @@ command! -nargs=? Fold :call     CocAction('fold', <f-args>)
 
 " Add `:OR` command for organize imports of the current buffer.
 command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
+
+nmap <silent><F2> :CocCommand explorer<CR>
+
+" Example configuration
+nmap <silent><F9> <Plug>(coc-bookmark-toggle)
+nmap <silent><F10> <Plug>(coc-bookmark-annotate)
+nmap <silent><F11> <Plug>(coc-bookmark-next)
+nmap <silent><F12> :CocList bookmark <CR>

@@ -11,7 +11,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 " ---------------------------------------
 "            General stuff
 " ---------------------------------------
-  Plug 'MattesGroeger/vim-bookmarks'
   Plug 'airblade/vim-rooter'
   Plug 'mattn/emmet-vim'
   Plug 'jiangmiao/auto-pairs'
@@ -55,8 +54,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 " ---------------------------------------
   Plug 'ludovicchabant/vim-gutentags'
   Plug 'mbbill/undotree', { 'on': [ 'UndotreeToggle' ] }
-  Plug 'preservim/nerdtree'
-  Plug 'Xuyuanp/nerdtree-git-plugin'
   Plug 'ryanoasis/vim-devicons'
 
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --no-bash' } " FZF from inside Vim

@@ -21,13 +21,11 @@ source $HOME/.config/nvim/themes/highlightyank.vim
 " configs
 source $HOME/.config/nvim/configs/ale.vim
 source $HOME/.config/nvim/configs/blamer.vim
-source $HOME/.config/nvim/configs/bookmarks.vim
 source $HOME/.config/nvim/configs/carbon.vim
 source $HOME/.config/nvim/configs/coc.vim
 source $HOME/.config/nvim/configs/commentary.vim
 source $HOME/.config/nvim/configs/doge.vim
 source $HOME/.config/nvim/configs/fzf.vim
-source $HOME/.config/nvim/configs/nerdtree.vim
 source $HOME/.config/nvim/configs/gitgutter.vim
 source $HOME/.config/nvim/configs/gutentags.vim
 source $HOME/.config/nvim/configs/rainbow.vim

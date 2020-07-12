@@ -1,15 +1,31 @@
 set noshowmode
 
-" let g:lightline = {
-      " \ 'colorscheme': 'sonokai',
-      " \ }
+function! LightlineFilename()
+  let filename = expand('%:t') !=# '' ? expand('%:t') : '[No Name]'
+  let modified = &modified ? ' +' : ''
+  return filename . modified
+endfunction
+
 let g:lightline = {
       \ 'colorscheme': 'srcery',
+       \ 'mode_map': {
+        \ 'n' : 'N',
+        \ 'i' : 'I',
+        \ 'R' : 'R',
+        \ 'v' : 'V',
+        \ 'V' : 'VL',
+        \ "\<C-v>": 'VB',
+        \ 'c' : 'C',
+        \ 's' : 'S',
+        \ 'S' : 'SL',
+        \ "\<C-s>": 'SB',
+        \ 't': 'T',
+        \ },
       \ }
+
 
 let g:lightline.component_function = {
       \   'filename': 'LightlineFilename',
-      \   'method': 'NearestMethodOrFunction',
       \ }
 
 let g:lightline.component_expand = {
@@ -29,15 +45,13 @@ let g:lightline.component_type = {
       \ }
 
 let g:lightline.active = {
-      \      'left': [ [ 'mode', 'paste' ], [ 'readonly', 'filename', 'modified', 'method' ]],
-      \      'right': [[ 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_infos', 'linter_ok' ]]
+      \      'left': [ [ 'mode', 'paste' ], [ 'readonly', 'filename', 'modified', 'method',]],
+      \      'right': [
+      \                 [ 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_infos', 'linter_ok' ],
+      \                 [ 'lineinfo' ],
+      \             ]
       \ }
 
-function! LightlineFilename()
-  let filename = expand('%:t') !=# '' ? expand('%:t') : '[No Name]'
-  let modified = &modified ? ' +' : ''
-  return filename . modified
-endfunction
 
 let g:lightline#ale#indicator_checking = "\uf110 "
 let g:lightline#ale#indicator_infos = "\uf129 "
