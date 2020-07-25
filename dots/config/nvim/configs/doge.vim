@@ -3,4 +3,4 @@ let g:doge_filetype_aliases = {
 \  'javascript': ['vue']
 \}
 
-noremap <silent> <F8> :DogeGenerate <CR>
+noremap <silent> <F4> :DogeGenerate <CR>

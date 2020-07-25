@@ -6,8 +6,9 @@ function! LightlineFilename()
   return filename . modified
 endfunction
 
+      " \ 'colorscheme': 'srcery',
 let g:lightline = {
-      \ 'colorscheme': 'srcery',
+      \ 'colorscheme': 'sonokai',
        \ 'mode_map': {
         \ 'n' : 'N',
         \ 'i' : 'I',

@@ -7,8 +7,10 @@ inoremap <C-S> <esc>:w<CR>
 nnoremap <silent> <C-s> :w<CR>
 nnoremap <C-Q> :q<CR>
 inoremap <C-Q> <esc>:q<CR>
+
 " Ctrl + C to xclip
 vnoremap <C-c> "+y
+
 " similar ctrl A
 nnoremap <C-A> ggvG$
 
@@ -45,8 +47,3 @@ nnoremap  <silent>   <tab> <C-w>w <CR>
 nnoremap <silent> <M-Right> :bnext<CR>
 nnoremap <silent> <M-Left> :bprevious<CR>
 nnoremap <silent> <M-Down> :bd<CR>
-
-
-" Easy CAPS
-inoremap <c-u> <ESC>viwUi
-nnoremap <c-u> viwU<Esc>

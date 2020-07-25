@@ -4,8 +4,9 @@ let g:coc_global_extensions = [
     \ 'coc-actions',
     \ 'coc-css',
     \ 'coc-bookmark',
+    \ 'coc-diagnostic',
+    \ 'coc-docker',
     \ 'coc-emmet',
-    \ 'coc-explorer',
     \ 'coc-eslint',
     \ 'coc-highlight',
     \ 'coc-html',
@@ -105,7 +106,7 @@ command! -nargs=? Fold :call     CocAction('fold', <f-args>)
 " Add `:OR` command for organize imports of the current buffer.
 command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
 
-nmap <silent><F2> :CocCommand explorer<CR>
+" nmap <silent><F2> :CocCommand explorer<CR>
 
 " Example configuration
 nmap <silent><F9> <Plug>(coc-bookmark-toggle)

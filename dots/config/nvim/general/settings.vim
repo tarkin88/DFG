@@ -32,7 +32,10 @@ set formatoptions-=cro                  " Stop newline continution of comments
   set shortmess+=c                        " Don't pass messages to |ins-completion-menu|.
   set signcolumn=yes                      " Always show the signcolumn, otherwise it would shift the text each time
   set updatetime=300                      " Faster completion
-  set timeoutlen=100                      " By default timeoutlen is 1000 ms
+  " set timeoutlen=100                      " By default timeoutlen is 1000 ms
+  set timeoutlen=1000 ttimeoutlen=0
+
+
 "  set clipboard=unnamedplus               " Copy paste between vim and everything else
   set ignorecase                          " Better search
   set incsearch
@@ -42,6 +45,10 @@ set formatoptions-=cro                  " Stop newline continution of comments
   set autochdir                           " Your working directory will always be the same as your working directory
   set foldcolumn=2                        " Folding abilities
   set colorcolumn=120
+
+  " Providers
+  let g:python3_host_prog  = '/home/tarquin/.envs/neovim/bin/python'
+  let g:loaded_python_provider = 0
 
 
   au! BufWritePost $MYVIMRC source %      " auto source when writing to init.vm alternatively you can run :source $MYVIMRC

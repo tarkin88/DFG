@@ -13,8 +13,7 @@ source $HOME/.config/nvim/keys/mappings.vim
 source $HOME/.config/nvim/plugins.vim
 
 " Themes
-source $HOME/.config/nvim/themes/srcery.vim
-" source $HOME/.config/nvim/themes/sonokai.vim
+source $HOME/.config/nvim/themes/sonokai.vim
 source $HOME/.config/nvim/themes/lightline.vim
 source $HOME/.config/nvim/themes/highlightyank.vim
 
@@ -26,9 +25,11 @@ source $HOME/.config/nvim/configs/coc.vim
 source $HOME/.config/nvim/configs/commentary.vim
 source $HOME/.config/nvim/configs/doge.vim
 source $HOME/.config/nvim/configs/fzf.vim
+source $HOME/.config/nvim/configs/floatterm.vim
 source $HOME/.config/nvim/configs/gitgutter.vim
 source $HOME/.config/nvim/configs/gutentags.vim
 source $HOME/.config/nvim/configs/rainbow.vim
+source $HOME/.config/nvim/configs/rnvimr.vim
 source $HOME/.config/nvim/configs/rooter.vim
 source $HOME/.config/nvim/configs/ultisnippets.vim
 source $HOME/.config/nvim/configs/undotree.vim

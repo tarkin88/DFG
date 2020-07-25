@@ -22,6 +22,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'kristijanhusak/vim-carbon-now-sh'
   Plug 'junegunn/rainbow_parentheses.vim'
   Plug 'ntpeters/vim-better-whitespace'
+  " Plug 'DanManN/vim-razer'
 
 " ---------------------------------------
 "            Code Quality
@@ -35,13 +36,19 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'sheerun/vim-polyglot'
   Plug 'kkoomen/vim-doge'
   Plug 'tmhedberg/SimpylFold'
+  Plug 'tpope/vim-commentary'
 
 " ---------------------------------------
 "            Colors
 " ---------------------------------------
-  " Plug 'sainnhe/sonokai'
-  Plug 'srcery-colors/srcery-vim'
+  Plug 'sainnhe/sonokai'
   Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
+  Plug 'srcery-colors/srcery-vim'
+  Plug 'franbach/miramare'
+  Plug 'ajmwagar/vim-deus'
+
+
+  " Plug 'sainnhe/gruvbox-material'
 
 " ---------------------------------------
 "            Git
@@ -54,8 +61,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 " ---------------------------------------
   Plug 'ludovicchabant/vim-gutentags'
   Plug 'mbbill/undotree', { 'on': [ 'UndotreeToggle' ] }
-  Plug 'ryanoasis/vim-devicons'
-
+  Plug 'kevinhwang91/rnvimr', {'do': 'make sync'}
+  " Plug 'ryanoasis/vim-devicons'
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --no-bash' } " FZF from inside Vim
   Plug 'junegunn/fzf.vim', {
             \ 'on': [
@@ -74,9 +81,14 @@ call plug#begin('~/.config/nvim/autoload/plugged')
                 \ 'Marks'
             \ ] }
 
-  Plug 'tpope/vim-commentary'
   Plug 'TaDaa/vimade'
+  Plug 'liuchengxu/vista.vim'
+
   Plug 'ap/vim-buftabline'
+  Plug 'voldikss/vim-floaterm', {
+        \ 'on': [
+        \ 'FloatermToggle'
+        \ ] }
 
 call plug#end()
 
